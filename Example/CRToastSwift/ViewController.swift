@@ -9,6 +9,10 @@
 import UIKit
 import CRToastSwift
 
+enum Template {
+    case Info, Success, Warning, Error
+}
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -17,7 +21,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var templateSegmentedControl: UISegmentedControl!
     
-    var template: NotificationController.Template {
+    var template: Template {
         get {
             switch templateSegmentedControl.selectedSegmentIndex {
             case 0:
@@ -37,24 +41,36 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var animationTypeSegmentedControl: UISegmentedControl!
     
-    var animationType: NotificationController.AnimationType {
+    var animationType: CRToastSwift.AnimationType {
         get {
-            return NotificationController.AnimationType(rawValue: self.animationTypeSegmentedControl.selectedSegmentIndex)!
+            return CRToastSwift.AnimationType(rawValue: self.animationTypeSegmentedControl.selectedSegmentIndex)!
         }
     }
     
     @IBOutlet weak var statusBarVisibleSwitch: UISwitch!
     
     @IBAction func showNotification(sender: UIButton) {
-        let notification = CRToastSwift.NotificationController(
-            title: self.titleTextField.text!,
-            subtitle: self.subtitleTextField.text!,
-            template: self.template)
-        notification.inAnimationType = self.animationType
-        notification.outAnimationType = self.animationType
-        notification.underStatusBar = self.statusBarVisibleSwitch.on
-        notification.statusBarStyle = .LightContent
-        notification.present()
+        notify(Notification(text: "Hello, world!"), animation: .Gravity) {
+            print("Presentation")
+        } .onTapOnce { _ in
+            print("TapOnce")
+        } .onTapTwice { _ in
+            print("TapTwice")
+        } .onSwipeUp { _ in
+            print("SwipeUp")
+        } .onSwipeRight { _ in
+            print("SwipeRight")
+        } .onSwipeDown { _ in
+            print("SwipeDown")
+        } .onSwipeLeft { _ in
+            print("SwipeLeft")
+        } .onAnyTap { _ in
+            print("AnyTap")
+        } .onAnySwipe { _ in
+            print("AnySwipe")
+        } .onDismissal { _ in
+            print("Dismissed")
+        }
     }
 
 }
