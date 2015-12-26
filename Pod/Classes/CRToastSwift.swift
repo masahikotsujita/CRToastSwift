@@ -26,7 +26,25 @@
 import UIKit
 import CRToast
 
-public  typealias NotificationBarType    = CRToastType
+public enum HeightType {
+    
+    case StatusBar
+    case NavigationBar
+    case Custom(preferredHeight: CGFloat)
+    
+    var crToastType: CRToastType {
+        switch self {
+        case .StatusBar:
+            return .StatusBar
+        case .NavigationBar:
+            return .NavigationBar
+        case .Custom(_):
+            return .Custom
+        }
+    }
+    
+}
+
 public  typealias PresentationType       = CRToastPresentationType
 public  typealias AccessoryViewAlignment = CRToastAccessoryViewAlignment
 public  typealias InteractionType        = CRToastInteractionType
@@ -66,15 +84,13 @@ public class Notification {
     
     public var subtextShadowOffset: CGSize = CGSize(width: 0.0, height: 0.0)
     
-    public var barType: NotificationBarType = .NavigationBar
+    public var heightType: HeightType = .NavigationBar
     
     public var presentationType: PresentationType = .Cover
     
     public var underStatusBar = false
     
     public var statusBarStyle: UIStatusBarStyle = .Default
-    
-    public var preferredHeight: CGFloat = 0
     
     public var preferredPadding: CGFloat = 0
     
@@ -306,9 +322,14 @@ public func notify(notification: Notification, animation: Animation = .Linear(),
     options[kCRToastSubtitleTextShadowColorKey]         = notification.subtextShadowColor
     options[kCRToastSubtitleTextShadowOffsetKey]        = NSValue(CGSize: notification.subtextShadowOffset)
     
-    options[kCRToastNotificationTypeKey]                = notification.barType.rawValue
+    options[kCRToastNotificationTypeKey]                = notification.heightType.crToastType.rawValue
+    switch notification.heightType {
+    case .Custom(let preferredHeight):
+        options[kCRToastNotificationPreferredHeightKey] = preferredHeight
+    default:
+        break
+    }
     
-    options[kCRToastNotificationPreferredHeightKey]     = notification.preferredHeight
     options[kCRToastNotificationPreferredPaddingKey]    = notification.preferredPadding
     
     options[kCRToastNotificationPresentationTypeKey]    = notification.presentationType.rawValue
