@@ -273,12 +273,12 @@ public final class NotificationDismisser {
     
 }
 
-public enum NotificationPresentation {
+public enum TimeInterval {
     case Finite(_: NSTimeInterval)
     case Infinite
 }
 
-public func notify(notification: Notification, animation: NotificationAnimation = .Linear(), presentation: NotificationPresentation = .Finite(2.0), handler: () -> Void) -> NotificationPresentationToken {
+public func notify(notification: Notification, animation: NotificationAnimation = .Linear(), lifetime: TimeInterval = .Finite(2.0), handler: () -> Void) -> NotificationPresentationToken {
     
     let token = NotificationPresentationToken()
     
@@ -354,7 +354,7 @@ public func notify(notification: Notification, animation: NotificationAnimation 
     
     // configure interactions
     
-    switch presentation {
+    switch lifetime {
     case .Finite(let timeInterval):
         options[kCRToastForceUserInteractionKey]        = false
         options[kCRToastTimeIntervalKey]                = timeInterval
