@@ -190,7 +190,7 @@ class Event<T> {
     
 }
 
-public final class NotificationPresentationToken {
+public final class Presentation {
     
     init() {
         
@@ -279,9 +279,9 @@ public enum TimeInterval {
     case Infinite
 }
 
-public func notify(notification: Notification, animation: Animation = .Linear(), lifetime: TimeInterval = .Finite(2.0), handler: () -> Void) -> NotificationPresentationToken {
+public func notify(notification: Notification, animation: Animation = .Linear(), lifetime: TimeInterval = .Finite(2.0), handler: () -> Void) -> Presentation {
     
-    let token = NotificationPresentationToken()
+    let presentation = Presentation()
     
     let identifier = NSUUID().UUIDString
     
@@ -364,16 +364,16 @@ public func notify(notification: Notification, animation: Animation = .Linear(),
     }
     
     options[kCRToastInteractionRespondersKey]           = [InteractionResponder(interactionType: .All, automaticallyDismiss: false, block: { type in
-        token.interactionEvent.invoke((type, notification, dismisser))
+        presentation.interactionEvent.invoke((type, notification, dismisser))
     })]
     
     // show notification
     
     dispatch_async(dispatch_get_main_queue()) {
         CRToastManager.showNotificationWithOptions(options, apperanceBlock: handler, completionBlock: {
-            token.dismissalEvent.invoke(notification)
+            presentation.dismissalEvent.invoke(notification)
         })
     }
     
-    return token
+    return presentation
 }
