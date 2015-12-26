@@ -30,7 +30,6 @@ public  typealias NotificationBarType    = CRToastType
 public  typealias PresentationType       = CRToastPresentationType
 public  typealias AccessoryViewAlignment = CRToastAccessoryViewAlignment
 public  typealias InteractionType        = CRToastInteractionType
-private typealias InteractionResponder   = CRToastInteractionResponder
 
 public class Notification {
     
@@ -363,7 +362,7 @@ public func notify(notification: Notification, animation: Animation = .Linear(),
         options[kCRToastForceUserInteractionKey]        = true
     }
     
-    options[kCRToastInteractionRespondersKey]           = [InteractionResponder(interactionType: .All, automaticallyDismiss: false, block: { type in
+    options[kCRToastInteractionRespondersKey]           = [CRToastInteractionResponder(interactionType: .All, automaticallyDismiss: false, block: { type in
         presentation.interactionEvent.invoke((type, notification, dismisser))
     })]
     
