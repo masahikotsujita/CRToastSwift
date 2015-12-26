@@ -259,7 +259,7 @@ public final class NotificationPresentationToken {
     
 }
 
-public final class NotificationDismisser {
+public struct NotificationDismisser {
     
     init(identifier: String) {
         self.identifier = identifier
