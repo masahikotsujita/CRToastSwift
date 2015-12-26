@@ -140,13 +140,13 @@ public struct Animation {
     
     public let gravityMagnitude: CGFloat
     
-    public static var None = Animation(inDuration: 0, outDuration: 0)
+    public static let None = Animation(inDuration: 0, outDuration: 0)
     
-    public static var Linear: Animation = .Linear()
+    public static let Linear: Animation = .Linear()
     
-    public static var Spring: Animation = .Spring()
+    public static let Spring: Animation = .Spring()
     
-    public static var Gravity: Animation = .Gravity()
+    public static let Gravity: Animation = .Gravity()
     
     public static func Linear(inDirection inDirection: Direction = .Top, inDuration: NSTimeInterval = 0.4, outDirection: Direction = .Top, outDuration: NSTimeInterval = 0.4) -> Animation {
         return Animation(inAnimation: .Linear, inDirection: inDirection, inDuration: inDuration, outAnimation: .Linear, outDirection: outDirection, outDuration: outDuration)
