@@ -106,10 +106,10 @@ public class Notification {
 
 public struct Animation {
     
-    public  typealias Type      = CRToastAnimationType
+    public  typealias AnimationType = CRToastAnimationType
     public  typealias Direction = CRToastAnimationDirection
     
-    public init(inAnimation: Type = .Linear, inDirection: Direction = .Top, inDuration: NSTimeInterval = 0.4, outAnimation: Type = .Linear , outDirection: Direction = .Top, outDuration: NSTimeInterval = 0.4, springDamping: CGFloat = 0.6, springInitialVelocity: CGFloat = 1.0, gravityMagnitude: CGFloat = 1.0) {
+    public init(inAnimation: AnimationType = .Linear, inDirection: Direction = .Top, inDuration: NSTimeInterval = 0.4, outAnimation: AnimationType = .Linear , outDirection: Direction = .Top, outDuration: NSTimeInterval = 0.4, springDamping: CGFloat = 0.6, springInitialVelocity: CGFloat = 1.0, gravityMagnitude: CGFloat = 1.0) {
         self.inType = inAnimation
         self.inDirection = inDirection
         self.inDuration = inDuration
@@ -121,13 +121,13 @@ public struct Animation {
         self.gravityMagnitude       = gravityMagnitude
     }
     
-    public let inType: Type
+    public let inType: AnimationType
     
     public let inDirection: Direction
     
     public let inDuration: NSTimeInterval
     
-    public let outType: Type
+    public let outType: AnimationType
     
     public let outDirection: Direction
     
