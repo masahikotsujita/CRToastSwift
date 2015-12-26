@@ -29,8 +29,6 @@ import CRToast
 public  typealias NotificationBarType    = CRToastType
 public  typealias PresentationType       = CRToastPresentationType
 public  typealias AccessoryViewAlignment = CRToastAccessoryViewAlignment
-public  typealias AnimationType          = CRToastAnimationType
-public  typealias AnimationDirection     = CRToastAnimationDirection
 public  typealias InteractionType        = CRToastInteractionType
 private typealias InteractionResponder   = CRToastInteractionResponder
 
@@ -107,31 +105,34 @@ public class Notification {
     
 }
 
-public struct NotificationAnimation {
+public struct Animation {
     
-    public init(inAnimation: AnimationType = .Linear, inDirection: AnimationDirection = .Top, inDuration: NSTimeInterval = 0.4, outAnimation: AnimationType = .Linear , outDirection: AnimationDirection = .Top, outDuration: NSTimeInterval = 0.4, springDamping: CGFloat = 0.6, springInitialVelocity: CGFloat = 1.0, gravityMagnitude: CGFloat = 1.0) {
-        self.inAnimationType        = inAnimation
-        self.inAnimationDirection   = inDirection
-        self.inAnimationDuration    = inDuration
-        self.outAnimationType       = outAnimation
-        self.outAnimationDirection  = outDirection
-        self.outAnimationDuration   = outDuration
+    public  typealias Type      = CRToastAnimationType
+    public  typealias Direction = CRToastAnimationDirection
+    
+    public init(inAnimation: Type = .Linear, inDirection: Direction = .Top, inDuration: NSTimeInterval = 0.4, outAnimation: Type = .Linear , outDirection: Direction = .Top, outDuration: NSTimeInterval = 0.4, springDamping: CGFloat = 0.6, springInitialVelocity: CGFloat = 1.0, gravityMagnitude: CGFloat = 1.0) {
+        self.inType = inAnimation
+        self.inDirection = inDirection
+        self.inDuration = inDuration
+        self.outType = outAnimation
+        self.outDirection = outDirection
+        self.outDuration = outDuration
         self.springDamping          = springDamping
         self.springInitialVelocity  = springInitialVelocity
         self.gravityMagnitude       = gravityMagnitude
     }
     
-    public let inAnimationType: AnimationType
+    public let inType: Type
     
-    public let inAnimationDirection: AnimationDirection
+    public let inDirection: Direction
     
-    public let inAnimationDuration: NSTimeInterval
+    public let inDuration: NSTimeInterval
     
-    public let outAnimationType: AnimationType
+    public let outType: Type
     
-    public let outAnimationDirection: AnimationDirection
+    public let outDirection: Direction
     
-    public let outAnimationDuration: NSTimeInterval
+    public let outDuration: NSTimeInterval
     
     public let springDamping: CGFloat
     
@@ -139,24 +140,24 @@ public struct NotificationAnimation {
     
     public let gravityMagnitude: CGFloat
     
-    public static var None = NotificationAnimation(inDuration: 0, outDuration: 0)
+    public static var None = Animation(inDuration: 0, outDuration: 0)
     
-    public static var Linear: NotificationAnimation = .Linear()
+    public static var Linear: Animation = .Linear()
     
-    public static var Spring: NotificationAnimation = .Spring()
+    public static var Spring: Animation = .Spring()
     
-    public static var Gravity: NotificationAnimation = .Gravity()
+    public static var Gravity: Animation = .Gravity()
     
-    public static func Linear(inDirection inDirection: AnimationDirection = .Top, inDuration: NSTimeInterval = 0.4, outDirection: AnimationDirection = .Top, outDuration: NSTimeInterval = 0.4) -> NotificationAnimation {
-        return NotificationAnimation(inAnimation: .Linear, inDirection: inDirection, inDuration: inDuration, outAnimation: .Linear, outDirection: outDirection, outDuration: outDuration)
+    public static func Linear(inDirection inDirection: Direction = .Top, inDuration: NSTimeInterval = 0.4, outDirection: Direction = .Top, outDuration: NSTimeInterval = 0.4) -> Animation {
+        return Animation(inAnimation: .Linear, inDirection: inDirection, inDuration: inDuration, outAnimation: .Linear, outDirection: outDirection, outDuration: outDuration)
     }
     
-    public static func Spring(inDirection inDirection: AnimationDirection = .Top, inDuration: NSTimeInterval = 0.4, outDirection: AnimationDirection = .Top, outDuration: NSTimeInterval = 0.4, damping: CGFloat = 0.6, initialVelocity: CGFloat = 1.0) -> NotificationAnimation {
-        return NotificationAnimation(inAnimation: .Spring, inDirection: inDirection, inDuration: inDuration, outAnimation: .Spring, outDirection: outDirection, outDuration: outDuration, springDamping: damping, springInitialVelocity: initialVelocity)
+    public static func Spring(inDirection inDirection: Direction = .Top, inDuration: NSTimeInterval = 0.4, outDirection: Direction = .Top, outDuration: NSTimeInterval = 0.4, damping: CGFloat = 0.6, initialVelocity: CGFloat = 1.0) -> Animation {
+        return Animation(inAnimation: .Spring, inDirection: inDirection, inDuration: inDuration, outAnimation: .Spring, outDirection: outDirection, outDuration: outDuration, springDamping: damping, springInitialVelocity: initialVelocity)
     }
     
-    public static func Gravity(inDirection inDirection: AnimationDirection = .Top, inDuration: NSTimeInterval = 0.4, outDirection: AnimationDirection = .Top, outDuration: NSTimeInterval = 0.4, magnitude: CGFloat = 1.0) -> NotificationAnimation {
-        return NotificationAnimation(inAnimation: .Gravity, inDirection: inDirection, inDuration: inDuration, outAnimation: .Gravity, outDirection: outDirection, outDuration: outDuration, gravityMagnitude: magnitude)
+    public static func Gravity(inDirection inDirection: Direction = .Top, inDuration: NSTimeInterval = 0.4, outDirection: Direction = .Top, outDuration: NSTimeInterval = 0.4, magnitude: CGFloat = 1.0) -> Animation {
+        return Animation(inAnimation: .Gravity, inDirection: inDirection, inDuration: inDuration, outAnimation: .Gravity, outDirection: outDirection, outDuration: outDuration, gravityMagnitude: magnitude)
     }
     
 }
@@ -278,7 +279,7 @@ public enum TimeInterval {
     case Infinite
 }
 
-public func notify(notification: Notification, animation: NotificationAnimation = .Linear(), lifetime: TimeInterval = .Finite(2.0), handler: () -> Void) -> NotificationPresentationToken {
+public func notify(notification: Notification, animation: Animation = .Linear(), lifetime: TimeInterval = .Finite(2.0), handler: () -> Void) -> NotificationPresentationToken {
     
     let token = NotificationPresentationToken()
     
@@ -340,13 +341,13 @@ public func notify(notification: Notification, animation: NotificationAnimation 
     
     // configure animations
     
-    options[kCRToastAnimationInTypeKey]                 = animation.inAnimationType.rawValue
-    options[kCRToastAnimationInDirectionKey]            = animation.inAnimationDirection.rawValue
-    options[kCRToastAnimationInTimeIntervalKey]         = animation.inAnimationDuration
+    options[kCRToastAnimationInTypeKey]                 = animation.inType.rawValue
+    options[kCRToastAnimationInDirectionKey]            = animation.inDirection.rawValue
+    options[kCRToastAnimationInTimeIntervalKey]         = animation.inDuration
     
-    options[kCRToastAnimationOutTypeKey]                = animation.outAnimationType.rawValue
-    options[kCRToastAnimationOutDirectionKey]           = animation.outAnimationDirection.rawValue
-    options[kCRToastAnimationOutTimeIntervalKey]        = animation.outAnimationDuration
+    options[kCRToastAnimationOutTypeKey]                = animation.outType.rawValue
+    options[kCRToastAnimationOutDirectionKey]           = animation.outDirection.rawValue
+    options[kCRToastAnimationOutTimeIntervalKey]        = animation.outDuration
     
     options[kCRToastAnimationSpringDampingKey]          = animation.springDamping
     options[kCRToastAnimationSpringInitialVelocityKey]  = animation.springInitialVelocity
