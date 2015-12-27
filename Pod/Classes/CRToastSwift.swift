@@ -46,7 +46,6 @@ public enum HeightType {
 }
 
 public  typealias AccessoryViewAlignment = CRToastAccessoryViewAlignment
-public  typealias InteractionType        = CRToastInteractionType
 
 public class Notification {
     
@@ -205,6 +204,8 @@ class Event<T> {
     }
     
 }
+
+public  typealias InteractionType        = CRToastInteractionType
 
 public final class Presentation {
     
