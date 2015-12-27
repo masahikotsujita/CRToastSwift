@@ -45,7 +45,6 @@ public enum HeightType {
     
 }
 
-public  typealias PresentationType       = CRToastPresentationType
 public  typealias AccessoryViewAlignment = CRToastAccessoryViewAlignment
 public  typealias InteractionType        = CRToastInteractionType
 
@@ -86,8 +85,6 @@ public class Notification {
     
     public var heightType: HeightType = .NavigationBar
     
-    public var presentationType: PresentationType = .Cover
-    
     public var underStatusBar = false
     
     public var statusBarStyle: UIStatusBarStyle = .Default
@@ -122,10 +119,11 @@ public class Notification {
 
 public  typealias AnimationType = CRToastAnimationType
 public  typealias AnimationDirection = CRToastAnimationDirection
+public  typealias PresentationType       = CRToastPresentationType
 
 public struct Animation {
     
-    public init(inAnimation: AnimationType = .Linear, inDirection: AnimationDirection = .Top, inDuration: NSTimeInterval = 0.4, outAnimation: AnimationType = .Linear , outDirection: AnimationDirection = .Top, outDuration: NSTimeInterval = 0.4, springDamping: CGFloat = 0.6, springInitialVelocity: CGFloat = 1.0, gravityMagnitude: CGFloat = 1.0) {
+    public init(inAnimation: AnimationType = .Linear, inDirection: AnimationDirection = .Top, inDuration: NSTimeInterval = 0.4, outAnimation: AnimationType = .Linear , outDirection: AnimationDirection = .Top, outDuration: NSTimeInterval = 0.4, springDamping: CGFloat = 0.6, springInitialVelocity: CGFloat = 1.0, gravityMagnitude: CGFloat = 1.0, presentationType: PresentationType = .Cover) {
         self.inType = inAnimation
         self.inDirection = inDirection
         self.inDuration = inDuration
@@ -135,6 +133,7 @@ public struct Animation {
         self.springDamping          = springDamping
         self.springInitialVelocity  = springInitialVelocity
         self.gravityMagnitude       = gravityMagnitude
+        self.presentationType = presentationType
     }
     
     public let inType: AnimationType
@@ -154,6 +153,8 @@ public struct Animation {
     public let springInitialVelocity: CGFloat
     
     public let gravityMagnitude: CGFloat
+    
+    public let presentationType: PresentationType
     
     public static let None = Animation(inDuration: 0, outDuration: 0)
     
@@ -332,8 +333,6 @@ public func notify(notification: Notification, animation: Animation = .Linear, l
     
     options[kCRToastNotificationPreferredPaddingKey]    = notification.preferredPadding
     
-    options[kCRToastNotificationPresentationTypeKey]    = notification.presentationType.rawValue
-    
     options[kCRToastUnderStatusBarKey]                  = notification.underStatusBar
     
     options[kCRToastKeepNavigationBarBorderKey]         = notification.keepsNavigationBarBorder
@@ -372,6 +371,8 @@ public func notify(notification: Notification, animation: Animation = .Linear, l
     options[kCRToastAnimationSpringDampingKey]          = animation.springDamping
     options[kCRToastAnimationSpringInitialVelocityKey]  = animation.springInitialVelocity
     options[kCRToastAnimationGravityMagnitudeKey]       = animation.gravityMagnitude
+    
+    options[kCRToastNotificationPresentationTypeKey]    = animation.presentationType.rawValue
     
     // configure interactions
     
