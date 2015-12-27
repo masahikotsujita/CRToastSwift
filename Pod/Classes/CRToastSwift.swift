@@ -294,7 +294,7 @@ public enum TimeInterval {
     case Infinite
 }
 
-public func notify(notification: Notification, animation: Animation = .Linear(), lifetime: TimeInterval = .Finite(2.0), handler: () -> Void) -> Presentation {
+public func notify(notification: Notification, animation: Animation = .Linear, lifetime: TimeInterval = .Finite(2.0), handler: () -> Void) -> Presentation {
     
     let presentation = Presentation()
     
