@@ -26,6 +26,8 @@
 import UIKit
 import CRToast
 
+// MARK: - Notification Type Definitions
+
 public enum HeightType {
     
     case StatusBar
@@ -45,13 +47,13 @@ public enum HeightType {
     
 }
 
-public  typealias AccessoryViewAlignment = CRToastAccessoryViewAlignment
+public typealias AccessoryViewAlignment = CRToastAccessoryViewAlignment
 
 public class Notification {
     
     public init(text: String = "", subtext: String? = nil) {
-        self.text = text
-        self.subtext = subtext
+        self.text       = text
+        self.subtext    = subtext
     }
     
     public var text: String = ""
@@ -68,7 +70,7 @@ public class Notification {
     
     public var textShadowOffset: CGSize = CGSize(width: 0.0, height: 0.0)
     
-    public var subtext: String? = nil
+    public var subtext: String?
     
     public var subtextAlignment: NSTextAlignment = .Left
     
@@ -92,7 +94,7 @@ public class Notification {
     
     public var image: UIImage?
     
-    public var imageTintColor: UIColor? = nil
+    public var imageTintColor: UIColor?
     
     public var imageAlignment: CRToastAccessoryViewAlignment = .Left
     
@@ -116,23 +118,25 @@ public class Notification {
     
 }
 
-public  typealias AnimationType = CRToastAnimationType
-public  typealias AnimationDirection = CRToastAnimationDirection
-public  typealias PresentationType       = CRToastPresentationType
+// MARK: - Animation Type Definitions
+
+public typealias AnimationType      = CRToastAnimationType
+public typealias AnimationDirection = CRToastAnimationDirection
+public typealias PresentationType   = CRToastPresentationType
 
 public struct Animation {
     
     public init(inAnimation: AnimationType = .Linear, inDirection: AnimationDirection = .Top, inDuration: NSTimeInterval = 0.4, outAnimation: AnimationType = .Linear , outDirection: AnimationDirection = .Top, outDuration: NSTimeInterval = 0.4, springDamping: CGFloat = 0.6, springInitialVelocity: CGFloat = 1.0, gravityMagnitude: CGFloat = 1.0, presentationType: PresentationType = .Cover) {
-        self.inType = inAnimation
-        self.inDirection = inDirection
-        self.inDuration = inDuration
-        self.outType = outAnimation
-        self.outDirection = outDirection
-        self.outDuration = outDuration
+        self.inType                 = inAnimation
+        self.inDirection            = inDirection
+        self.inDuration             = inDuration
+        self.outType                = outAnimation
+        self.outDirection           = outDirection
+        self.outDuration            = outDuration
         self.springDamping          = springDamping
         self.springInitialVelocity  = springInitialVelocity
         self.gravityMagnitude       = gravityMagnitude
-        self.presentationType = presentationType
+        self.presentationType       = presentationType
     }
     
     public let inType: AnimationType
@@ -177,11 +181,15 @@ public struct Animation {
     
 }
 
+// MARK: - Utility Functions
+
 func synchronized(lock: NSLocking, @noescape handler: () -> Void) {
     lock.lock()
     handler()
     lock.unlock()
 }
+
+// MARK: - Event Type Definitions
 
 class Event<T> {
     
@@ -204,6 +212,8 @@ class Event<T> {
     }
     
 }
+
+// MARK: - Event Handlings and User Interactions
 
 public  typealias InteractionType        = CRToastInteractionType
 
@@ -277,6 +287,8 @@ public final class Presentation {
     
 }
 
+// MARK: - Dismissing Notifications
+
 public struct NotificationDismisser {
     
     init(identifier: String) {
@@ -291,22 +303,27 @@ public struct NotificationDismisser {
     
 }
 
+// MARK: - Other Type Definitions
+
 public enum TimeInterval {
     case Finite(_: NSTimeInterval)
     case Infinite
 }
 
+// MARK: - Presenting Notifications
+
 public func notify(notification: Notification, animation: Animation = .Linear, lifetime: TimeInterval = .Finite(2.0), handler: () -> Void) -> Presentation {
     
-    let presentation = Presentation()
+    // Initializing Presentation Objects and Configurings
     
     let identifier = NSUUID().UUIDString
-    
+    let presentation = Presentation()
     let dismisser = NotificationDismisser(identifier: identifier)
     
     var options = [String : AnyObject]()
+    options[kCRToastIdentifierKey]                      = identifier
     
-    // configure appearance
+    // Configuring Texts
     
     options[kCRToastTextKey]                            = notification.text
     options[kCRToastTextAlignmentKey]                   = notification.textAlignment.rawValue
@@ -317,7 +334,7 @@ public func notify(notification: Notification, animation: Animation = .Linear, l
     options[kCRToastTextShadowOffsetKey]                = NSValue(CGSize: notification.textShadowOffset)
     
     if notification.subtext != nil {
-        options[kCRToastSubtitleTextKey]                    = notification.subtext
+        options[kCRToastSubtitleTextKey]                = notification.subtext
     }
     options[kCRToastSubtitleTextAlignmentKey]           = notification.subtextAlignment.rawValue
     options[kCRToastSubtitleFontKey]                    = notification.subtextFont
@@ -325,6 +342,8 @@ public func notify(notification: Notification, animation: Animation = .Linear, l
     options[kCRToastSubtitleTextMaxNumberOfLinesKey]    = notification.subtextMaxNumberOfLines
     options[kCRToastSubtitleTextShadowColorKey]         = notification.subtextShadowColor
     options[kCRToastSubtitleTextShadowOffsetKey]        = NSValue(CGSize: notification.subtextShadowOffset)
+    
+    // Configuring Appearances
     
     options[kCRToastNotificationTypeKey]                = notification.heightType.crToastType.rawValue
     switch notification.heightType {
@@ -334,17 +353,13 @@ public func notify(notification: Notification, animation: Animation = .Linear, l
         break
     }
     
+    options[kCRToastBackgroundColorKey]                 = notification.backgroundColor
+    options[kCRToastBackgroundViewKey]                  = notification.backgroundView
+    
     options[kCRToastNotificationPreferredPaddingKey]    = notification.preferredPadding
     
     options[kCRToastUnderStatusBarKey]                  = notification.underStatusBar
-    
-    options[kCRToastKeepNavigationBarBorderKey]         = notification.keepsNavigationBarBorder
-    
     options[kCRToastStatusBarStyleKey]                  = notification.statusBarStyle.rawValue
-    
-    options[kCRToastBackgroundColorKey]                 = notification.backgroundColor
-    
-    options[kCRToastBackgroundViewKey]                  = notification.backgroundView
     
     options[kCRToastImageKey]                           = notification.image
     options[kCRToastImageTintKey]                       = notification.imageTintColor
@@ -355,13 +370,14 @@ public func notify(notification: Notification, animation: Animation = .Linear, l
     options[kCRToastActivityIndicatorAlignmentKey]      = notification.activityIndicatorAlignment.rawValue
     options[kCRToastActivityIndicatorViewStyleKey]      = notification.activityIndicatorViewStyle.rawValue
     
+    options[kCRToastKeepNavigationBarBorderKey]         = notification.keepsNavigationBarBorder
+    
+    // Configuring Other Properties
+    
     options[kCRToastAutorotateKey]                      = notification.rotatesAutomatically
-    
-    options[kCRToastIdentifierKey]                      = identifier
-    
     options[kCRToastCaptureDefaultWindowKey]            = notification.capturesDefaultWindow
     
-    // configure animations
+    // Configuring Animations
     
     options[kCRToastAnimationInTypeKey]                 = animation.inType.rawValue
     options[kCRToastAnimationInDirectionKey]            = animation.inDirection.rawValue
@@ -377,7 +393,7 @@ public func notify(notification: Notification, animation: Animation = .Linear, l
     
     options[kCRToastNotificationPresentationTypeKey]    = animation.presentationType.rawValue
     
-    // configure interactions
+    // Configuring User Interactions
     
     switch lifetime {
     case .Finite(let timeInterval):
@@ -391,7 +407,7 @@ public func notify(notification: Notification, animation: Animation = .Linear, l
         presentation.interactionEvent.invoke((type, notification, dismisser))
     })]
     
-    // show notification
+    // Presenting Notification
     
     dispatch_async(dispatch_get_main_queue()) {
         CRToastManager.showNotificationWithOptions(options, apperanceBlock: handler, completionBlock: {
