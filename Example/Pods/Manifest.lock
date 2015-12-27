@@ -8,10 +8,10 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   CRToastSwift:
-    :path: "../"
+    :path: ../
 
 SPEC CHECKSUMS:
   CRToast: 5a78c22b921c5ed3487488af605bc403a9c92fed
-  CRToastSwift: dda4af8bfd921a5b46b730adc769a5b5eb9ac306
+  CRToastSwift: fb4b9835b4db0abce55914fcf9b6a35d9bb80810
 
 COCOAPODS: 0.39.0
