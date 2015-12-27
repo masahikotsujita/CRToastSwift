@@ -182,7 +182,7 @@ public class Notification: NotificationType {
 
 public extension NotificationType {
     
-    public func notify(animation: Animation = .Linear, lifetime: TimeInterval = .Finite(2.0), handler: () -> Void) -> Presentation<Self> {
+    public func notify(animation animation: Animation = .Linear, lifetime: TimeInterval = .Finite(2.0), handler: () -> Void) -> Presentation<Self> {
         
         // Initializing Presentation Objects and Configurings
         
