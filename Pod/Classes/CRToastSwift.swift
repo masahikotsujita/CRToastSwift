@@ -50,7 +50,7 @@ public  typealias InteractionType        = CRToastInteractionType
 
 public class Notification {
     
-    public init(text: String = "", subtext: String = "") {
+    public init(text: String = "", subtext: String? = nil) {
         self.text = text
         self.subtext = subtext
     }
@@ -69,7 +69,7 @@ public class Notification {
     
     public var textShadowOffset: CGSize = CGSize(width: 0.0, height: 0.0)
     
-    public var subtext: String = ""
+    public var subtext: String? = nil
     
     public var subtextAlignment: NSTextAlignment = .Left
     
@@ -315,7 +315,9 @@ public func notify(notification: Notification, animation: Animation = .Linear, l
     options[kCRToastTextShadowColorKey]                 = notification.textShadowColor
     options[kCRToastTextShadowOffsetKey]                = NSValue(CGSize: notification.textShadowOffset)
     
-    options[kCRToastSubtitleTextKey]                    = notification.subtext
+    if notification.subtext != nil {
+        options[kCRToastSubtitleTextKey]                    = notification.subtext
+    }
     options[kCRToastSubtitleTextAlignmentKey]           = notification.subtextAlignment.rawValue
     options[kCRToastSubtitleFontKey]                    = notification.subtextFont
     options[kCRToastSubtitleTextColorKey]               = notification.subtextColor
