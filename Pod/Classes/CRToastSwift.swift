@@ -120,12 +120,12 @@ public class Notification {
     
 }
 
+public  typealias AnimationType = CRToastAnimationType
+public  typealias AnimationDirection = CRToastAnimationDirection
+
 public struct Animation {
     
-    public  typealias AnimationType = CRToastAnimationType
-    public  typealias Direction = CRToastAnimationDirection
-    
-    public init(inAnimation: AnimationType = .Linear, inDirection: Direction = .Top, inDuration: NSTimeInterval = 0.4, outAnimation: AnimationType = .Linear , outDirection: Direction = .Top, outDuration: NSTimeInterval = 0.4, springDamping: CGFloat = 0.6, springInitialVelocity: CGFloat = 1.0, gravityMagnitude: CGFloat = 1.0) {
+    public init(inAnimation: AnimationType = .Linear, inDirection: AnimationDirection = .Top, inDuration: NSTimeInterval = 0.4, outAnimation: AnimationType = .Linear , outDirection: AnimationDirection = .Top, outDuration: NSTimeInterval = 0.4, springDamping: CGFloat = 0.6, springInitialVelocity: CGFloat = 1.0, gravityMagnitude: CGFloat = 1.0) {
         self.inType = inAnimation
         self.inDirection = inDirection
         self.inDuration = inDuration
@@ -139,13 +139,13 @@ public struct Animation {
     
     public let inType: AnimationType
     
-    public let inDirection: Direction
+    public let inDirection: AnimationDirection
     
     public let inDuration: NSTimeInterval
     
     public let outType: AnimationType
     
-    public let outDirection: Direction
+    public let outDirection: AnimationDirection
     
     public let outDuration: NSTimeInterval
     
@@ -163,15 +163,15 @@ public struct Animation {
     
     public static let Gravity: Animation = .Gravity()
     
-    public static func Linear(inDirection inDirection: Direction = .Top, inDuration: NSTimeInterval = 0.4, outDirection: Direction = .Top, outDuration: NSTimeInterval = 0.4) -> Animation {
+    public static func Linear(inDirection inDirection: AnimationDirection = .Top, inDuration: NSTimeInterval = 0.4, outDirection: AnimationDirection = .Top, outDuration: NSTimeInterval = 0.4) -> Animation {
         return Animation(inAnimation: .Linear, inDirection: inDirection, inDuration: inDuration, outAnimation: .Linear, outDirection: outDirection, outDuration: outDuration)
     }
     
-    public static func Spring(inDirection inDirection: Direction = .Top, inDuration: NSTimeInterval = 0.4, outDirection: Direction = .Top, outDuration: NSTimeInterval = 0.4, damping: CGFloat = 0.6, initialVelocity: CGFloat = 1.0) -> Animation {
+    public static func Spring(inDirection inDirection: AnimationDirection = .Top, inDuration: NSTimeInterval = 0.4, outDirection: AnimationDirection = .Top, outDuration: NSTimeInterval = 0.4, damping: CGFloat = 0.6, initialVelocity: CGFloat = 1.0) -> Animation {
         return Animation(inAnimation: .Spring, inDirection: inDirection, inDuration: inDuration, outAnimation: .Spring, outDirection: outDirection, outDuration: outDuration, springDamping: damping, springInitialVelocity: initialVelocity)
     }
     
-    public static func Gravity(inDirection inDirection: Direction = .Top, inDuration: NSTimeInterval = 0.4, outDirection: Direction = .Top, outDuration: NSTimeInterval = 0.4, magnitude: CGFloat = 1.0) -> Animation {
+    public static func Gravity(inDirection inDirection: AnimationDirection = .Top, inDuration: NSTimeInterval = 0.4, outDirection: AnimationDirection = .Top, outDuration: NSTimeInterval = 0.4, magnitude: CGFloat = 1.0) -> Animation {
         return Animation(inAnimation: .Gravity, inDirection: inDirection, inDuration: inDuration, outAnimation: .Gravity, outDirection: outDirection, outDuration: outDuration, gravityMagnitude: magnitude)
     }
     
