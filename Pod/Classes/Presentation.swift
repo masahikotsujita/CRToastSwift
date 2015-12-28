@@ -28,27 +28,27 @@ import CRToast
 
 public typealias InteractionType = CRToastInteractionType
 
-public final class Presentation<T: NotificationType> {
+public final class Presentation<Notification: NotificationType> {
     
-    init(notification: T) {
+    init(notification: Notification) {
         
     }
     
-    let dismissalEvent = Event<T>()
+    let dismissalEvent = Event<Notification>()
     
-    public func onDismissal(handler: (T) -> Void) -> Self {
+    public func onDismissal(handler: (Notification) -> Void) -> Self {
         self.dismissalEvent.addHandler(handler)
         return self
     }
     
-    let interactionEvent = Event<(InteractionType, T, NotificationDismisser)>()
+    let interactionEvent = Event<(InteractionType, Notification, NotificationDismisser)>()
     
-    public func onInteraction(handler: (InteractionType, T, NotificationDismisser) -> Void) -> Self {
+    public func onInteraction(handler: (InteractionType, Notification, NotificationDismisser) -> Void) -> Self {
         self.interactionEvent.addHandler(handler)
         return self
     }
     
-    private func onInteractionOfType(type: InteractionType, handler: (T, NotificationDismisser) -> Void) -> Self {
+    private func onInteractionOfType(type: InteractionType, handler: (Notification, NotificationDismisser) -> Void) -> Self {
         return self.onInteraction {
             if !$0.intersect(type).isEmpty {
                 handler($1, $2)
@@ -56,43 +56,43 @@ public final class Presentation<T: NotificationType> {
         }
     }
     
-    public func onTapOnce(handler: (T, NotificationDismisser) -> Void) -> Self {
+    public func onTapOnce(handler: (Notification, NotificationDismisser) -> Void) -> Self {
         return self.onInteractionOfType(.TapOnce, handler: handler)
     }
     
-    public func onTapTwice(handler: (T, NotificationDismisser) -> Void) -> Self {
+    public func onTapTwice(handler: (Notification, NotificationDismisser) -> Void) -> Self {
         return self.onInteractionOfType(.TapTwice, handler: handler)
     }
     
-    public func onTwoFingerTapOnce(handler: (T, NotificationDismisser) -> Void) -> Self {
+    public func onTwoFingerTapOnce(handler: (Notification, NotificationDismisser) -> Void) -> Self {
         return self.onInteractionOfType(.TwoFingerTapOnce, handler: handler)
     }
     
-    public func onTwoFinderTapTwice(handler: (T, NotificationDismisser) -> Void) -> Self {
+    public func onTwoFinderTapTwice(handler: (Notification, NotificationDismisser) -> Void) -> Self {
         return self.onInteractionOfType(.TwoFingerTapTwice, handler: handler)
     }
     
-    public func onSwipeUp(handler: (T, NotificationDismisser) -> Void) -> Self {
+    public func onSwipeUp(handler: (Notification, NotificationDismisser) -> Void) -> Self {
         return self.onInteractionOfType(.SwipeUp, handler: handler)
     }
     
-    public func onSwipeLeft(handler: (T, NotificationDismisser) -> Void) -> Self {
+    public func onSwipeLeft(handler: (Notification, NotificationDismisser) -> Void) -> Self {
         return self.onInteractionOfType(.SwipeLeft, handler: handler)
     }
     
-    public func onSwipeDown(handler: (T, NotificationDismisser) -> Void) -> Self {
+    public func onSwipeDown(handler: (Notification, NotificationDismisser) -> Void) -> Self {
         return self.onInteractionOfType(.SwipeDown, handler: handler)
     }
     
-    public func onSwipeRight(handler: (T, NotificationDismisser) -> Void) -> Self {
+    public func onSwipeRight(handler: (Notification, NotificationDismisser) -> Void) -> Self {
         return self.onInteractionOfType(.SwipeRight, handler: handler)
     }
     
-    public func onAnyTap(handler: (T, NotificationDismisser) -> Void) -> Self {
+    public func onAnyTap(handler: (Notification, NotificationDismisser) -> Void) -> Self {
         return self.onInteractionOfType(.Tap, handler: handler)
     }
     
-    public func onAnySwipe(handler: (T, NotificationDismisser) -> Void) -> Self {
+    public func onAnySwipe(handler: (Notification, NotificationDismisser) -> Void) -> Self {
         return self.onInteractionOfType(.Swipe, handler: handler)
     }
     
