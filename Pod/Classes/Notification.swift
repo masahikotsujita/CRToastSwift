@@ -188,7 +188,7 @@ public extension NotificationType {
         
         let identifier = NSUUID().UUIDString
         let presentation = Presentation(notification: self)
-        let dismisser = NotificationDismisser(identifier: identifier)
+        let dismisser = Dismisser(identifier: identifier)
         
         var options = [String : AnyObject]()
         options[kCRToastIdentifierKey]                      = identifier
