@@ -32,7 +32,7 @@ public typealias PresentationType   = CRToastPresentationType
 
 public struct Animation {
     
-    public init(inAnimation: AnimationType = .Linear, inDirection: AnimationDirection = .Top, inDuration: NSTimeInterval = 0.4, outAnimation: AnimationType = .Linear , outDirection: AnimationDirection = .Top, outDuration: NSTimeInterval = 0.4, springDamping: CGFloat = 0.6, springInitialVelocity: CGFloat = 1.0, gravityMagnitude: CGFloat = 1.0, presentationType: PresentationType = .Cover) {
+    init(inAnimation: AnimationType = .Linear, inDirection: AnimationDirection = .Top, inDuration: NSTimeInterval = 0.4, outAnimation: AnimationType = .Linear , outDirection: AnimationDirection = .Top, outDuration: NSTimeInterval = 0.4, springDamping: CGFloat = 0.6, springInitialVelocity: CGFloat = 1.0, gravityMagnitude: CGFloat = 1.0, presentationType: PresentationType = .Cover) {
         self.inType                 = inAnimation
         self.inDirection            = inDirection
         self.inDuration             = inDuration
@@ -45,25 +45,25 @@ public struct Animation {
         self.presentationType       = presentationType
     }
     
-    public let inType: AnimationType
+    let inType: AnimationType
     
-    public let inDirection: AnimationDirection
+    let inDirection: AnimationDirection
     
-    public let inDuration: NSTimeInterval
+    let inDuration: NSTimeInterval
     
-    public let outType: AnimationType
+    let outType: AnimationType
     
-    public let outDirection: AnimationDirection
+    let outDirection: AnimationDirection
     
-    public let outDuration: NSTimeInterval
+    let outDuration: NSTimeInterval
     
-    public let springDamping: CGFloat
+    let springDamping: CGFloat
     
-    public let springInitialVelocity: CGFloat
+    let springInitialVelocity: CGFloat
     
-    public let gravityMagnitude: CGFloat
+    let gravityMagnitude: CGFloat
     
-    public let presentationType: PresentationType
+    let presentationType: PresentationType
     
     public static let None = Animation(inDuration: 0, outDuration: 0)
     
@@ -72,6 +72,30 @@ public struct Animation {
     public static let Spring: Animation = .Spring()
     
     public static let Gravity: Animation = .Gravity()
+    
+    public static let NoneInLinearOut: Animation = .NoneInLinearOut()
+    
+    public static let NoneInSpringOut: Animation = .NoneInSpringOut()
+    
+    public static let NoneInGravityOut: Animation = .NoneInGravityOut()
+    
+    public static let LinearInNoneOut: Animation = .LinearInNoneOut()
+    
+    public static let LinearInSpringOut: Animation = .LinearInSpringOut()
+    
+    public static let LinearInGravityOut: Animation = .LinearInGravityOut()
+    
+    public static let SpringInNoneOut: Animation = .SpringInNoneOut()
+    
+    public static let SpringInLinearOut: Animation = .SpringInLinearOut()
+    
+    public static let SpringInGravityOut: Animation = .SpringInGravityOut()
+    
+    public static let GravityInNoneOut: Animation = .GravityInNoneOut()
+    
+    public static let GravityInLinearOut: Animation = .GravityInLinearOut()
+    
+    public static let GravityInSpringOut: Animation = .GravityInSpringOut()
     
     public static func Linear(inDirection inDirection: AnimationDirection = .Top, inDuration: NSTimeInterval = 0.4, outDirection: AnimationDirection = .Top, outDuration: NSTimeInterval = 0.4, presentationType: PresentationType = .Cover) -> Animation {
         return Animation(inAnimation: .Linear, inDirection: inDirection, inDuration: inDuration, outAnimation: .Linear, outDirection: outDirection, outDuration: outDuration, presentationType: presentationType)
@@ -83,6 +107,54 @@ public struct Animation {
     
     public static func Gravity(inDirection inDirection: AnimationDirection = .Top, inDuration: NSTimeInterval = 0.4, outDirection: AnimationDirection = .Top, outDuration: NSTimeInterval = 0.4, magnitude: CGFloat = 1.0, presentationType: PresentationType = .Cover) -> Animation {
         return Animation(inAnimation: .Gravity, inDirection: inDirection, inDuration: inDuration, outAnimation: .Gravity, outDirection: outDirection, outDuration: outDuration, gravityMagnitude: magnitude, presentationType: presentationType)
+    }
+    
+    public static func NoneInLinearOut(outDirection outDirection: AnimationDirection = .Top, outDuration: NSTimeInterval = 0.4, presentationType: PresentationType = .Cover) -> Animation {
+        return Animation(inDuration: 0, outAnimation: .Linear, outDirection: outDirection, outDuration: outDuration, presentationType: presentationType)
+    }
+    
+    public static func NoneInSpringOut(outDirection outDirection: AnimationDirection = .Top, outDuration: NSTimeInterval = 0.4, springDamping: CGFloat = 0.6, springInitialVelocity: CGFloat = 1.0, presentationType: PresentationType = .Cover) -> Animation {
+        return Animation(inDuration: 0, outAnimation: .Spring, outDirection: outDirection, outDuration: outDuration, springDamping: springDamping, springInitialVelocity: springInitialVelocity, presentationType: presentationType)
+    }
+    
+    public static func NoneInGravityOut(outDirection outDirection: AnimationDirection = .Top, outDuration: NSTimeInterval = 0.4, gravityMagnitude: CGFloat = 1.0, presentationType: PresentationType = .Cover) -> Animation {
+        return Animation(inDuration: 0, outAnimation: .Gravity, outDirection: outDirection, outDuration: outDuration, gravityMagnitude: gravityMagnitude, presentationType: presentationType)
+    }
+    
+    public static func LinearInNoneOut(inDirection inDirection: AnimationDirection = .Top, inDuration: NSTimeInterval = 0.4, presentationType: PresentationType = .Cover) -> Animation {
+        return Animation(inAnimation: .Linear, inDirection: inDirection, inDuration: inDuration, outDuration: 0, presentationType: presentationType)
+    }
+    
+    public static func LinearInSpringOut(inDirection inDirection: AnimationDirection = .Top, inDuration: NSTimeInterval = 0.4, outDirection: AnimationDirection = .Top, outDuration: NSTimeInterval = 0.4, springDamping: CGFloat = 0.6, springInitialVelocity: CGFloat = 1.0, presentationType: PresentationType = .Cover) -> Animation {
+        return Animation(inAnimation: .Linear, inDirection: inDirection, inDuration: inDuration, outAnimation: .Spring, outDirection: outDirection, outDuration: outDuration, springDamping: springDamping, springInitialVelocity: springInitialVelocity, presentationType: presentationType)
+    }
+    
+    public static func LinearInGravityOut(inDirection inDirection: AnimationDirection = .Top, inDuration: NSTimeInterval = 0.4, outDirection: AnimationDirection = .Top, outDuration: NSTimeInterval = 0.4, gravityMagnitude: CGFloat = 1.0, presentationType: PresentationType = .Cover) -> Animation {
+        return Animation(inAnimation: .Linear, inDirection: inDirection, inDuration: inDuration, outAnimation: .Gravity, outDirection: outDirection, outDuration: outDuration, gravityMagnitude: gravityMagnitude, presentationType: presentationType)
+    }
+    
+    public static func SpringInNoneOut(inDirection inDirection: AnimationDirection = .Top, inDuration: NSTimeInterval = 0.4, springDamping: CGFloat = 0.6, springInitialVelocity: CGFloat = 1.0, presentationType: PresentationType = .Cover) -> Animation {
+        return Animation(inAnimation: .Spring, inDirection: inDirection, inDuration: inDuration, outDuration: 0, springDamping: springDamping, springInitialVelocity: springInitialVelocity, presentationType: presentationType)
+    }
+    
+    public static func SpringInLinearOut(inDirection inDirection: AnimationDirection = .Top, inDuration: NSTimeInterval = 0.4, outDirection: AnimationDirection = .Top, outDuration: NSTimeInterval = 0.4, springDamping: CGFloat = 0.6, springInitialVelocity: CGFloat = 1.0, presentationType: PresentationType = .Cover) -> Animation {
+        return Animation(inAnimation: .Spring, inDirection: inDirection, inDuration: inDuration, outAnimation: .Linear, outDirection: outDirection, outDuration: outDuration, springDamping: springDamping, springInitialVelocity: springInitialVelocity, presentationType: presentationType)
+    }
+    
+    public static func SpringInGravityOut(inDirection inDirection: AnimationDirection = .Top, inDuration: NSTimeInterval = 0.4, outDirection: AnimationDirection = .Top, outDuration: NSTimeInterval = 0.4, springDamping: CGFloat = 0.6, springInitialVelocity: CGFloat = 1.0, gravityMagnitude: CGFloat = 1.0, presentationType: PresentationType = .Cover) -> Animation {
+        return Animation(inAnimation: .Spring, inDirection: inDirection, inDuration: inDuration, outAnimation: .Gravity, outDirection: outDirection, outDuration: outDuration, springDamping: springDamping, springInitialVelocity: springInitialVelocity, gravityMagnitude: gravityMagnitude, presentationType: presentationType)
+    }
+    
+    public static func GravityInNoneOut(inDirection inDirection: AnimationDirection = .Top, inDuration: NSTimeInterval = 0.4, gravityMagnitude: CGFloat = 1.0, presentationType: PresentationType = .Cover) -> Animation {
+        return Animation(inAnimation: .Gravity, inDirection: inDirection, inDuration: inDuration, outDuration: 0, gravityMagnitude: gravityMagnitude, presentationType: presentationType)
+    }
+    
+    public static func GravityInLinearOut(inDirection inDirection: AnimationDirection = .Top, inDuration: NSTimeInterval = 0.4, outDirection: AnimationDirection = .Top, outDuration: NSTimeInterval = 0.4, gravityMagnitude: CGFloat = 1.0, presentationType: PresentationType = .Cover) -> Animation {
+        return Animation(inAnimation: .Gravity, inDirection: inDirection, inDuration: inDuration, outAnimation: .Linear, outDirection: outDirection, outDuration: outDuration, gravityMagnitude: gravityMagnitude, presentationType: presentationType)
+    }
+    
+    public static func GravityInSpringOut(inDirection inDirection: AnimationDirection = .Top, inDuration: NSTimeInterval = 0.4, outDirection: AnimationDirection = .Top, outDuration: NSTimeInterval = 0.4, springDamping: CGFloat = 0.6, springInitialVelocity: CGFloat = 1.0, gravityMagnitude: CGFloat = 1.0, presentationType: PresentationType = .Cover) -> Animation {
+        return Animation(inAnimation: .Gravity, inDirection: inDirection, inDuration: inDuration, outAnimation: .Spring, outDirection: outDirection, outDuration: outDuration, springDamping: springDamping, springInitialVelocity: springInitialVelocity, gravityMagnitude: gravityMagnitude, presentationType: presentationType)
     }
     
 }
