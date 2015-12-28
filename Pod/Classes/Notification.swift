@@ -47,75 +47,17 @@ public enum HeightType {
 
 public typealias AccessoryViewAlignment = CRToastAccessoryViewAlignment
 
-public protocol NotificationType {
-
-    var text: String { get }
-
-    var textAlignment: NSTextAlignment { get }
-
-    var textFont: UIFont { get }
-
-    var textColor: UIColor { get }
-
-    var textMaxNumberOfLines: Int { get }
-
-    var textShadowColor: UIColor { get }
-
-    var textShadowOffset: CGSize { get }
-
-    var subtext: String? { get }
-
-    var subtextAlignment: NSTextAlignment { get }
-
-    var subtextFont: UIFont { get }
-
-    var subtextColor: UIColor { get }
-
-    var subtextMaxNumberOfLines: Int { get }
-
-    var subtextShadowColor: UIColor { get }
-
-    var subtextShadowOffset: CGSize { get }
-
-    var heightType: HeightType { get }
-
-    var underStatusBar: Bool { get }
-
-    var statusBarStyle: UIStatusBarStyle { get }
-
-    var preferredPadding: CGFloat { get }
-
-    var image: UIImage? { get }
-
-    var imageTintColor: UIColor? { get }
-
-    var imageAlignment: CRToastAccessoryViewAlignment { get }
-
-    var imageContentMode: UIViewContentMode { get }
-
-    var backgroundColor: UIColor { get }
-
-    var backgroundView: UIView? { get }
-
-    var activityIndicatorVisible: Bool { get }
-
-    var activityIndicatorViewStyle: UIActivityIndicatorViewStyle { get }
-
-    var activityIndicatorAlignment: AccessoryViewAlignment { get }
-
-    var keepsNavigationBarBorder: Bool { get }
-
-    var rotatesAutomatically: Bool { get }
-
-    var capturesDefaultWindow: Bool { get }
-
+public protocol NotificationConvertible {
+    
+    var notification: Notification { get }
+    
 }
 
-public class Notification: NotificationType {
+public class Notification {
     
-    public init(text: String = "", subtext: String? = nil) {
-        self.text       = text
-        self.subtext    = subtext
+    public init(text: String, subtext: String? = nil) {
+        self.text = text
+        self.subtext = subtext
     }
     
     public var text: String = ""
@@ -180,9 +122,27 @@ public class Notification: NotificationType {
     
 }
 
-public extension NotificationType {
+extension Notification: NotificationConvertible {
+    
+    public var notification: Notification {
+        return self
+    }
+    
+}
+
+extension String: NotificationConvertible {
+    
+    public var notification: Notification {
+        return Notification(text: self)
+    }
+    
+}
+
+public extension NotificationConvertible {
     
     public func notify(animation animation: Animation = .Linear, lifetime: TimeInterval = .Finite(2.0), handler: () -> Void) -> Presentation<Self> {
+        
+        let notification = self.notification
         
         // Initializing Presentation Objects and Configurings
         
@@ -195,57 +155,57 @@ public extension NotificationType {
         
         // Configuring Texts
         
-        options[kCRToastTextKey]                            = self.text
-        options[kCRToastTextAlignmentKey]                   = self.textAlignment.rawValue
-        options[kCRToastFontKey]                            = self.textFont
-        options[kCRToastTextColorKey]                       = self.textColor
-        options[kCRToastTextMaxNumberOfLinesKey]            = self.textMaxNumberOfLines
-        options[kCRToastTextShadowColorKey]                 = self.textShadowColor
-        options[kCRToastTextShadowOffsetKey]                = NSValue(CGSize: self.textShadowOffset)
+        options[kCRToastTextKey]                            = notification.text
+        options[kCRToastTextAlignmentKey]                   = notification.textAlignment.rawValue
+        options[kCRToastFontKey]                            = notification.textFont
+        options[kCRToastTextColorKey]                       = notification.textColor
+        options[kCRToastTextMaxNumberOfLinesKey]            = notification.textMaxNumberOfLines
+        options[kCRToastTextShadowColorKey]                 = notification.textShadowColor
+        options[kCRToastTextShadowOffsetKey]                = NSValue(CGSize: notification.textShadowOffset)
         
-        if self.subtext != nil {
-            options[kCRToastSubtitleTextKey]                = self.subtext
+        if notification.subtext != nil {
+            options[kCRToastSubtitleTextKey]                = notification.subtext
         }
-        options[kCRToastSubtitleTextAlignmentKey]           = self.subtextAlignment.rawValue
-        options[kCRToastSubtitleFontKey]                    = self.subtextFont
-        options[kCRToastSubtitleTextColorKey]               = self.subtextColor
-        options[kCRToastSubtitleTextMaxNumberOfLinesKey]    = self.subtextMaxNumberOfLines
-        options[kCRToastSubtitleTextShadowColorKey]         = self.subtextShadowColor
-        options[kCRToastSubtitleTextShadowOffsetKey]        = NSValue(CGSize: self.subtextShadowOffset)
+        options[kCRToastSubtitleTextAlignmentKey]           = notification.subtextAlignment.rawValue
+        options[kCRToastSubtitleFontKey]                    = notification.subtextFont
+        options[kCRToastSubtitleTextColorKey]               = notification.subtextColor
+        options[kCRToastSubtitleTextMaxNumberOfLinesKey]    = notification.subtextMaxNumberOfLines
+        options[kCRToastSubtitleTextShadowColorKey]         = notification.subtextShadowColor
+        options[kCRToastSubtitleTextShadowOffsetKey]        = NSValue(CGSize: notification.subtextShadowOffset)
         
         // Configuring Appearances
         
-        options[kCRToastNotificationTypeKey]                = self.heightType.crToastType.rawValue
-        switch self.heightType {
+        options[kCRToastNotificationTypeKey]                = notification.heightType.crToastType.rawValue
+        switch notification.heightType {
         case .Custom(let preferredHeight):
             options[kCRToastNotificationPreferredHeightKey] = preferredHeight
         default:
             break
         }
         
-        options[kCRToastBackgroundColorKey]                 = self.backgroundColor
-        options[kCRToastBackgroundViewKey]                  = self.backgroundView
+        options[kCRToastBackgroundColorKey]                 = notification.backgroundColor
+        options[kCRToastBackgroundViewKey]                  = notification.backgroundView
         
-        options[kCRToastNotificationPreferredPaddingKey]    = self.preferredPadding
+        options[kCRToastNotificationPreferredPaddingKey]    = notification.preferredPadding
         
-        options[kCRToastUnderStatusBarKey]                  = self.underStatusBar
-        options[kCRToastStatusBarStyleKey]                  = self.statusBarStyle.rawValue
+        options[kCRToastUnderStatusBarKey]                  = notification.underStatusBar
+        options[kCRToastStatusBarStyleKey]                  = notification.statusBarStyle.rawValue
         
-        options[kCRToastImageKey]                           = self.image
-        options[kCRToastImageTintKey]                       = self.imageTintColor
-        options[kCRToastImageAlignmentKey]                  = self.imageAlignment.rawValue
-        options[kCRToastImageContentModeKey]                = self.imageContentMode.rawValue
+        options[kCRToastImageKey]                           = notification.image
+        options[kCRToastImageTintKey]                       = notification.imageTintColor
+        options[kCRToastImageAlignmentKey]                  = notification.imageAlignment.rawValue
+        options[kCRToastImageContentModeKey]                = notification.imageContentMode.rawValue
         
-        options[kCRToastShowActivityIndicatorKey]           = self.activityIndicatorVisible
-        options[kCRToastActivityIndicatorAlignmentKey]      = self.activityIndicatorAlignment.rawValue
-        options[kCRToastActivityIndicatorViewStyleKey]      = self.activityIndicatorViewStyle.rawValue
+        options[kCRToastShowActivityIndicatorKey]           = notification.activityIndicatorVisible
+        options[kCRToastActivityIndicatorAlignmentKey]      = notification.activityIndicatorAlignment.rawValue
+        options[kCRToastActivityIndicatorViewStyleKey]      = notification.activityIndicatorViewStyle.rawValue
         
-        options[kCRToastKeepNavigationBarBorderKey]         = self.keepsNavigationBarBorder
+        options[kCRToastKeepNavigationBarBorderKey]         = notification.keepsNavigationBarBorder
         
         // Configuring Other Properties
         
-        options[kCRToastAutorotateKey]                      = self.rotatesAutomatically
-        options[kCRToastCaptureDefaultWindowKey]            = self.capturesDefaultWindow
+        options[kCRToastAutorotateKey]                      = notification.rotatesAutomatically
+        options[kCRToastCaptureDefaultWindowKey]            = notification.capturesDefaultWindow
         
         // Configuring Animations
         

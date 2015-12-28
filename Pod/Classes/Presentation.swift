@@ -28,7 +28,7 @@ import CRToast
 
 public typealias InteractionType = CRToastInteractionType
 
-public final class Presentation<Notification: NotificationType> {
+public final class Presentation<Notification: NotificationConvertible> {
     
     init(notification: Notification) {
         
