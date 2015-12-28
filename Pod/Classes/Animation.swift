@@ -73,16 +73,16 @@ public struct Animation {
     
     public static let Gravity: Animation = .Gravity()
     
-    public static func Linear(inDirection inDirection: AnimationDirection = .Top, inDuration: NSTimeInterval = 0.4, outDirection: AnimationDirection = .Top, outDuration: NSTimeInterval = 0.4) -> Animation {
-        return Animation(inAnimation: .Linear, inDirection: inDirection, inDuration: inDuration, outAnimation: .Linear, outDirection: outDirection, outDuration: outDuration)
+    public static func Linear(inDirection inDirection: AnimationDirection = .Top, inDuration: NSTimeInterval = 0.4, outDirection: AnimationDirection = .Top, outDuration: NSTimeInterval = 0.4, presentationType: PresentationType = .Cover) -> Animation {
+        return Animation(inAnimation: .Linear, inDirection: inDirection, inDuration: inDuration, outAnimation: .Linear, outDirection: outDirection, outDuration: outDuration, presentationType: presentationType)
     }
     
-    public static func Spring(inDirection inDirection: AnimationDirection = .Top, inDuration: NSTimeInterval = 0.4, outDirection: AnimationDirection = .Top, outDuration: NSTimeInterval = 0.4, damping: CGFloat = 0.6, initialVelocity: CGFloat = 1.0) -> Animation {
-        return Animation(inAnimation: .Spring, inDirection: inDirection, inDuration: inDuration, outAnimation: .Spring, outDirection: outDirection, outDuration: outDuration, springDamping: damping, springInitialVelocity: initialVelocity)
+    public static func Spring(inDirection inDirection: AnimationDirection = .Top, inDuration: NSTimeInterval = 0.4, outDirection: AnimationDirection = .Top, outDuration: NSTimeInterval = 0.4, damping: CGFloat = 0.6, initialVelocity: CGFloat = 1.0, presentationType: PresentationType = .Cover) -> Animation {
+        return Animation(inAnimation: .Spring, inDirection: inDirection, inDuration: inDuration, outAnimation: .Spring, outDirection: outDirection, outDuration: outDuration, springDamping: damping, springInitialVelocity: initialVelocity, presentationType: presentationType)
     }
     
-    public static func Gravity(inDirection inDirection: AnimationDirection = .Top, inDuration: NSTimeInterval = 0.4, outDirection: AnimationDirection = .Top, outDuration: NSTimeInterval = 0.4, magnitude: CGFloat = 1.0) -> Animation {
-        return Animation(inAnimation: .Gravity, inDirection: inDirection, inDuration: inDuration, outAnimation: .Gravity, outDirection: outDirection, outDuration: outDuration, gravityMagnitude: magnitude)
+    public static func Gravity(inDirection inDirection: AnimationDirection = .Top, inDuration: NSTimeInterval = 0.4, outDirection: AnimationDirection = .Top, outDuration: NSTimeInterval = 0.4, magnitude: CGFloat = 1.0, presentationType: PresentationType = .Cover) -> Animation {
+        return Animation(inAnimation: .Gravity, inDirection: inDirection, inDuration: inDuration, outAnimation: .Gravity, outDirection: outDirection, outDuration: outDuration, gravityMagnitude: magnitude, presentationType: presentationType)
     }
     
 }
