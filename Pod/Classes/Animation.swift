@@ -26,7 +26,7 @@
 import UIKit
 import CRToast
 
-public typealias AnimationType      = CRToastAnimationType
+typealias AnimationType             = CRToastAnimationType
 public typealias AnimationDirection = CRToastAnimationDirection
 public typealias PresentationType   = CRToastPresentationType
 
