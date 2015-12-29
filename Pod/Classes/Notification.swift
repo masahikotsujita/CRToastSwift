@@ -30,7 +30,7 @@ public enum HeightType {
     
     case StatusBar
     case NavigationBar
-    case Custom(preferredHeight: CGFloat)
+    case Custom(_: CGFloat)
     
     var crToastType: CRToastType {
         switch self {
