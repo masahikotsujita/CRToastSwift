@@ -90,7 +90,7 @@ public class Notification {
     
     public var heightType: HeightType = .NavigationBar
     
-    public var underStatusBar = false
+    public var statusBarVisible = false
     
     public var statusBarStyle: UIStatusBarStyle = .Default
     
@@ -188,7 +188,7 @@ public extension NotificationConvertible {
         
         options[kCRToastNotificationPreferredPaddingKey]    = notification.preferredPadding
         
-        options[kCRToastUnderStatusBarKey]                  = notification.underStatusBar
+        options[kCRToastUnderStatusBarKey]                  = notification.statusBarVisible
         options[kCRToastStatusBarStyleKey]                  = notification.statusBarStyle.rawValue
         
         options[kCRToastImageKey]                           = notification.image
