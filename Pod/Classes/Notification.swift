@@ -28,15 +28,15 @@ import CRToast
 
 public enum HeightType {
     
-    case StatusBar
-    case NavigationBar
+    case Compact
+    case Regular
     case Custom(_: CGFloat)
     
     var crToastType: CRToastType {
         switch self {
-        case .StatusBar:
+        case .Compact:
             return .StatusBar
-        case .NavigationBar:
+        case .Regular:
             return .NavigationBar
         case .Custom(_):
             return .Custom
@@ -87,7 +87,7 @@ public class Notification {
     
     public var subtextShadowOffset: CGSize = CGSize(width: 0.0, height: 0.0)
     
-    public var heightType: HeightType = .NavigationBar
+    public var heightType: HeightType = .Regular
     
     public var statusBarVisible = false
     
