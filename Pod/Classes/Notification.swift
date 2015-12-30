@@ -132,7 +132,7 @@ extension Notification: NotificationConvertible {
 extension String: NotificationConvertible {
     
     public var notification: Notification {
-        var notification = Notification()
+        let notification = Notification()
         notification.text = self
         return notification
     }
