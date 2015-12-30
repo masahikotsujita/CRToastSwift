@@ -55,9 +55,8 @@ public protocol NotificationConvertible {
 
 public class Notification {
     
-    public init(text: String, subtext: String? = nil) {
-        self.text = text
-        self.subtext = subtext
+    public init() {
+        
     }
     
     public var text: String = ""
@@ -133,7 +132,9 @@ extension Notification: NotificationConvertible {
 extension String: NotificationConvertible {
     
     public var notification: Notification {
-        return Notification(text: self)
+        var notification = Notification()
+        notification.text = self
+        return notification
     }
     
 }
