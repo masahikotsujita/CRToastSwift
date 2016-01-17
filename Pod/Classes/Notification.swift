@@ -65,7 +65,7 @@ public class Notification {
     
     public var textFont = UIFont.boldSystemFontOfSize(18.0)
     
-    public var textColor = UIColor.whiteColor()
+    public var textColor: Adaptable<UIColor> = .Adapting
     
     public var textMaxNumberOfLines: Int = 0
     
@@ -79,7 +79,7 @@ public class Notification {
     
     public var subtextFont = UIFont.systemFontOfSize(14.0)
     
-    public var subtextColor = UIColor.whiteColor()
+    public var subtextColor: Adaptable<UIColor> = .Adapting
     
     public var subtextMaxNumberOfLines: Int = 0
     
@@ -91,13 +91,13 @@ public class Notification {
     
     public var statusBarVisible = false
     
-    public var statusBarStyle: UIStatusBarStyle = .Default
+    public var statusBarStyle: Adaptable<UIStatusBarStyle> = .Adapting
     
     public var preferredPadding: CGFloat = 0
     
     public var image: UIImage?
     
-    public var imageTintColor: UIColor?
+    public var imageTintColor: Adaptable<UIColor>?
     
     public var imageAlignment: CRToastAccessoryViewAlignment = .Left
     
@@ -109,7 +109,7 @@ public class Notification {
     
     public var activityIndicatorVisible = false
     
-    public var activityIndicatorViewStyle: UIActivityIndicatorViewStyle = .White
+    public var activityIndicatorViewStyle: Adaptable<UIActivityIndicatorViewStyle> = .Adapting
     
     public var activityIndicatorAlignment: AccessoryViewAlignment = .Left
     
@@ -159,7 +159,7 @@ public extension NotificationConvertible {
         options[kCRToastTextKey]                            = notification.text
         options[kCRToastTextAlignmentKey]                   = notification.textAlignment.rawValue
         options[kCRToastFontKey]                            = notification.textFont
-        options[kCRToastTextColorKey]                       = notification.textColor
+        options[kCRToastTextColorKey]                       = colorByUnwrappingAdaptableValue(notification.textColor, forBackgroundColor: notification.backgroundColor)
         options[kCRToastTextMaxNumberOfLinesKey]            = notification.textMaxNumberOfLines
         options[kCRToastTextShadowColorKey]                 = notification.textShadowColor
         options[kCRToastTextShadowOffsetKey]                = NSValue(CGSize: notification.textShadowOffset)
@@ -169,7 +169,7 @@ public extension NotificationConvertible {
         }
         options[kCRToastSubtitleTextAlignmentKey]           = notification.subtextAlignment.rawValue
         options[kCRToastSubtitleFontKey]                    = notification.subtextFont
-        options[kCRToastSubtitleTextColorKey]               = notification.subtextColor
+        options[kCRToastSubtitleTextColorKey]               = colorByUnwrappingAdaptableValue(notification.subtextColor, forBackgroundColor: notification.backgroundColor)
         options[kCRToastSubtitleTextMaxNumberOfLinesKey]    = notification.subtextMaxNumberOfLines
         options[kCRToastSubtitleTextShadowColorKey]         = notification.subtextShadowColor
         options[kCRToastSubtitleTextShadowOffsetKey]        = NSValue(CGSize: notification.subtextShadowOffset)
@@ -190,16 +190,18 @@ public extension NotificationConvertible {
         options[kCRToastNotificationPreferredPaddingKey]    = notification.preferredPadding
         
         options[kCRToastUnderStatusBarKey]                  = notification.statusBarVisible
-        options[kCRToastStatusBarStyleKey]                  = notification.statusBarStyle.rawValue
+        options[kCRToastStatusBarStyleKey]                  = statusBarStyleByUnwrappingAdaptableValue(notification.statusBarStyle, forBackgroundColor: notification.backgroundColor).rawValue
         
         options[kCRToastImageKey]                           = notification.image
-        options[kCRToastImageTintKey]                       = notification.imageTintColor
+        options[kCRToastImageTintKey]                       = notification.imageTintColor.flatMap {
+            return colorByUnwrappingAdaptableValue($0, forBackgroundColor: notification.backgroundColor)
+        }
         options[kCRToastImageAlignmentKey]                  = notification.imageAlignment.rawValue
         options[kCRToastImageContentModeKey]                = notification.imageContentMode.rawValue
         
         options[kCRToastShowActivityIndicatorKey]           = notification.activityIndicatorVisible
         options[kCRToastActivityIndicatorAlignmentKey]      = notification.activityIndicatorAlignment.rawValue
-        options[kCRToastActivityIndicatorViewStyleKey]      = notification.activityIndicatorViewStyle.rawValue
+        options[kCRToastActivityIndicatorViewStyleKey]      = activityIndicatorViewStyleByUnrappingAdaptableValue(notification.activityIndicatorViewStyle, forBackgroundColor: notification.backgroundColor).rawValue
         
         options[kCRToastKeepNavigationBarBorderKey]         = notification.keepsNavigationBarBorder
         
@@ -249,4 +251,43 @@ public extension NotificationConvertible {
         return presentation
     }
     
+}
+
+func colorByUnwrappingAdaptableValue(adaptableValue: Adaptable<UIColor>, forBackgroundColor backgroundColor: UIColor) -> UIColor {
+    switch adaptableValue {
+    case let .Fixed(value):
+        return value
+    case .Adapting:
+        if backgroundColor.isLightColor {
+            return .blackColor()
+        } else {
+            return .whiteColor()
+        }
+    }
+}
+
+func statusBarStyleByUnwrappingAdaptableValue(adaptableValue: Adaptable<UIStatusBarStyle>, forBackgroundColor backgroundColor: UIColor) -> UIStatusBarStyle {
+    switch adaptableValue {
+    case let .Fixed(value):
+        return value
+    case .Adapting:
+        if backgroundColor.isLightColor {
+            return .Default
+        } else {
+            return .LightContent
+        }
+    }
+}
+
+func activityIndicatorViewStyleByUnrappingAdaptableValue(adaptableValue: Adaptable<UIActivityIndicatorViewStyle>, forBackgroundColor backgroundColor: UIColor) -> UIActivityIndicatorViewStyle {
+    switch adaptableValue {
+    case let .Fixed(value):
+        return value
+    case .Adapting:
+        if backgroundColor.isLightColor {
+            return .Gray
+        } else {
+            return .White
+        }
+    }
 }

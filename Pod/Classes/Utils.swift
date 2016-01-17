@@ -25,6 +25,29 @@
 
 import Foundation
 
+public enum Adaptable<Value> {
+
+    case Fixed(_: Value)
+    case Adapting
+
+    public init(_ value: Value) {
+        self = .Fixed(value)
+    }
+    
+}
+
+extension UIColor {
+
+    var isLightColor: Bool {
+        var white = CGFloat()
+        guard self.getWhite(&white, alpha: nil) else {
+            fatalError("Couldn't get whiteness from color \(self)")
+        }
+        return white >= 0.5
+    }
+    
+}
+
 public enum TimeInterval {
     case Finite(_: NSTimeInterval)
     case Infinite
