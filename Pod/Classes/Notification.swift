@@ -53,7 +53,7 @@ public protocol NotificationConvertible {
     
 }
 
-public class Notification {
+public struct Notification {
     
     public init() {
         
@@ -105,7 +105,7 @@ public class Notification {
     
     public var backgroundColor = UIColor.darkGrayColor()
     
-    public var backgroundView: UIView?
+    public var backgroundView: (() -> UIView?)?
     
     public var activityIndicatorVisible = false
     
@@ -132,7 +132,7 @@ extension Notification: NotificationConvertible {
 extension String: NotificationConvertible {
     
     public var notification: Notification {
-        let notification = Notification()
+        var notification = Notification()
         notification.text = self
         return notification
     }
@@ -185,7 +185,7 @@ public extension NotificationConvertible {
         }
         
         options[kCRToastBackgroundColorKey]                 = notification.backgroundColor
-        options[kCRToastBackgroundViewKey]                  = notification.backgroundView
+        options[kCRToastBackgroundViewKey]                  = notification.backgroundView?()
         
         options[kCRToastNotificationPreferredPaddingKey]    = notification.preferredPadding
         

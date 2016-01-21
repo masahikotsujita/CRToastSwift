@@ -90,7 +90,7 @@ class ViewController: UIViewController {
     
     @IBAction func showNotification(sender: UIButton) {
         
-        let notification = Notification()
+        var notification = Notification()
         notification.text = self.textField.text!
         notification.subtext = self.subtextField.text
         notification.image = self.selectedTheme.image
