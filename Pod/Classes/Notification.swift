@@ -89,7 +89,7 @@ public struct Notification {
     
     public var heightType: HeightType = .Regular
     
-    public var statusBarVisible = false
+    public var showsStatusBar = false
     
     public var statusBarStyle: Adaptable<UIStatusBarStyle> = .Adapting
     
@@ -107,7 +107,7 @@ public struct Notification {
     
     public var backgroundView: (() -> UIView?)?
     
-    public var activityIndicatorVisible = false
+    public var showsActivityIndicatorView = false
     
     public var activityIndicatorViewStyle: Adaptable<UIActivityIndicatorViewStyle> = .Adapting
     
@@ -189,7 +189,7 @@ public extension NotificationConvertible {
         
         options[kCRToastNotificationPreferredPaddingKey]    = notification.preferredPadding
         
-        options[kCRToastUnderStatusBarKey]                  = notification.statusBarVisible
+        options[kCRToastUnderStatusBarKey]                  = notification.showsStatusBar
         options[kCRToastStatusBarStyleKey]                  = statusBarStyleByUnwrappingAdaptableValue(notification.statusBarStyle, forBackgroundColor: notification.backgroundColor).rawValue
         
         options[kCRToastImageKey]                           = notification.image
@@ -199,7 +199,7 @@ public extension NotificationConvertible {
         options[kCRToastImageAlignmentKey]                  = notification.imageAlignment.rawValue
         options[kCRToastImageContentModeKey]                = notification.imageContentMode.rawValue
         
-        options[kCRToastShowActivityIndicatorKey]           = notification.activityIndicatorVisible
+        options[kCRToastShowActivityIndicatorKey]           = notification.showsActivityIndicatorView
         options[kCRToastActivityIndicatorAlignmentKey]      = notification.activityIndicatorAlignment.rawValue
         options[kCRToastActivityIndicatorViewStyleKey]      = activityIndicatorViewStyleByUnrappingAdaptableValue(notification.activityIndicatorViewStyle, forBackgroundColor: notification.backgroundColor).rawValue
         

@@ -96,7 +96,7 @@ class ViewController: UIViewController {
         notification.image = self.selectedTheme.image
         notification.imageTintColor = .Adapting
         notification.backgroundColor = self.selectedTheme.backgroundColor
-        notification.statusBarVisible = self.statusBarVisibleSwitch.on
+        notification.showsStatusBar = self.statusBarVisibleSwitch.on
         
         notification
         .notify(animation: self.selectedAnimation) {
