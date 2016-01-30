@@ -55,8 +55,9 @@ public protocol NotificationConvertible {
 
 public struct Notification {
     
-    public init() {
-        
+    public init(text: String = "", subtext: String? = nil) {
+        self.text = text
+        self.subtext = subtext
     }
     
     public var text: String = ""
@@ -132,9 +133,7 @@ extension Notification: NotificationConvertible {
 extension String: NotificationConvertible {
     
     public var notification: Notification {
-        var notification = Notification()
-        notification.text = self
-        return notification
+        return Notification(text: self)
     }
     
 }
