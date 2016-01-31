@@ -141,6 +141,10 @@ extension String: NotificationConvertible {
 public extension NotificationConvertible {
     
     public func notify(animation animation: Animation = .Linear, lifetime: TimeInterval = .Finite(2.0), handler: () -> Void) -> Presentation<Self> {
+        return self._notify(animation: animation, lifetime: lifetime, handler: handler)
+    }
+    
+    func _notify(animation animation: Animation = .Linear, lifetime: TimeInterval = .Finite(2.0), handler: () -> Void) -> Presentation<Self> {
         
         let notification = self.notification
         
