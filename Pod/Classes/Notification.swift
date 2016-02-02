@@ -69,11 +69,11 @@ public struct Notification {
     
     public var subtextShadowOffset: CGSize = CGSize(width: 0.0, height: 0.0)
     
-    public enum HeightType {
+    public enum Size {
         
         case Compact
         case Regular
-        case Custom(_: CGFloat)
+        case Custom(preferredHeight: CGFloat)
         
         var crToastType: CRToastType {
             switch self {
@@ -88,7 +88,7 @@ public struct Notification {
         
     }
     
-    public var heightType: HeightType = .Regular
+    public var size: Size = .Regular
     
     public var showsStatusBar = false
     
@@ -173,8 +173,8 @@ public func notify<Notification: NotificationConvertible>(notificationConvertibl
     
     // Configuring Appearances
     
-    options[kCRToastNotificationTypeKey]                = notification.heightType.crToastType.rawValue
-    switch notification.heightType {
+    options[kCRToastNotificationTypeKey]                = notification.size.crToastType.rawValue
+    switch notification.size {
     case .Custom(let preferredHeight):
         options[kCRToastNotificationPreferredHeightKey] = preferredHeight
     default:
