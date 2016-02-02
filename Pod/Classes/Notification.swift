@@ -26,8 +26,6 @@
 import UIKit
 import CRToast
 
-public typealias AccessoryViewAlignment = CRToastAccessoryViewAlignment
-
 public protocol NotificationConvertible {
     
     var notification: Notification { get }
@@ -35,6 +33,8 @@ public protocol NotificationConvertible {
 }
 
 public struct Notification {
+    
+    public typealias AccessoryViewAlignment = CRToastAccessoryViewAlignment
     
     public init(text: String = "", subtext: String? = nil) {
         self.text = text
