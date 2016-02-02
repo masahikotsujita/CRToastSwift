@@ -98,8 +98,7 @@ class ViewController: UIViewController {
         notification.backgroundColor = self.selectedTheme.backgroundColor
         notification.showsStatusBar = self.statusBarVisibleSwitch.on
         
-        notification
-        .notify(animation: self.selectedAnimation) {
+        notify(notification, animation: self.selectedAnimation) {
             print("Presented")
         } .onTapOnce { _ in
             print("OnTapOnce")
