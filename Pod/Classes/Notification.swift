@@ -138,7 +138,7 @@ extension String: NotificationConvertible {
     
 }
 
-public func notify<Notification: NotificationConvertible>(notificationConvertible: Notification, animation: Animation = .Linear, lifetime: TimeInterval = .Finite(2.0), handler: () -> Void) -> Presentation<Notification> {
+public func notify<Notification: NotificationConvertible>(notificationConvertible: Notification, animation: Animation = .Linear, lifetime: NSTimeInterval? = 2.0, handler: () -> Void) -> Presentation<Notification> {
     
     let notification = notificationConvertible.notification
     
@@ -225,11 +225,10 @@ public func notify<Notification: NotificationConvertible>(notificationConvertibl
     
     // Configuring User Interactions
     
-    switch lifetime {
-    case .Finite(let timeInterval):
+    if let lifetime = lifetime {
         options[kCRToastForceUserInteractionKey]        = false
-        options[kCRToastTimeIntervalKey]                = timeInterval
-    case .Infinite:
+        options[kCRToastTimeIntervalKey]                = lifetime
+    } else {
         options[kCRToastForceUserInteractionKey]        = true
     }
     

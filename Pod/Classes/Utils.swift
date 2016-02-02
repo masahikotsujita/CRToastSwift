@@ -49,11 +49,6 @@ extension UIColor {
     
 }
 
-public enum TimeInterval {
-    case Finite(_: NSTimeInterval)
-    case Infinite
-}
-
 func synchronized(lock: NSLocking, @noescape handler: () -> Void) {
     lock.lock()
     handler()
