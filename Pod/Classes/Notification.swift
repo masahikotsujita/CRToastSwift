@@ -26,25 +26,6 @@
 import UIKit
 import CRToast
 
-public enum HeightType {
-    
-    case Compact
-    case Regular
-    case Custom(_: CGFloat)
-    
-    var crToastType: CRToastType {
-        switch self {
-        case .Compact:
-            return .StatusBar
-        case .Regular:
-            return .NavigationBar
-        case .Custom(_):
-            return .Custom
-        }
-    }
-    
-}
-
 public typealias AccessoryViewAlignment = CRToastAccessoryViewAlignment
 
 public protocol NotificationConvertible {
@@ -87,6 +68,25 @@ public struct Notification {
     public var subtextShadowColor: UIColor = UIColor.clearColor()
     
     public var subtextShadowOffset: CGSize = CGSize(width: 0.0, height: 0.0)
+    
+    public enum HeightType {
+        
+        case Compact
+        case Regular
+        case Custom(_: CGFloat)
+        
+        var crToastType: CRToastType {
+            switch self {
+            case .Compact:
+                return .StatusBar
+            case .Regular:
+                return .NavigationBar
+            case .Custom(_):
+                return .Custom
+            }
+        }
+        
+    }
     
     public var heightType: HeightType = .Regular
     
