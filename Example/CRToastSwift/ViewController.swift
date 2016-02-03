@@ -100,21 +100,21 @@ class ViewController: UIViewController {
         
         notify(notification, animation: self.selectedAnimation) {
             print("Presented")
-        } .onTapOnce { _ in
+        } .on(.TapOnce) { _ in
             print("OnTapOnce")
-        } .onTapTwice { _ in
+        } .on(.TapTwice) { _ in
             print("OnTapTwice")
-        } .onSwipeUp { _ in
+        } .on(.SwipeUp) { _ in
             print("OnSwipeUp")
-        } .onSwipeRight { _ in
+        } .on(.SwipeRight) { _ in
             print("OnSwipeRight")
-        } .onSwipeDown { _ in
+        } .on(.SwipeDown) { _ in
             print("OnSwipeDown")
-        } .onSwipeLeft { _ in
+        } .on(.SwipeLeft) { _ in
             print("OnSwipeLeft")
-        } .onAnyTap { _ in
+        } .on(.Tap) { _ in
             print("OnAnyTap")
-        } .onAnySwipe { _ in
+        } .on(.Swipe) { _ in
             print("OnAnySwipe")
         } .onDismissal { _ in
             print("Dismissed")
