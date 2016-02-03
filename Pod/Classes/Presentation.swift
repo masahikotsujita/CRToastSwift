@@ -26,7 +26,35 @@
 import UIKit
 import CRToast
 
-public typealias InteractionType = CRToastInteractionType
+public struct InteractionType: OptionSetType {
+    
+    public typealias RawValue = CRToastInteractionType.RawValue
+    
+    public init(rawValue: RawValue) {
+        self.rawValue = rawValue
+    }
+    
+    public let rawValue: RawValue
+    
+    public static let Tap                   = InteractionType(rawValue: CRToastInteractionType.TapOnce.rawValue)
+    public static let DoubleTap             = InteractionType(rawValue: CRToastInteractionType.TapTwice.rawValue)
+    public static let TwoFingerTap          = InteractionType(rawValue: CRToastInteractionType.TwoFingerTapOnce.rawValue)
+    public static let TwoFingerDoubleTap    = InteractionType(rawValue: CRToastInteractionType.TwoFingerTapTwice.rawValue)
+    
+    public static let SwipeUp               = InteractionType(rawValue: CRToastInteractionType.SwipeUp.rawValue)
+    public static let SwipeLeft             = InteractionType(rawValue: CRToastInteractionType.SwipeLeft.rawValue)
+    public static let SwipeDown             = InteractionType(rawValue: CRToastInteractionType.SwipeDown.rawValue)
+    public static let SwipeRight            = InteractionType(rawValue: CRToastInteractionType.SwipeRight.rawValue)
+    
+    public static let AnyTap                = InteractionType(rawValue: CRToastInteractionType.Tap.rawValue)
+    public static let AnySwipe              = InteractionType(rawValue: CRToastInteractionType.Swipe.rawValue)
+    public static let Any                   = InteractionType(rawValue: CRToastInteractionType.All.rawValue)
+    
+    var crToastInteractionType: CRToastInteractionType {
+        return CRToastInteractionType(rawValue: self.rawValue)
+    }
+    
+}
 
 public final class Presentation<Notification: NotificationConvertible> {
     

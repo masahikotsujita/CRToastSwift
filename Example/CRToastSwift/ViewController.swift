@@ -100,9 +100,9 @@ class ViewController: UIViewController {
         
         notify(notification, animation: self.selectedAnimation) {
             print("Presented")
-        } .on(.TapOnce) { _ in
+        } .on(.Tap) { _ in
             print("OnTapOnce")
-        } .on(.TapTwice) { _ in
+        } .on(.DoubleTap) { _ in
             print("OnTapTwice")
         } .on(.SwipeUp) { _ in
             print("OnSwipeUp")
@@ -112,9 +112,9 @@ class ViewController: UIViewController {
             print("OnSwipeDown")
         } .on(.SwipeLeft) { _ in
             print("OnSwipeLeft")
-        } .on(.Tap) { _ in
+        } .on(.AnyTap) { _ in
             print("OnAnyTap")
-        } .on(.Swipe) { _ in
+        } .on(.AnySwipe) { _ in
             print("OnAnySwipe")
         } .onDismissal { _ in
             print("Dismissed")
