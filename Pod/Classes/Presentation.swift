@@ -30,10 +30,6 @@ public typealias InteractionType = CRToastInteractionType
 
 public final class Presentation<Notification: NotificationConvertible> {
     
-    init(notification: Notification) {
-        
-    }
-    
     let interactionEvent = Event<(InteractionType, Notification, Dismisser)>()
     
     public func on(interaction: InteractionType, handler: (Notification, Dismisser) -> Void) -> Self {

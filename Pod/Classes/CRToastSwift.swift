@@ -33,7 +33,7 @@ public func notify<Notification: NotificationConvertible>(notificationConvertibl
     // Initializing Presentation Objects and Configurings
     
     let identifier = NSUUID().UUIDString
-    let presentation = Presentation(notification: notificationConvertible)
+    let presentation = Presentation<Notification>()
     let dismisser = Dismisser(identifier: identifier)
     
     var options = [String : AnyObject]()
