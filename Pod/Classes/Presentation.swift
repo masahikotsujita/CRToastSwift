@@ -34,13 +34,6 @@ public final class Presentation<Notification: NotificationConvertible> {
         
     }
     
-    let dismissalEvent = Event<Notification>()
-    
-    public func onDismissal(handler: (Notification) -> Void) -> Self {
-        self.dismissalEvent.addHandler(handler)
-        return self
-    }
-    
     let interactionEvent = Event<(InteractionType, Notification, Dismisser)>()
     
     public func on(interaction: InteractionType, handler: (Notification, Dismisser) -> Void) -> Self {
@@ -49,6 +42,13 @@ public final class Presentation<Notification: NotificationConvertible> {
                 handler(notification, dismisser)
             }
         })
+        return self
+    }
+    
+    let dismissalEvent = Event<Notification>()
+    
+    public func onDismissal(handler: (Notification) -> Void) -> Self {
+        self.dismissalEvent.addHandler(handler)
         return self
     }
     
