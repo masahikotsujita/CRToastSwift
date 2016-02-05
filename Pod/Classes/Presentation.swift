@@ -57,7 +57,7 @@ public struct Dismisser {
     let identifier: String
     
     public func dismiss(animated animated: Bool = true) {
-        CRToastManager.dismissAllNotificationsWithIdentifier(identifier, animated: animated)
+        CRToastManager.dismissAllNotificationsWithIdentifier(self.identifier, animated: animated)
     }
     
 }
