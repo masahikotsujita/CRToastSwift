@@ -56,7 +56,7 @@ public struct Interaction: OptionSetType {
     
 }
 
-public final class Presentation<Notification: NotificationConvertible> {
+public final class Presentation<Notification: NotificationType> {
     
     let interactionEvent = Event<(Interaction, Notification, Dismisser)>()
     

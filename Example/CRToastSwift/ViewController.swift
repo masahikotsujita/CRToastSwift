@@ -90,15 +90,15 @@ class ViewController: UIViewController {
     
     @IBAction func showNotification(sender: UIButton) {
         
-        var notification = Notification()
-        notification.text = self.textField.text!
-        notification.subtext = self.subtextField.text
-        notification.image = self.selectedTheme.image
-        notification.imageTintColor = .Adapting
-        notification.backgroundColor = self.selectedTheme.backgroundColor
-        notification.showsStatusBar = self.statusBarVisibleSwitch.on
+        let notification = Notification(text: self.textField.text!, subtext: self.subtextField.text)
         
-        notify(notification, animation: self.selectedAnimation) {
+        var traits = NotificationTraits()
+        traits.image = self.selectedTheme.image
+        traits.imageTintColor = .Adapting
+        traits.backgroundColor = self.selectedTheme.backgroundColor
+        traits.showsStatusBar = self.statusBarVisibleSwitch.on
+        
+        notify(notification, traits: traits, animation: self.selectedAnimation) {
             print("Presented")
         } .on(.Tap) { _ in
             print("OnTapOnce")

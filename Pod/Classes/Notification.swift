@@ -26,15 +26,15 @@
 import UIKit
 import CRToast
 
-public protocol NotificationConvertible {
+public protocol NotificationType {
     
-    var notification: Notification { get }
+    var text: String { get }
+    
+    var subtext: String? { get }
     
 }
 
-public struct Notification {
-    
-    public typealias AccessoryViewAlignment = CRToastAccessoryViewAlignment
+public class Notification: NotificationType {
     
     public init(text: String = "", subtext: String? = nil) {
         self.text = text
@@ -42,6 +42,30 @@ public struct Notification {
     }
     
     public var text: String = ""
+    
+    public var subtext: String?
+    
+}
+
+extension String: NotificationType {
+    
+    public var text: String {
+        return self
+    }
+    
+    public var subtext: String? {
+        return nil
+    }
+    
+}
+
+public struct NotificationTraits {
+    
+    public typealias AccessoryViewAlignment = CRToastAccessoryViewAlignment
+    
+    public init() {
+        
+    }
     
     public var textAlignment: NSTextAlignment = .Left
     
@@ -54,8 +78,6 @@ public struct Notification {
     public var textShadowColor: UIColor = UIColor.clearColor()
     
     public var textShadowOffset: CGSize = CGSize(width: 0.0, height: 0.0)
-    
-    public var subtext: String?
     
     public var subtextAlignment: NSTextAlignment = .Left
     
@@ -119,21 +141,5 @@ public struct Notification {
     public var rotatesAutomatically = true
     
     public var capturesDefaultWindow = true
-    
-}
-
-extension Notification: NotificationConvertible {
-    
-    public var notification: Notification {
-        return self
-    }
-    
-}
-
-extension String: NotificationConvertible {
-    
-    public var notification: Notification {
-        return Notification(text: self)
-    }
     
 }

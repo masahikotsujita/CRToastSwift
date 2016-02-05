@@ -26,9 +26,7 @@
 import UIKit
 import CRToast
 
-public func notify<Notification: NotificationConvertible>(notificationConvertible: Notification, animation: Animation = .Linear, presentationTimeInterval: NSTimeInterval? = 2.0, handler: () -> Void) -> Presentation<Notification> {
-    
-    let notification = notificationConvertible.notification
+public func notify<Notification: NotificationType>(notification: Notification, traits: NotificationTraits = NotificationTraits(), animation: Animation = .Linear, presentationTimeInterval: NSTimeInterval? = 2.0, handler: () -> Void) -> Presentation<Notification> {
     
     // Initializing Presentation Objects and Configurings
     
@@ -42,58 +40,58 @@ public func notify<Notification: NotificationConvertible>(notificationConvertibl
     // Configuring Texts
     
     options[kCRToastTextKey]                            = notification.text
-    options[kCRToastTextAlignmentKey]                   = notification.textAlignment.rawValue
-    options[kCRToastFontKey]                            = notification.textFont
-    options[kCRToastTextColorKey]                       = colorByUnwrappingAdaptableValue(notification.textColor, forBackgroundColor: notification.backgroundColor)
-    options[kCRToastTextMaxNumberOfLinesKey]            = notification.textMaxNumberOfLines
-    options[kCRToastTextShadowColorKey]                 = notification.textShadowColor
-    options[kCRToastTextShadowOffsetKey]                = NSValue(CGSize: notification.textShadowOffset)
+    options[kCRToastTextAlignmentKey]                   = traits.textAlignment.rawValue
+    options[kCRToastFontKey]                            = traits.textFont
+    options[kCRToastTextColorKey]                       = colorByUnwrappingAdaptableValue(traits.textColor, forBackgroundColor: traits.backgroundColor)
+    options[kCRToastTextMaxNumberOfLinesKey]            = traits.textMaxNumberOfLines
+    options[kCRToastTextShadowColorKey]                 = traits.textShadowColor
+    options[kCRToastTextShadowOffsetKey]                = NSValue(CGSize: traits.textShadowOffset)
     
     if notification.subtext != nil {
         options[kCRToastSubtitleTextKey]                = notification.subtext
     }
-    options[kCRToastSubtitleTextAlignmentKey]           = notification.subtextAlignment.rawValue
-    options[kCRToastSubtitleFontKey]                    = notification.subtextFont
-    options[kCRToastSubtitleTextColorKey]               = colorByUnwrappingAdaptableValue(notification.subtextColor, forBackgroundColor: notification.backgroundColor)
-    options[kCRToastSubtitleTextMaxNumberOfLinesKey]    = notification.subtextMaxNumberOfLines
-    options[kCRToastSubtitleTextShadowColorKey]         = notification.subtextShadowColor
-    options[kCRToastSubtitleTextShadowOffsetKey]        = NSValue(CGSize: notification.subtextShadowOffset)
+    options[kCRToastSubtitleTextAlignmentKey]           = traits.subtextAlignment.rawValue
+    options[kCRToastSubtitleFontKey]                    = traits.subtextFont
+    options[kCRToastSubtitleTextColorKey]               = colorByUnwrappingAdaptableValue(traits.subtextColor, forBackgroundColor: traits.backgroundColor)
+    options[kCRToastSubtitleTextMaxNumberOfLinesKey]    = traits.subtextMaxNumberOfLines
+    options[kCRToastSubtitleTextShadowColorKey]         = traits.subtextShadowColor
+    options[kCRToastSubtitleTextShadowOffsetKey]        = NSValue(CGSize: traits.subtextShadowOffset)
     
     // Configuring Appearances
     
-    options[kCRToastNotificationTypeKey]                = notification.size.crToastType.rawValue
-    switch notification.size {
+    options[kCRToastNotificationTypeKey]                = traits.size.crToastType.rawValue
+    switch traits.size {
     case .Custom(let preferredHeight):
         options[kCRToastNotificationPreferredHeightKey] = preferredHeight
     default:
         break
     }
     
-    options[kCRToastBackgroundColorKey]                 = notification.backgroundColor
-    options[kCRToastBackgroundViewKey]                  = notification.backgroundView?()
+    options[kCRToastBackgroundColorKey]                 = traits.backgroundColor
+    options[kCRToastBackgroundViewKey]                  = traits.backgroundView?()
     
-    options[kCRToastNotificationPreferredPaddingKey]    = notification.preferredPadding
+    options[kCRToastNotificationPreferredPaddingKey]    = traits.preferredPadding
     
-    options[kCRToastUnderStatusBarKey]                  = notification.showsStatusBar
-    options[kCRToastStatusBarStyleKey]                  = statusBarStyleByUnwrappingAdaptableValue(notification.statusBarStyle, forBackgroundColor: notification.backgroundColor).rawValue
+    options[kCRToastUnderStatusBarKey]                  = traits.showsStatusBar
+    options[kCRToastStatusBarStyleKey]                  = statusBarStyleByUnwrappingAdaptableValue(traits.statusBarStyle, forBackgroundColor: traits.backgroundColor).rawValue
     
-    options[kCRToastImageKey]                           = notification.image
-    options[kCRToastImageTintKey]                       = notification.imageTintColor.flatMap {
-        return colorByUnwrappingAdaptableValue($0, forBackgroundColor: notification.backgroundColor)
+    options[kCRToastImageKey]                           = traits.image
+    options[kCRToastImageTintKey]                       = traits.imageTintColor.flatMap {
+        return colorByUnwrappingAdaptableValue($0, forBackgroundColor: traits.backgroundColor)
     }
-    options[kCRToastImageAlignmentKey]                  = notification.imageAlignment.rawValue
-    options[kCRToastImageContentModeKey]                = notification.imageContentMode.rawValue
+    options[kCRToastImageAlignmentKey]                  = traits.imageAlignment.rawValue
+    options[kCRToastImageContentModeKey]                = traits.imageContentMode.rawValue
     
-    options[kCRToastShowActivityIndicatorKey]           = notification.showsActivityIndicatorView
-    options[kCRToastActivityIndicatorAlignmentKey]      = notification.activityIndicatorAlignment.rawValue
-    options[kCRToastActivityIndicatorViewStyleKey]      = activityIndicatorViewStyleByUnrappingAdaptableValue(notification.activityIndicatorViewStyle, forBackgroundColor: notification.backgroundColor).rawValue
+    options[kCRToastShowActivityIndicatorKey]           = traits.showsActivityIndicatorView
+    options[kCRToastActivityIndicatorAlignmentKey]      = traits.activityIndicatorAlignment.rawValue
+    options[kCRToastActivityIndicatorViewStyleKey]      = activityIndicatorViewStyleByUnrappingAdaptableValue(traits.activityIndicatorViewStyle, forBackgroundColor: traits.backgroundColor).rawValue
     
-    options[kCRToastKeepNavigationBarBorderKey]         = notification.keepsNavigationBarBorder
+    options[kCRToastKeepNavigationBarBorderKey]         = traits.keepsNavigationBarBorder
     
     // Configuring Other Properties
     
-    options[kCRToastAutorotateKey]                      = notification.rotatesAutomatically
-    options[kCRToastCaptureDefaultWindowKey]            = notification.capturesDefaultWindow
+    options[kCRToastAutorotateKey]                      = traits.rotatesAutomatically
+    options[kCRToastCaptureDefaultWindowKey]            = traits.capturesDefaultWindow
     
     // Configuring Animations
     
@@ -121,14 +119,14 @@ public func notify<Notification: NotificationConvertible>(notificationConvertibl
     }
     
     options[kCRToastInteractionRespondersKey]           = [CRToastInteractionResponder(interactionType: .All, automaticallyDismiss: false, block: { type in
-        presentation.interactionEvent.invoke((Interaction(rawValue: type.rawValue), notificationConvertible, dismisser))
+        presentation.interactionEvent.invoke((Interaction(rawValue: type.rawValue), notification, dismisser))
     })]
     
     // Presenting Notification
     
     dispatch_async(dispatch_get_main_queue()) {
         CRToastManager.showNotificationWithOptions(options, apperanceBlock: handler, completionBlock: {
-            presentation.dismissalEvent.invoke(notificationConvertible)
+            presentation.dismissalEvent.invoke(notification)
         })
     }
     
