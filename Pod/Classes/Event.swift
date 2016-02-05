@@ -25,9 +25,9 @@
 
 import Foundation
 
-class Event<T> {
+class Event<Argument> {
     
-    typealias EventHandler = (T) -> Void
+    typealias EventHandler = (Argument) -> Void
     
     private(set) var handlers = [EventHandler]()
     
@@ -39,9 +39,9 @@ class Event<T> {
         }
     }
     
-    func invoke(value: T) {
+    func invoke(argument: Argument) {
         synchronized(self.lock) {
-            self.handlers.forEach { $0(value) }
+            self.handlers.forEach { $0(argument) }
         }
     }
     
