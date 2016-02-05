@@ -26,36 +26,6 @@
 import UIKit
 import CRToast
 
-public struct Interaction: OptionSetType {
-    
-    public typealias RawValue = CRToastInteractionType.RawValue
-    
-    public init(rawValue: RawValue) {
-        self.rawValue = rawValue
-    }
-    
-    public let rawValue: RawValue
-    
-    public static let Tap                   = Interaction(rawValue: CRToastInteractionType.TapOnce.rawValue)
-    public static let DoubleTap             = Interaction(rawValue: CRToastInteractionType.TapTwice.rawValue)
-    public static let TwoFingerTap          = Interaction(rawValue: CRToastInteractionType.TwoFingerTapOnce.rawValue)
-    public static let TwoFingerDoubleTap    = Interaction(rawValue: CRToastInteractionType.TwoFingerTapTwice.rawValue)
-    
-    public static let SwipeUp               = Interaction(rawValue: CRToastInteractionType.SwipeUp.rawValue)
-    public static let SwipeLeft             = Interaction(rawValue: CRToastInteractionType.SwipeLeft.rawValue)
-    public static let SwipeDown             = Interaction(rawValue: CRToastInteractionType.SwipeDown.rawValue)
-    public static let SwipeRight            = Interaction(rawValue: CRToastInteractionType.SwipeRight.rawValue)
-    
-    public static let AnyTap                = Interaction(rawValue: CRToastInteractionType.Tap.rawValue)
-    public static let AnySwipe              = Interaction(rawValue: CRToastInteractionType.Swipe.rawValue)
-    public static let Any                   = Interaction(rawValue: CRToastInteractionType.All.rawValue)
-    
-    var crToastInteractionType: CRToastInteractionType {
-        return CRToastInteractionType(rawValue: self.rawValue)
-    }
-    
-}
-
 public final class Presentation<Notification: NotificationType> {
     
     let interactionEvent = Event<(Interaction, Notification, Dismisser)>()
