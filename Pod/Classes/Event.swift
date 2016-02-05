@@ -29,7 +29,7 @@ class Event<T> {
     
     typealias EventHandler = (T) -> Void
     
-    private var handlers = [EventHandler]()
+    private(set) var handlers = [EventHandler]()
     
     private let lock = NSLock()
     
