@@ -44,7 +44,9 @@ enum Theme {
     
 }
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, PresenterType {
+    
+    typealias Notification = CRToastSwift.Notification
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,17 +90,17 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func showNotification(sender: UIButton) {
-        
-        let notification = Notification(text: self.textField.text!, subtext: self.subtextField.text)
-        
+    func traits(forNotification _: Notification) -> NotificationTraits {
         var traits = NotificationTraits()
         traits.image = self.selectedTheme.image
         traits.imageTintColor = .Adapting
         traits.backgroundColor = self.selectedTheme.backgroundColor
         traits.showsStatusBar = self.statusBarVisibleSwitch.on
-        
-        notify(notification, traits: traits, animation: self.selectedAnimation) {
+        return traits
+    }
+    
+    @IBAction func showNotification(sender: UIButton) {
+        self.present(notification: Notification(text: self.textField.text!, subtext: self.subtextField.text), animation: self.selectedAnimation) {
             print("Presented")
         } .on(.Tap) { _ in
             print("OnTapOnce")
