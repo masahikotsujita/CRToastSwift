@@ -59,7 +59,7 @@ public func present<Notification: NotificationType>(notification notification: N
     options[kCRToastTextKey]                            = notification.text
     options[kCRToastTextAlignmentKey]                   = traits.textAlignment.rawValue
     options[kCRToastFontKey]                            = traits.textFont
-    options[kCRToastTextColorKey]                       = colorByUnwrappingAdaptableValue(traits.textColor, forBackgroundColor: traits.backgroundColor)
+    options[kCRToastTextColorKey]                       = traits.textColor
     options[kCRToastTextMaxNumberOfLinesKey]            = traits.textMaxNumberOfLines
     options[kCRToastTextShadowColorKey]                 = traits.textShadowColor
     options[kCRToastTextShadowOffsetKey]                = NSValue(CGSize: traits.textShadowOffset)
@@ -69,7 +69,7 @@ public func present<Notification: NotificationType>(notification notification: N
     }
     options[kCRToastSubtitleTextAlignmentKey]           = traits.subtextAlignment.rawValue
     options[kCRToastSubtitleFontKey]                    = traits.subtextFont
-    options[kCRToastSubtitleTextColorKey]               = colorByUnwrappingAdaptableValue(traits.subtextColor, forBackgroundColor: traits.backgroundColor)
+    options[kCRToastSubtitleTextColorKey]               = traits.subtextColor
     options[kCRToastSubtitleTextMaxNumberOfLinesKey]    = traits.subtextMaxNumberOfLines
     options[kCRToastSubtitleTextShadowColorKey]         = traits.subtextShadowColor
     options[kCRToastSubtitleTextShadowOffsetKey]        = NSValue(CGSize: traits.subtextShadowOffset)
@@ -90,18 +90,17 @@ public func present<Notification: NotificationType>(notification notification: N
     options[kCRToastNotificationPreferredPaddingKey]    = traits.preferredPadding
     
     options[kCRToastUnderStatusBarKey]                  = traits.showsStatusBar
-    options[kCRToastStatusBarStyleKey]                  = statusBarStyleByUnwrappingAdaptableValue(traits.statusBarStyle, forBackgroundColor: traits.backgroundColor).rawValue
+    options[kCRToastStatusBarStyleKey]                  = traits.statusBarStyle.rawValue
     
     options[kCRToastImageKey]                           = traits.image
-    options[kCRToastImageTintKey]                       = traits.imageTintColor.flatMap {
-        return colorByUnwrappingAdaptableValue($0, forBackgroundColor: traits.backgroundColor)
-    }
+    options[kCRToastImageTintKey]                       = traits.imageTintColor
+    
     options[kCRToastImageAlignmentKey]                  = traits.imageAlignment.rawValue
     options[kCRToastImageContentModeKey]                = traits.imageContentMode.rawValue
     
     options[kCRToastShowActivityIndicatorKey]           = traits.showsActivityIndicatorView
     options[kCRToastActivityIndicatorAlignmentKey]      = traits.activityIndicatorAlignment.rawValue
-    options[kCRToastActivityIndicatorViewStyleKey]      = activityIndicatorViewStyleByUnrappingAdaptableValue(traits.activityIndicatorViewStyle, forBackgroundColor: traits.backgroundColor).rawValue
+    options[kCRToastActivityIndicatorViewStyleKey]      = traits.activityIndicatorViewStyle.rawValue
     
     options[kCRToastKeepNavigationBarBorderKey]         = traits.keepsNavigationBarBorder
     

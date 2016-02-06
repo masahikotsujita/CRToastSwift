@@ -26,70 +26,8 @@
 import Foundation
 import CRToast
 
-public enum Adaptable<Value> {
-
-    case Fixed(_: Value)
-    case Adapting
-
-    public init(_ value: Value) {
-        self = .Fixed(value)
-    }
-    
-}
-
-extension UIColor {
-
-    var isLightColor: Bool {
-        var white = CGFloat()
-        guard self.getWhite(&white, alpha: nil) else {
-            fatalError("Couldn't get whiteness from color \(self)")
-        }
-        return white >= 0.5
-    }
-    
-}
-
 func synchronized(lock: NSLocking, @noescape handler: () -> Void) {
     lock.lock()
     handler()
     lock.unlock()
-}
-
-func colorByUnwrappingAdaptableValue(adaptableValue: Adaptable<UIColor>, forBackgroundColor backgroundColor: UIColor) -> UIColor {
-    switch adaptableValue {
-    case let .Fixed(value):
-        return value
-    case .Adapting:
-        if backgroundColor.isLightColor {
-            return .blackColor()
-        } else {
-            return .whiteColor()
-        }
-    }
-}
-
-func statusBarStyleByUnwrappingAdaptableValue(adaptableValue: Adaptable<UIStatusBarStyle>, forBackgroundColor backgroundColor: UIColor) -> UIStatusBarStyle {
-    switch adaptableValue {
-    case let .Fixed(value):
-        return value
-    case .Adapting:
-        if backgroundColor.isLightColor {
-            return .Default
-        } else {
-            return .LightContent
-        }
-    }
-}
-
-func activityIndicatorViewStyleByUnrappingAdaptableValue(adaptableValue: Adaptable<UIActivityIndicatorViewStyle>, forBackgroundColor backgroundColor: UIColor) -> UIActivityIndicatorViewStyle {
-    switch adaptableValue {
-    case let .Fixed(value):
-        return value
-    case .Adapting:
-        if backgroundColor.isLightColor {
-            return .Gray
-        } else {
-            return .White
-        }
-    }
 }

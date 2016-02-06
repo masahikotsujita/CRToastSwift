@@ -93,7 +93,6 @@ class ViewController: UIViewController, PresenterType {
     func traits(forNotification _: Notification) -> NotificationTraits {
         var traits = NotificationTraits()
         traits.image = self.selectedTheme.image
-        traits.imageTintColor = .Adapting
         traits.backgroundColor = self.selectedTheme.backgroundColor
         traits.showsStatusBar = self.statusBarVisibleSwitch.on
         return traits

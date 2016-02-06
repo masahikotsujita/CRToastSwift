@@ -21,7 +21,7 @@ public struct NotificationTraits {
     
     public var textFont = UIFont.boldSystemFontOfSize(18.0)
     
-    public var textColor: Adaptable<UIColor> = .Adapting
+    public var textColor: UIColor = .whiteColor()
     
     public var textMaxNumberOfLines: Int = 0
     
@@ -33,7 +33,7 @@ public struct NotificationTraits {
     
     public var subtextFont = UIFont.systemFontOfSize(14.0)
     
-    public var subtextColor: Adaptable<UIColor> = .Adapting
+    public var subtextColor: UIColor = .whiteColor()
     
     public var subtextMaxNumberOfLines: Int = 0
     
@@ -64,13 +64,13 @@ public struct NotificationTraits {
     
     public var showsStatusBar = false
     
-    public var statusBarStyle: Adaptable<UIStatusBarStyle> = .Adapting
+    public var statusBarStyle: UIStatusBarStyle = .Default
     
     public var preferredPadding: CGFloat = 0
     
     public var image: UIImage?
     
-    public var imageTintColor: Adaptable<UIColor>?
+    public var imageTintColor: UIColor?
     
     public var imageAlignment: CRToastAccessoryViewAlignment = .Left
     
@@ -82,7 +82,7 @@ public struct NotificationTraits {
     
     public var showsActivityIndicatorView = false
     
-    public var activityIndicatorViewStyle: Adaptable<UIActivityIndicatorViewStyle> = .Adapting
+    public var activityIndicatorViewStyle: UIActivityIndicatorViewStyle = .Gray
     
     public var activityIndicatorAlignment: AccessoryViewAlignment = .Left
     
