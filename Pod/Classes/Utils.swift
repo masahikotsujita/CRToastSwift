@@ -26,8 +26,8 @@
 import Foundation
 import CRToast
 
-func synchronized(lock: NSLocking, @noescape handler: () -> Void) {
+func synchronized(lock: NSLocking, @noescape body: () -> Void) {
     lock.lock()
-    handler()
+    body()
     lock.unlock()
 }
