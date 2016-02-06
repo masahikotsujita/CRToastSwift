@@ -43,18 +43,6 @@ public extension PresenterType {
     
 }
 
-public struct Presenter<Notification: NotificationType>: PresenterType {
-    
-    public init() {
-        
-    }
-    
-    public func traits(forNotification notification: Notification) -> NotificationTraits {
-        return NotificationTraits()
-    }
-    
-}
-
 public func present<Notification: NotificationType>(notification notification: Notification, traits: NotificationTraits = NotificationTraits(), animation: Animation = .Linear, presentationTimeInterval: NSTimeInterval? = 2.0, handler: () -> Void) -> Presentation<Notification> {
     
     // Initializing Presentation Objects and Configurings
