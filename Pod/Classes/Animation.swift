@@ -26,17 +26,17 @@
 import UIKit
 import CRToast
 
-public typealias AnimationType      = CRToastAnimationType
+public typealias AnimationCurve     = CRToastAnimationType
 public typealias AnimationDirection = CRToastAnimationDirection
 public typealias PresentationType   = CRToastPresentationType
 
 public struct Animation {
     
-    public init(inAnimation: AnimationType = .Linear, inDirection: AnimationDirection = .Top, inDuration: NSTimeInterval = 0.4, outAnimation: AnimationType = .Linear , outDirection: AnimationDirection = .Top, outDuration: NSTimeInterval = 0.4, springDamping: CGFloat = 0.6, springInitialVelocity: CGFloat = 1.0, gravityMagnitude: CGFloat = 1.0, presentationType: PresentationType = .Cover) {
-        self.inType                 = inAnimation
+    public init(inCurve: AnimationCurve = .Linear, inDirection: AnimationDirection = .Top, inDuration: NSTimeInterval = 0.4, outCurve: AnimationCurve = .Linear , outDirection: AnimationDirection = .Top, outDuration: NSTimeInterval = 0.4, springDamping: CGFloat = 0.6, springInitialVelocity: CGFloat = 1.0, gravityMagnitude: CGFloat = 1.0, presentationType: PresentationType = .Cover) {
+        self.inCurve                = inCurve
         self.inDirection            = inDirection
         self.inDuration             = inDuration
-        self.outType                = outAnimation
+        self.outCurve               = outCurve
         self.outDirection           = outDirection
         self.outDuration            = outDuration
         self.springDamping          = springDamping
@@ -45,13 +45,13 @@ public struct Animation {
         self.presentationType       = presentationType
     }
     
-    public let inType: AnimationType
+    public let inCurve: AnimationCurve
     
     public let inDirection: AnimationDirection
     
     public let inDuration: NSTimeInterval
     
-    public let outType: AnimationType
+    public let outCurve: AnimationCurve
     
     public let outDirection: AnimationDirection
     
@@ -74,15 +74,15 @@ public struct Animation {
     public static let Gravity: Animation = .Gravity()
     
     public static func Linear(inDirection inDirection: AnimationDirection = .Top, inDuration: NSTimeInterval = 0.4, outDirection: AnimationDirection = .Top, outDuration: NSTimeInterval = 0.4, presentationType: PresentationType = .Cover) -> Animation {
-        return Animation(inAnimation: .Linear, inDirection: inDirection, inDuration: inDuration, outAnimation: .Linear, outDirection: outDirection, outDuration: outDuration, presentationType: presentationType)
+        return Animation(inCurve: .Linear, inDirection: inDirection, inDuration: inDuration, outCurve: .Linear, outDirection: outDirection, outDuration: outDuration, presentationType: presentationType)
     }
     
     public static func Spring(inDirection inDirection: AnimationDirection = .Top, inDuration: NSTimeInterval = 0.4, outDirection: AnimationDirection = .Top, outDuration: NSTimeInterval = 0.4, damping: CGFloat = 0.6, initialVelocity: CGFloat = 1.0, presentationType: PresentationType = .Cover) -> Animation {
-        return Animation(inAnimation: .Spring, inDirection: inDirection, inDuration: inDuration, outAnimation: .Spring, outDirection: outDirection, outDuration: outDuration, springDamping: damping, springInitialVelocity: initialVelocity, presentationType: presentationType)
+        return Animation(inCurve: .Spring, inDirection: inDirection, inDuration: inDuration, outCurve: .Spring, outDirection: outDirection, outDuration: outDuration, springDamping: damping, springInitialVelocity: initialVelocity, presentationType: presentationType)
     }
     
     public static func Gravity(inDirection inDirection: AnimationDirection = .Top, inDuration: NSTimeInterval = 0.4, outDirection: AnimationDirection = .Top, outDuration: NSTimeInterval = 0.4, magnitude: CGFloat = 1.0, presentationType: PresentationType = .Cover) -> Animation {
-        return Animation(inAnimation: .Gravity, inDirection: inDirection, inDuration: inDuration, outAnimation: .Gravity, outDirection: outDirection, outDuration: outDuration, gravityMagnitude: magnitude, presentationType: presentationType)
+        return Animation(inCurve: .Gravity, inDirection: inDirection, inDuration: inDuration, outCurve: .Gravity, outDirection: outDirection, outDuration: outDuration, gravityMagnitude: magnitude, presentationType: presentationType)
     }
     
 }

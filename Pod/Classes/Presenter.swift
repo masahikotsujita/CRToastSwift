@@ -111,11 +111,11 @@ public func present<Notification: NotificationType>(notification notification: N
     
     // Configuring Animations
     
-    options[kCRToastAnimationInTypeKey]                 = animation.inType.rawValue
+    options[kCRToastAnimationInTypeKey]                 = animation.inCurve.rawValue
     options[kCRToastAnimationInDirectionKey]            = animation.inDirection.rawValue
     options[kCRToastAnimationInTimeIntervalKey]         = animation.inDuration
     
-    options[kCRToastAnimationOutTypeKey]                = animation.outType.rawValue
+    options[kCRToastAnimationOutTypeKey]                = animation.outCurve.rawValue
     options[kCRToastAnimationOutDirectionKey]           = animation.outDirection.rawValue
     options[kCRToastAnimationOutTimeIntervalKey]        = animation.outDuration
     
