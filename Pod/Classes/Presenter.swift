@@ -123,7 +123,7 @@ public func present<Notification: NotificationType>(notification notification: N
     options[kCRToastAnimationSpringInitialVelocityKey]  = animation.springInitialVelocity
     options[kCRToastAnimationGravityMagnitudeKey]       = animation.gravityMagnitude
     
-    options[kCRToastNotificationPresentationTypeKey]    = animation.presentationType.rawValue
+    options[kCRToastNotificationPresentationTypeKey]    = animation.backgroundHidingStyle.rawValue
     
     // Configuring User Interactions
     
