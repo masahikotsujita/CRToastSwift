@@ -1,5 +1,5 @@
 //
-//  Presenter.swift
+//  CRToastSwift.swift
 //  CRToastSwift
 //
 //  Copyright (c) 2015 Masahiko Tsujita <tsujitamasahiko.dev@icloud.com>
@@ -26,25 +26,7 @@
 import Foundation
 import CRToast
 
-public protocol PresenterType {
-    
-    typealias Notification: NotificationType
-    
-    func traits(forNotification notification: Notification) -> NotificationTraits
-    
-}
-
-public extension PresenterType {
-    
-    public func present(notification notification: Self.Notification, animation: Animation = .Linear, presentationTimeInterval: NSTimeInterval? = 2.0, handler: () -> Void) -> Presentation<Self.Notification> {
-        let presentation = CRToastSwift.present(notification: notification, traits: self.traits(forNotification: notification), animation: animation, presentationTimeInterval: presentationTimeInterval, handler: handler)
-        return presentation
-    }
-    
-}
-
 public func present<Notification: NotificationType>(notification notification: Notification, traits: NotificationTraits = NotificationTraits(), animation: Animation = .Linear, presentationTimeInterval: NSTimeInterval? = 2.0, handler: () -> Void) -> Presentation<Notification> {
-    
     // Initializing Presentation Objects and Configurings
     
     let identifier = NSUUID().UUIDString
@@ -147,4 +129,9 @@ public func present<Notification: NotificationType>(notification notification: N
     }
     
     return presentation
+}
+
+public func present<Notification: NotificationType, TraitsMap: NotificationTraitsMapping where Notification == TraitsMap.Notification>(notification notification: Notification, traitsMap: TraitsMap, animation: Animation = .Linear, presentationTimeInterval: NSTimeInterval? = 2.0, handler: () -> Void) -> Presentation<Notification> {
+    let traits = traitsMap.traits(forNotification: notification)
+    return present(notification: notification, traits: traits, animation: animation, presentationTimeInterval: presentationTimeInterval, handler: handler)
 }

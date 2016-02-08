@@ -7,51 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		03872BF037D303B4AAA71E9CFF732D91 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E0868C9E700371C9C64E18A1F4109C /* Notification.swift */; };
+		081A64CA13FA582177ADD4BB68277BE5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 324E93C3577451E9859B70B5D3E5ECA6 /* UIKit.framework */; };
+		09745575E59D84B9435E1BC947FD9095 /* NotificationTraitsMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECC1701359C5658B26191F12D9CC90B /* NotificationTraitsMapping.swift */; };
 		1659191D5F0DE7C23A4D8043B185276D /* CRToastWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 31905F9C68BA18DBB45DA64781922200 /* CRToastWindow.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		1E4BCC9481C5EE553AAF8D801C8B50D7 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDA0E5675C2038148DB081E3BBBC4CB /* Event.swift */; };
+		226DF8CB7AC3F7966006C58B29A3B083 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626A07D75A06C66862D5EA0C1C2162FB /* Utils.swift */; };
+		2D7DA67F4206AF96F4D7BFE6F2C0A66A /* CRToast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C96AF33B6E76058126F623C108124A16 /* CRToast.framework */; };
 		33718000E841CCF1D4983A5A0F1E7BFF /* CRToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8017B99BABD5CA7CDB70A3F2117C76C5 /* CRToastView.m */; };
 		448C6B6A8253D8288302B02391E981F9 /* CRToastManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E7139809EBD1037FC80C1DA1EE0C8615 /* CRToastManager.m */; };
 		50E3AE089BA5FDB776F72AD7A5ADD115 /* CRToast-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 339653633508D6732B1210577D0CB5B4 /* CRToast-dummy.m */; };
 		53A54F7F0610B94AC03C33862D547590 /* Pods-CRToastSwift_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CED0B6FECF0B57BA3C71152C55209BA1 /* Pods-CRToastSwift_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		54098F4E77479FF59BDFE5F958DB8161 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03B120594C1F1016078343F58733D20 /* Event.swift */; };
-		5E245E5E4730D25E527CF4B91651B39D /* CRToastSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 42294DD34C4C98A4B2E4D52C0EE3F0D7 /* CRToastSwift-dummy.m */; };
+		553367ECAD87AE1506105296A54C7CC5 /* CRToastSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C27A9D2867A992C97C2A27F234FED1F /* CRToastSwift.swift */; };
+		56980CC8BC7ED89305F96769A44CA5A1 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E9678546EAF06081398C83AE4FAD19 /* Animation.swift */; };
 		5F5A455F52E16F2C69AE4A4243B5E0AF /* Pods-CRToastSwift_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F6097562BEA2217ADE81C7407FA7F4E0 /* Pods-CRToastSwift_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		624E4F5C878188DF9123FF58E2815A40 /* NotificationTraits.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71DA7594E3225ADE1850D6CA02B0E7F /* NotificationTraits.swift */; };
 		70F8D120A6B7FD27BE9E3DC50C5A78D1 /* Pods-CRToastSwift_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D5058EC8195885FDA20101B13F8F5E /* Pods-CRToastSwift_Tests-dummy.m */; };
-		7154379183C5F96CBA8F069DDB8E44A7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 324E93C3577451E9859B70B5D3E5ECA6 /* UIKit.framework */; };
 		74B4EC789D9A9A0DD3039008F883B4FA /* CRToastManager.h in Headers */ = {isa = PBXBuildFile; fileRef = AEC401D3D57A44AF7D469A8CAC496745 /* CRToastManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		798E8C0AE149548697C7C5BCAB85DAEF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AE8A5A62136B1889D2E6B6EE2A60B51 /* Foundation.framework */; };
 		8EF751B1EC63590AA8D7FC6EFD0F5A3E /* CRToast-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 735184D448E7CE182B9F2FD8AD1B3C66 /* CRToast-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		918775EF3F2D27C70A5A756B23C695B9 /* CRToastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E33E66B8D42E0F9EB5333FAA855270 /* CRToastViewController.m */; };
+		9203DD80E0C1C957F4D7A439066BA0F6 /* Interaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122E17783C544BE516F467ACCB83AE0E /* Interaction.swift */; };
 		98FC46DD2C947BE365B0F0E3152503C6 /* Pods-CRToastSwift_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD59708A440B936C5FFD505C3534DEE /* Pods-CRToastSwift_Example-dummy.m */; };
 		9A7799F638372CEC1C2C75F09A608137 /* CRToastWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = B573BBBF842A26D1915B519E201C0C50 /* CRToastWindow.m */; };
-		9C173E8005FF803FE5359F82C21379B1 /* CRToast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C96AF33B6E76058126F623C108124A16 /* CRToast.framework */; };
 		9CA6664E6E7792D7B4CCF35697F7AC0A /* CRToast.h in Headers */ = {isa = PBXBuildFile; fileRef = B02827393802D18C7A81644A918F1826 /* CRToast.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AA0B283F5FC12919C1D9707994063848 /* Presentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822C4879A3D09A5BF73A60235565AA3C /* Presentation.swift */; };
 		AA2F467FD21E2ECACAD2DE50C86D7EF8 /* CRToastConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = EE0283AB1D96604BECA7675DFC0D1C1A /* CRToastConfig.m */; };
-		AD93D920B00A58507752EA3EC067F3A9 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBBACFBD7646F75069E33A8DC861D91 /* Animation.swift */; };
-		AF66A953C0BACA1B884EAD0C04C720A2 /* CRToastSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B2725F7A31188ADE3D0A13C37CB058B4 /* CRToastSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B82288A480251B40A1DAE7DC66C48DEA /* CRToastView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B76F9CD4C7C55B081BDDCB282597CC9 /* CRToastView.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		CA3872915A6165B3860ADF5500523205 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AE8A5A62136B1889D2E6B6EE2A60B51 /* Foundation.framework */; };
-		CC752E57FEC2D6D0EE00864F0FAD4714 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66ADE39E5C43DC0A2E04076C11CC575 /* Utils.swift */; };
-		D6ABCB0E1C64E942004D612D /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6ABCB0C1C64E93F004D612D /* Presenter.swift */; };
-		D6ABCB101C64F8AF004D612D /* Interaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6ABCB0F1C64F8AF004D612D /* Interaction.swift */; };
+		CC652A28C61F40A4C788337F3F5E4F32 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AE8A5A62136B1889D2E6B6EE2A60B51 /* Foundation.framework */; };
+		DA765A649A6DB54EC193D426479FE0E7 /* NotificationTraits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384A44D3D46306E394CF58576BA70D83 /* NotificationTraits.swift */; };
 		E14015E3BDEEB18019ADE2A9FEA1D4D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AE8A5A62136B1889D2E6B6EE2A60B51 /* Foundation.framework */; };
 		E558E1943F0D720389E22F3F72C3DE58 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AE8A5A62136B1889D2E6B6EE2A60B51 /* Foundation.framework */; };
+		F0AC484A3CC96145535FE6F28E4FE758 /* Presentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4D32ADC03C98D97241DB52D7A15C42 /* Presentation.swift */; };
 		F1BC26919B3FE8257659DC9027FBD39A /* CRToastConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 2072040B244854464DCBBB3A138D8729 /* CRToastConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F2A6A9F7D28D3C5185C45E67A2CC0B79 /* CRToastViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9796152A67FC07E5AB4114EDD6E7E4F6 /* CRToastViewController.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		F7C5DCFAC707D9A4ED12E6B06BE7A31B /* CRToastSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B2725F7A31188ADE3D0A13C37CB058B4 /* CRToastSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F93683D1D9002945AF71992F1AE2D433 /* CRToastLayoutHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 5070466A3FAD7B5D36F96C89ECCB7147 /* CRToastLayoutHelpers.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		F93C7538129FDDFB3DDD1B398FF37553 /* CRToastSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 42294DD34C4C98A4B2E4D52C0EE3F0D7 /* CRToastSwift-dummy.m */; };
+		FEAD7550F9652034B0EDA6AC3FA2A417 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF031A6A0F67812017F709C83C339CB9 /* Notification.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		00DE6CE51AB2CC5DAFBF5351C9FDE0FD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AB7360021CAA2913AC77DDE689D5A2AE;
-			remoteInfo = CRToast;
-		};
-		05E8B3D6C0F985B837AC0A972BBA1559 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
@@ -69,20 +63,28 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 77132F87A6DA6480F538025919D3CFA8;
+			remoteGlobalIDString = 3BFAE15A77BDBF5C6C533F91F4B4DFF3;
 			remoteInfo = CRToastSwift;
+		};
+		BFE67FE26108A820F9D935CDFD27DBBD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AB7360021CAA2913AC77DDE689D5A2AE;
+			remoteInfo = CRToast;
 		};
 		ED4083DA824DD302A7C63BDDA9AB396B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 77132F87A6DA6480F538025919D3CFA8;
+			remoteGlobalIDString = 3BFAE15A77BDBF5C6C533F91F4B4DFF3;
 			remoteInfo = CRToastSwift;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		09786BC7EC6E0FBD5C4A4240103AE22D /* CRToastSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CRToastSwift-prefix.pch"; sourceTree = "<group>"; };
+		122E17783C544BE516F467ACCB83AE0E /* Interaction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Interaction.swift; sourceTree = "<group>"; };
 		1333DC346CB6189321BCD079EC5B1EE6 /* Pods-CRToastSwift_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CRToastSwift_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		2072040B244854464DCBBB3A138D8729 /* CRToastConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CRToastConfig.h; path = CRToast/CRToastConfig.h; sourceTree = "<group>"; };
 		22C683608BF057B70682BF723CA54742 /* CRToast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CRToast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,7 +96,9 @@
 		324E93C3577451E9859B70B5D3E5ECA6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		339653633508D6732B1210577D0CB5B4 /* CRToast-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CRToast-dummy.m"; sourceTree = "<group>"; };
 		3758D67D9A7282A309029E5C303D6091 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		384A44D3D46306E394CF58576BA70D83 /* NotificationTraits.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NotificationTraits.swift; sourceTree = "<group>"; };
 		38DB8BF8F822F89D6F036A7DB9C88E88 /* Pods-CRToastSwift_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CRToastSwift_Example.release.xcconfig"; sourceTree = "<group>"; };
+		39E9678546EAF06081398C83AE4FAD19 /* Animation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		3B76F9CD4C7C55B081BDDCB282597CC9 /* CRToastView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CRToastView.h; path = CRToast/CRToastView.h; sourceTree = "<group>"; };
 		40ACC65F9DA6D6803C8581333FE12987 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42294DD34C4C98A4B2E4D52C0EE3F0D7 /* CRToastSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CRToastSwift-dummy.m"; sourceTree = "<group>"; };
@@ -103,12 +107,14 @@
 		4AE8A5A62136B1889D2E6B6EE2A60B51 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		5070466A3FAD7B5D36F96C89ECCB7147 /* CRToastLayoutHelpers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CRToastLayoutHelpers.h; path = CRToast/CRToastLayoutHelpers.h; sourceTree = "<group>"; };
 		513FBED57B4A4F6DEACD326A0D90BA02 /* CRToastSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = CRToastSwift.modulemap; sourceTree = "<group>"; };
-		58E0868C9E700371C9C64E18A1F4109C /* Notification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		5C27A9D2867A992C97C2A27F234FED1F /* CRToastSwift.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CRToastSwift.swift; sourceTree = "<group>"; };
+		626A07D75A06C66862D5EA0C1C2162FB /* Utils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		6C62169BC5A61076DCE0497D2BA20E03 /* Pods-CRToastSwift_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-CRToastSwift_Tests.modulemap"; sourceTree = "<group>"; };
 		735184D448E7CE182B9F2FD8AD1B3C66 /* CRToast-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CRToast-umbrella.h"; sourceTree = "<group>"; };
 		76E33E66B8D42E0F9EB5333FAA855270 /* CRToastViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CRToastViewController.m; path = CRToast/CRToastViewController.m; sourceTree = "<group>"; };
+		7CDA0E5675C2038148DB081E3BBBC4CB /* Event.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		7ECC1701359C5658B26191F12D9CC90B /* NotificationTraitsMapping.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NotificationTraitsMapping.swift; sourceTree = "<group>"; };
 		8017B99BABD5CA7CDB70A3F2117C76C5 /* CRToastView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CRToastView.m; path = CRToast/CRToastView.m; sourceTree = "<group>"; };
-		822C4879A3D09A5BF73A60235565AA3C /* Presentation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Presentation.swift; sourceTree = "<group>"; };
 		9319DD5290F79EA7A95B66A1DD08707C /* Pods-CRToastSwift_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CRToastSwift_Tests-resources.sh"; sourceTree = "<group>"; };
 		9796152A67FC07E5AB4114EDD6E7E4F6 /* CRToastViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CRToastViewController.h; path = CRToast/CRToastViewController.h; sourceTree = "<group>"; };
 		A364E1EACCB82D8432346BC34F2FEF84 /* Pods-CRToastSwift_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CRToastSwift_Example-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -116,27 +122,23 @@
 		A53D72C7DC93E7A9C99996C56A73F996 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A55ABD5E53A334EA22DA1E6471EC4C2F /* CRToast.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = CRToast.modulemap; sourceTree = "<group>"; };
 		AEC401D3D57A44AF7D469A8CAC496745 /* CRToastManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CRToastManager.h; path = CRToast/CRToastManager.h; sourceTree = "<group>"; };
+		AF031A6A0F67812017F709C83C339CB9 /* Notification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		AF4D32ADC03C98D97241DB52D7A15C42 /* Presentation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Presentation.swift; sourceTree = "<group>"; };
 		B02827393802D18C7A81644A918F1826 /* CRToast.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CRToast.h; path = CRToast/CRToast.h; sourceTree = "<group>"; };
 		B2725F7A31188ADE3D0A13C37CB058B4 /* CRToastSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CRToastSwift-umbrella.h"; sourceTree = "<group>"; };
 		B3525497229C0ED1DFD4D34CF2C74FA7 /* Pods-CRToastSwift_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CRToastSwift_Example-frameworks.sh"; sourceTree = "<group>"; };
 		B573BBBF842A26D1915B519E201C0C50 /* CRToastWindow.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CRToastWindow.m; path = CRToast/CRToastWindow.m; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		BFBBACFBD7646F75069E33A8DC861D91 /* Animation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		C3BB2109172DF788D45A6E0C40D6D764 /* Pods_CRToastSwift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CRToastSwift_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C66ADE39E5C43DC0A2E04076C11CC575 /* Utils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		C96AF33B6E76058126F623C108124A16 /* CRToast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CRToast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE31EC8BB757798132570537B5CF5FCA /* CRToast.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CRToast.xcconfig; sourceTree = "<group>"; };
 		CED0B6FECF0B57BA3C71152C55209BA1 /* Pods-CRToastSwift_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CRToastSwift_Example-umbrella.h"; sourceTree = "<group>"; };
-		D03B120594C1F1016078343F58733D20 /* Event.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		D6ABCB0C1C64E93F004D612D /* Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
-		D6ABCB0F1C64F8AF004D612D /* Interaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interaction.swift; sourceTree = "<group>"; };
 		DA506EC7AE52F379E99B1CAACA8936AA /* Pods-CRToastSwift_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CRToastSwift_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		DA69FADFE98E5B6062CB9965AF34C3C9 /* Pods_CRToastSwift_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CRToastSwift_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE9F00EB26AF7980000BF237F1E3B1CE /* Pods-CRToastSwift_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CRToastSwift_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		E29CF49E8F5E8443C3B3FD8F26EDC93E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E58EEC8CC5D29E8438F68377731C1DDE /* Pods-CRToastSwift_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CRToastSwift_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		E7139809EBD1037FC80C1DA1EE0C8615 /* CRToastManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CRToastManager.m; path = CRToast/CRToastManager.m; sourceTree = "<group>"; };
-		E71DA7594E3225ADE1850D6CA02B0E7F /* NotificationTraits.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NotificationTraits.swift; sourceTree = "<group>"; };
 		EC08BE1E7D7C13C837ACE1AB0E6335A9 /* CRToastSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CRToastSwift.xcconfig; sourceTree = "<group>"; };
 		EE0283AB1D96604BECA7675DFC0D1C1A /* CRToastConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CRToastConfig.m; path = CRToast/CRToastConfig.m; sourceTree = "<group>"; };
 		F0B099F8E3D026E37CC2A18C6418AEA2 /* CRToast-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CRToast-prefix.pch"; sourceTree = "<group>"; };
@@ -169,13 +171,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FAFA3F3900988B4BA9EFE57928D48DE1 /* Frameworks */ = {
+		87B5CF6FBB3064032D6932CC9A5D6476 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C173E8005FF803FE5359F82C21379B1 /* CRToast.framework in Frameworks */,
-				798E8C0AE149548697C7C5BCAB85DAEF /* Foundation.framework in Frameworks */,
-				7154379183C5F96CBA8F069DDB8E44A7 /* UIKit.framework in Frameworks */,
+				2D7DA67F4206AF96F4D7BFE6F2C0A66A /* CRToast.framework in Frameworks */,
+				CC652A28C61F40A4C788337F3F5E4F32 /* Foundation.framework in Frameworks */,
+				081A64CA13FA582177ADD4BB68277BE5 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,26 +280,11 @@
 		93F08E939E62D739DD8A0D24FBBAA0CE /* CRToastSwift */ = {
 			isa = PBXGroup;
 			children = (
-				DB575FBF12372DED8AE90B7A86586CE5 /* Pod */,
+				C5A3A1819264E9897F83B06C80C8A7E7 /* Pod */,
 				18B6618262DD5B49B4266F623D2C90C2 /* Support Files */,
 			);
 			name = CRToastSwift;
 			path = ../..;
-			sourceTree = "<group>";
-		};
-		95D0A8E866D89135CC44930B02884888 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				BFBBACFBD7646F75069E33A8DC861D91 /* Animation.swift */,
-				D6ABCB0C1C64E93F004D612D /* Presenter.swift */,
-				D6ABCB0F1C64F8AF004D612D /* Interaction.swift */,
-				D03B120594C1F1016078343F58733D20 /* Event.swift */,
-				58E0868C9E700371C9C64E18A1F4109C /* Notification.swift */,
-				E71DA7594E3225ADE1850D6CA02B0E7F /* NotificationTraits.swift */,
-				822C4879A3D09A5BF73A60235565AA3C /* Presentation.swift */,
-				C66ADE39E5C43DC0A2E04076C11CC575 /* Utils.swift */,
-			);
-			path = Classes;
 			sourceTree = "<group>";
 		};
 		96A9345E0ECAAE6FD03F2EB8FB94FC2A /* Pods-CRToastSwift_Example */ = {
@@ -329,10 +316,26 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DB575FBF12372DED8AE90B7A86586CE5 /* Pod */ = {
+		B59BE47B80D9CD5138A49B0F94BA0092 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				95D0A8E866D89135CC44930B02884888 /* Classes */,
+				39E9678546EAF06081398C83AE4FAD19 /* Animation.swift */,
+				5C27A9D2867A992C97C2A27F234FED1F /* CRToastSwift.swift */,
+				7CDA0E5675C2038148DB081E3BBBC4CB /* Event.swift */,
+				122E17783C544BE516F467ACCB83AE0E /* Interaction.swift */,
+				AF031A6A0F67812017F709C83C339CB9 /* Notification.swift */,
+				384A44D3D46306E394CF58576BA70D83 /* NotificationTraits.swift */,
+				7ECC1701359C5658B26191F12D9CC90B /* NotificationTraitsMapping.swift */,
+				AF4D32ADC03C98D97241DB52D7A15C42 /* Presentation.swift */,
+				626A07D75A06C66862D5EA0C1C2162FB /* Utils.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		C5A3A1819264E9897F83B06C80C8A7E7 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				B59BE47B80D9CD5138A49B0F94BA0092 /* Classes */,
 			);
 			path = Pod;
 			sourceTree = "<group>";
@@ -368,11 +371,11 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		1DCE788A4605640E667B5FDF590C6973 /* Headers */ = {
+		4D160F29AD2A527BB6F031787E2DE9AF /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF66A953C0BACA1B884EAD0C04C720A2 /* CRToastSwift-umbrella.h in Headers */,
+				F7C5DCFAC707D9A4ED12E6B06BE7A31B /* CRToastSwift-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,18 +413,18 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		77132F87A6DA6480F538025919D3CFA8 /* CRToastSwift */ = {
+		3BFAE15A77BDBF5C6C533F91F4B4DFF3 /* CRToastSwift */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A16B7C8E0123B27686E49CFFEEB86198 /* Build configuration list for PBXNativeTarget "CRToastSwift" */;
+			buildConfigurationList = 9B257AADB939F74ED060A01250D21517 /* Build configuration list for PBXNativeTarget "CRToastSwift" */;
 			buildPhases = (
-				07C283EC8CBCA0470DDAD5A44339E44F /* Sources */,
-				FAFA3F3900988B4BA9EFE57928D48DE1 /* Frameworks */,
-				1DCE788A4605640E667B5FDF590C6973 /* Headers */,
+				4A55915A5D8DC2581DE1BBCAA19FCDF8 /* Sources */,
+				87B5CF6FBB3064032D6932CC9A5D6476 /* Frameworks */,
+				4D160F29AD2A527BB6F031787E2DE9AF /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				5B916C764DE96DB1BCB888D8DE2BFF72 /* PBXTargetDependency */,
+				923215768B578E8B688B602BDFDFED69 /* PBXTargetDependency */,
 			);
 			name = CRToastSwift;
 			productName = CRToastSwift;
@@ -489,7 +492,7 @@
 		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
@@ -505,7 +508,7 @@
 			projectRoot = "";
 			targets = (
 				AB7360021CAA2913AC77DDE689D5A2AE /* CRToast */,
-				77132F87A6DA6480F538025919D3CFA8 /* CRToastSwift */,
+				3BFAE15A77BDBF5C6C533F91F4B4DFF3 /* CRToastSwift */,
 				B20A39069D558A04E3C98E6210D2AF15 /* Pods-CRToastSwift_Example */,
 				B170341F47B77828347820032BF8C101 /* Pods-CRToastSwift_Tests */,
 			);
@@ -513,22 +516,6 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		07C283EC8CBCA0470DDAD5A44339E44F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D6ABCB0E1C64E942004D612D /* Presenter.swift in Sources */,
-				AD93D920B00A58507752EA3EC067F3A9 /* Animation.swift in Sources */,
-				5E245E5E4730D25E527CF4B91651B39D /* CRToastSwift-dummy.m in Sources */,
-				54098F4E77479FF59BDFE5F958DB8161 /* Event.swift in Sources */,
-				03872BF037D303B4AAA71E9CFF732D91 /* Notification.swift in Sources */,
-				624E4F5C878188DF9123FF58E2815A40 /* NotificationTraits.swift in Sources */,
-				D6ABCB101C64F8AF004D612D /* Interaction.swift in Sources */,
-				AA0B283F5FC12919C1D9707994063848 /* Presentation.swift in Sources */,
-				CC752E57FEC2D6D0EE00864F0FAD4714 /* Utils.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1CCE62B87B0DAB94E9054C2588215917 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -547,6 +534,23 @@
 				33718000E841CCF1D4983A5A0F1E7BFF /* CRToastView.m in Sources */,
 				918775EF3F2D27C70A5A756B23C695B9 /* CRToastViewController.m in Sources */,
 				9A7799F638372CEC1C2C75F09A608137 /* CRToastWindow.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A55915A5D8DC2581DE1BBCAA19FCDF8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56980CC8BC7ED89305F96769A44CA5A1 /* Animation.swift in Sources */,
+				F93C7538129FDDFB3DDD1B398FF37553 /* CRToastSwift-dummy.m in Sources */,
+				553367ECAD87AE1506105296A54C7CC5 /* CRToastSwift.swift in Sources */,
+				1E4BCC9481C5EE553AAF8D801C8B50D7 /* Event.swift in Sources */,
+				9203DD80E0C1C957F4D7A439066BA0F6 /* Interaction.swift in Sources */,
+				FEAD7550F9652034B0EDA6AC3FA2A417 /* Notification.swift in Sources */,
+				DA765A649A6DB54EC193D426479FE0E7 /* NotificationTraits.swift in Sources */,
+				09745575E59D84B9435E1BC947FD9095 /* NotificationTraitsMapping.swift in Sources */,
+				F0AC484A3CC96145535FE6F28E4FE758 /* Presentation.swift in Sources */,
+				226DF8CB7AC3F7966006C58B29A3B083 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -570,20 +574,20 @@
 		4CACAE1017C6C9A11A6B386FAB9727F3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = CRToastSwift;
-			target = 77132F87A6DA6480F538025919D3CFA8 /* CRToastSwift */;
+			target = 3BFAE15A77BDBF5C6C533F91F4B4DFF3 /* CRToastSwift */;
 			targetProxy = ED4083DA824DD302A7C63BDDA9AB396B /* PBXContainerItemProxy */;
-		};
-		5B916C764DE96DB1BCB888D8DE2BFF72 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CRToast;
-			target = AB7360021CAA2913AC77DDE689D5A2AE /* CRToast */;
-			targetProxy = 05E8B3D6C0F985B837AC0A972BBA1559 /* PBXContainerItemProxy */;
 		};
 		71DCFD62D7DD4CE14540900BC748AC39 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = CRToastSwift;
-			target = 77132F87A6DA6480F538025919D3CFA8 /* CRToastSwift */;
+			target = 3BFAE15A77BDBF5C6C533F91F4B4DFF3 /* CRToastSwift */;
 			targetProxy = 7E0A11A264CBD8B24B1172D252E36570 /* PBXContainerItemProxy */;
+		};
+		923215768B578E8B688B602BDFDFED69 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CRToast;
+			target = AB7360021CAA2913AC77DDE689D5A2AE /* CRToast */;
+			targetProxy = BFE67FE26108A820F9D935CDFD27DBBD /* PBXContainerItemProxy */;
 		};
 		ACB049558DB3383553347C0593EA3769 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -629,7 +633,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CE31EC8BB757798132570537B5CF5FCA /* CRToast.xcconfig */;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -653,11 +656,37 @@
 			};
 			name = Release;
 		};
+		4762B1D89920F487F8E0DBB3E0B46722 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC08BE1E7D7C13C837ACE1AB0E6335A9 /* CRToastSwift.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/CRToastSwift/CRToastSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CRToastSwift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CRToastSwift/CRToastSwift.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = CRToastSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		4D53C297C26355C4A11621C3D52874D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CE31EC8BB757798132570537B5CF5FCA /* CRToast.xcconfig */;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -675,7 +704,6 @@
 				PRODUCT_NAME = CRToast;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -721,33 +749,6 @@
 			};
 			name = Debug;
 		};
-		73498F8FCEB151484F4C08965AF6A959 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = EC08BE1E7D7C13C837ACE1AB0E6335A9 /* CRToastSwift.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/CRToastSwift/CRToastSwift-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/CRToastSwift/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/CRToastSwift/CRToastSwift.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = CRToastSwift;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		74857149DC1E0D599B8A01A78349A926 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -782,7 +783,7 @@
 			};
 			name = Release;
 		};
-		8B112AC3F58A158D524F60C7A16D0AD1 /* Debug */ = {
+		88A45E3C3D59CAB929F87413F82CD553 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EC08BE1E7D7C13C837ACE1AB0E6335A9 /* CRToastSwift.xcconfig */;
 			buildSettings = {
@@ -940,11 +941,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A16B7C8E0123B27686E49CFFEEB86198 /* Build configuration list for PBXNativeTarget "CRToastSwift" */ = {
+		9B257AADB939F74ED060A01250D21517 /* Build configuration list for PBXNativeTarget "CRToastSwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8B112AC3F58A158D524F60C7A16D0AD1 /* Debug */,
-				73498F8FCEB151484F4C08965AF6A959 /* Release */,
+				88A45E3C3D59CAB929F87413F82CD553 /* Debug */,
+				4762B1D89920F487F8E0DBB3E0B46722 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
