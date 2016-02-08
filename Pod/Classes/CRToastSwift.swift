@@ -199,6 +199,12 @@ public class NotificationController {
     /// The color to tint the image provided. If supplied, `imageWithRenderingMode:` is used with `AlwaysTemplate`.
     public var imageTintColor: UIColor? = nil
     
+    /// The image content mode to use for the image.
+    public var imageContentMode: UIViewContentMode = .Center
+    
+    /// The alignment of the image.
+    public var imageAlignment: AccessoryViewAlignment = .Left
+    
     // MARK: - Configuring Notification Background
     
     /// The background color of the notification.
@@ -353,8 +359,8 @@ public class NotificationController {
         if let image = self.image {
             options[kCRToastImageKey] = image
             options[kCRToastImageTintKey] = self.imageTintColor
-            options[kCRToastImageAlignmentKey] = CRToastAccessoryViewAlignment.Left.rawValue
-            options[kCRToastImageContentModeKey] = UIViewContentMode.Center.rawValue
+            options[kCRToastImageAlignmentKey] = self.imageAlignment.rawValue
+            options[kCRToastImageContentModeKey] = self.imageContentMode.rawValue
         }
         
         options[kCRToastInteractionRespondersKey] = self.interactionResponders

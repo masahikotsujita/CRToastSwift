@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B5378823C12056D48500681BF3979283"
-               BlueprintName = "CRToastSwift"
-               ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "CRToastSwift.framework">
+               BuildableIdentifier = 'primary'
+               BlueprintIdentifier = '76D9C2A3475C22478A183194'
+               BlueprintName = 'CRToastSwift'
+               ReferencedContainer = 'container:Pods.xcodeproj'
+               BuildableName = 'CRToastSwift.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

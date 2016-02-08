@@ -1,6 +1,6 @@
 # CRToastSwift
 
-[![CI Status](http://img.shields.io/travis/Masahiko Tsujita/CRToastSwift.svg?style=flat)](https://travis-ci.org/Masahiko Tsujita/CRToastSwift)
+[![CI Status](http://img.shields.io/travis/masahikot/CRToastSwift.svg?style=flat)](https://travis-ci.org/masahikot/CRToastSwift)
 [![Version](https://img.shields.io/cocoapods/v/CRToastSwift.svg?style=flat)](http://cocoapods.org/pods/CRToastSwift)
 [![License](https://img.shields.io/cocoapods/l/CRToastSwift.svg?style=flat)](http://cocoapods.org/pods/CRToastSwift)
 [![Platform](https://img.shields.io/cocoapods/p/CRToastSwift.svg?style=flat)](http://cocoapods.org/pods/CRToastSwift)
