@@ -11,6 +11,7 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		D61031F11C6A2BC80098DC90 /* NotificationImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D61031F01C6A2BC80098DC90 /* NotificationImages.xcassets */; };
 		D676A8F21BF799570075AE0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D676A8F01BF799570075AE0D /* Main.storyboard */; };
 		D676A8F41BF7995E0075AE0D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D676A8F31BF7995E0075AE0D /* ViewController.swift */; };
 		DE3F2384DCC847FAD1899855 /* Pods_CRToastSwift_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D54851DAE9DB86739E9014F /* Pods_CRToastSwift_Tests.framework */; };
@@ -45,6 +46,7 @@
 		9718AF5AE4EAACD2FCB0CE72 /* Pods-CRToastSwift_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CRToastSwift_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CRToastSwift_Example/Pods-CRToastSwift_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		9AC71F022433533D4E5DC75E /* CRToastSwift.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = CRToastSwift.podspec; path = ../CRToastSwift.podspec; sourceTree = "<group>"; };
 		D2657ED85ACB93D12D0865C3 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		D61031F01C6A2BC80098DC90 /* NotificationImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = NotificationImages.xcassets; sourceTree = "<group>"; };
 		D676A8F11BF799570075AE0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D676A8F31BF7995E0075AE0D /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,6 +99,7 @@
 				D676A8F31BF7995E0075AE0D /* ViewController.swift */,
 				D676A8F01BF799570075AE0D /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
+				D61031F01C6A2BC80098DC90 /* NotificationImages.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
@@ -246,6 +249,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D61031F11C6A2BC80098DC90 /* NotificationImages.xcassets in Resources */,
 				D676A8F21BF799570075AE0D /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
