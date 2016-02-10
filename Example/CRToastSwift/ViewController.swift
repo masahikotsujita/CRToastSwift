@@ -99,7 +99,7 @@ class ViewController: UIViewController, NotificationTraitsMapping {
     }
     
     @IBAction func showNotification(sender: UIButton) {
-        present(notification: Notification(text: self.textField.text!, subtext: self.subtextField.text), traitsMap: self, animation: self.selectedAnimation) {
+        notify(Notification(text: self.textField.text!, subtext: self.subtextField.text), traitsMap: self, animation: self.selectedAnimation) {
             print("Presented")
         } .on(.Tap) { _ in
             print("OnTapOnce")

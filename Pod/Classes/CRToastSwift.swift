@@ -26,7 +26,7 @@
 import Foundation
 import CRToast
 
-public func present<Notification: NotificationType>(notification notification: Notification, traits: NotificationTraits = NotificationTraits(), animation: Animation = .Linear, presentationTimeInterval: NSTimeInterval? = 2.0, handler: () -> Void) -> Presentation<Notification> {
+public func notify<Notification: NotificationType>(notification: Notification, traits: NotificationTraits = NotificationTraits(), animation: Animation = .Linear, presentationTimeInterval: NSTimeInterval? = 2.0, handler: () -> Void) -> Presentation<Notification> {
     // Initializing Presentation Objects and Configurings
     
     let identifier = NSUUID().UUIDString
@@ -131,7 +131,7 @@ public func present<Notification: NotificationType>(notification notification: N
     return presentation
 }
 
-public func present<Notification: NotificationType, TraitsMap: NotificationTraitsMapping where Notification == TraitsMap.Notification>(notification notification: Notification, traitsMap: TraitsMap, animation: Animation = .Linear, presentationTimeInterval: NSTimeInterval? = 2.0, handler: () -> Void) -> Presentation<Notification> {
+public func notify<Notification: NotificationType, TraitsMap: NotificationTraitsMapping where Notification == TraitsMap.Notification>(notification: Notification, traitsMap: TraitsMap, animation: Animation = .Linear, presentationTimeInterval: NSTimeInterval? = 2.0, handler: () -> Void) -> Presentation<Notification> {
     let traits = traitsMap.traits(forNotification: notification)
-    return present(notification: notification, traits: traits, animation: animation, presentationTimeInterval: presentationTimeInterval, handler: handler)
+    return notify(notification, traits: traits, animation: animation, presentationTimeInterval: presentationTimeInterval, handler: handler)
 }
