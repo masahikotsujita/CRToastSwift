@@ -44,7 +44,7 @@ enum Theme {
     
 }
 
-class ViewController: UIViewController, NotificationTraitsMapping {
+class ViewController: UIViewController, NotificationContext {
     
     typealias Notification = CRToastSwift.Notification
 
@@ -99,7 +99,7 @@ class ViewController: UIViewController, NotificationTraitsMapping {
     }
     
     @IBAction func showNotification(sender: UIButton) {
-        notify(Notification(text: self.textField.text!, subtext: self.subtextField.text), traitsMap: self, animation: self.selectedAnimation) {
+        notify(Notification(text: self.textField.text!, subtext: self.subtextField.text), context: self, animation: self.selectedAnimation) {
             print("Presented")
         } .on(.Tap) { _ in
             print("OnTapOnce")

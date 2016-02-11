@@ -131,7 +131,7 @@ public func notify<Notification: NotificationType>(notification: Notification, t
     return presentation
 }
 
-public func notify<Notification: NotificationType, TraitsMap: NotificationTraitsMapping where Notification == TraitsMap.Notification>(notification: Notification, traitsMap: TraitsMap, animation: Animation = .Linear, presentationTimeInterval: NSTimeInterval? = 2.0, handler: () -> Void) -> Presentation<Notification> {
-    let traits = traitsMap.traits(forNotification: notification)
+public func notify<Notification: NotificationType, Context: NotificationContext where Notification == Context.Notification>(notification: Notification, context: Context, animation: Animation = .Linear, presentationTimeInterval: NSTimeInterval? = 2.0, handler: () -> Void) -> Presentation<Notification> {
+    let traits = context.traits(forNotification: notification)
     return notify(notification, traits: traits, animation: animation, presentationTimeInterval: presentationTimeInterval, handler: handler)
 }
