@@ -44,7 +44,7 @@ enum Theme {
     
 }
 
-class ViewController: UIViewController, NotificationContext {
+class ViewController: UIViewController, NotificationContextType {
     
     typealias Notification = CRToastSwift.Notification
 

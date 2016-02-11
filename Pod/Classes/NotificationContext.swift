@@ -25,7 +25,7 @@
 
 import Foundation
 
-public protocol NotificationContext {
+public protocol NotificationContextType {
     
     typealias Notification: NotificationType
     

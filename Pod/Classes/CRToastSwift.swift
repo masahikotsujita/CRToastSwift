@@ -26,7 +26,7 @@
 import Foundation
 import CRToast
 
-public func notify<Notification: NotificationType, Context: NotificationContext where Notification == Context.Notification>(notification: Notification, context: Context, animation: Animation = .Linear, presentationTimeInterval: NSTimeInterval? = 2.0, handler: () -> Void) -> Presentation<Notification> {
+public func notify<Notification: NotificationType, Context: NotificationContextType where Notification == Context.Notification>(notification: Notification, context: Context, animation: Animation = .Linear, presentationTimeInterval: NSTimeInterval? = 2.0, handler: () -> Void) -> Presentation<Notification> {
     
     let traits = context.traits(forNotification: notification)
     
