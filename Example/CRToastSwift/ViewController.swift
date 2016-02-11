@@ -101,18 +101,36 @@ class ViewController: UIViewController, NotificationContextType {
     @IBAction func showNotification(sender: UIButton) {
         notify(Notification(text: self.textField.text!, subtext: self.subtextField.text), context: self, animation: self.selectedAnimation) {
             print("Presented")
-        } .on(.Tap) { _ in
+        } .on(.Tap) { (_, dismisser) in
             print("OnTapOnce")
-        } .on(.DoubleTap) { _ in
+            dismisser.dismiss { _ in
+                print("Dismissed by Tap")
+            }
+        } .on(.DoubleTap) { (_, dismisser) in
             print("OnTapTwice")
-        } .on(.SwipeUp) { _ in
+            dismisser.dismiss { _ in
+                print("Dismissed by Tap Twice")
+            }
+        } .on(.SwipeUp) { (_, dismisser) in
             print("OnSwipeUp")
-        } .on(.SwipeRight) { _ in
+            dismisser.dismiss { _ in
+                print("Dismissed by Swipe Up")
+            }
+        } .on(.SwipeRight) { (_, dismisser) in
             print("OnSwipeRight")
-        } .on(.SwipeDown) { _ in
+            dismisser.dismiss { _ in
+                print("Dismissed by Swipe Right")
+            }
+        } .on(.SwipeDown) { (_, dismisser) in
             print("OnSwipeDown")
-        } .on(.SwipeLeft) { _ in
+            dismisser.dismiss { _ in
+                print("Dismissed by Swipe Down")
+            }
+        } .on(.SwipeLeft) { (_, dismisser) in
             print("OnSwipeLeft")
+            dismisser.dismiss { _ in
+                print("Dismissed by Swipe Left")
+            }
         } .on(.AnyTap) { _ in
             print("OnAnyTap")
         } .on(.AnySwipe) { _ in

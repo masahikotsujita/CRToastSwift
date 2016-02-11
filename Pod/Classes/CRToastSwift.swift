@@ -34,7 +34,7 @@ public func notify<Notification: NotificationType, Context: NotificationContextT
     
     let identifier = NSUUID().UUIDString
     let presentation = Presentation<Notification>()
-    let dismisser = Dismisser(identifier: identifier)
+    let dismisser = Dismisser(identifier: identifier, presentation: presentation)
     
     var options = [String : AnyObject]()
     options[kCRToastIdentifierKey]                      = identifier

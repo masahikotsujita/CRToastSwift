@@ -28,9 +28,9 @@ import CRToast
 
 public final class Presentation<Notification: NotificationType> {
     
-    let interactionEvent = Event<(Interaction, Notification, Dismisser)>()
+    let interactionEvent = Event<(Interaction, Notification, Dismisser<Notification>)>()
     
-    public func on(interaction: Interaction, handler: (Notification, Dismisser) -> Void) -> Self {
+    public func on(interaction: Interaction, handler: (Notification, Dismisser<Notification>) -> Void) -> Self {
         self.interactionEvent.addHandler({ (occurredInteraction, notification, dismisser) in
             if !(occurredInteraction.intersect(interaction).isEmpty) {
                 handler(notification, dismisser)
@@ -48,15 +48,21 @@ public final class Presentation<Notification: NotificationType> {
     
 }
 
-public struct Dismisser {
+public struct Dismisser<Notification: NotificationType> {
     
-    init(identifier: String) {
+    init(identifier: String, presentation: Presentation<Notification>) {
         self.identifier = identifier
+        self.presentation = presentation
     }
     
     let identifier: String
     
-    public func dismiss(animated animated: Bool = true) {
+    unowned let presentation: Presentation<Notification>
+    
+    public func dismiss(animated animated: Bool = true, handler: ((Notification) -> Void)? = nil) {
+        if let handler = handler {
+            self.presentation.onDismissal(handler)
+        }
         CRToastManager.dismissAllNotificationsWithIdentifier(self.identifier, animated: animated)
     }
     
