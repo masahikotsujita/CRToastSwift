@@ -33,8 +33,7 @@ public func notify<Notification: NotificationType, Context: NotificationContextT
     // Initializing Presentation Objects and Configurings
     
     let identifier = NSUUID().UUIDString
-    let presentation = Presentation<Notification>()
-    let dismisser = Dismisser(identifier: identifier, presentation: presentation)
+    let presentation = Presentation<Notification>(notification: notification, identifier: identifier)
     
     var options = [String : AnyObject]()
     options[kCRToastIdentifierKey]                      = identifier
@@ -120,14 +119,14 @@ public func notify<Notification: NotificationType, Context: NotificationContextT
     }
     
     options[kCRToastInteractionRespondersKey]           = [CRToastInteractionResponder(interactionType: .All, automaticallyDismiss: false, block: { type in
-        presentation.interactionEvent.invoke((Interaction(rawValue: type.rawValue), notification, dismisser))
+        presentation.invokeInteractionEvent(Interaction(rawValue: type.rawValue))
     })]
     
     // Presenting Notification
     
     dispatch_async(dispatch_get_main_queue()) {
         CRToastManager.showNotificationWithOptions(options, apperanceBlock: handler, completionBlock: {
-            presentation.dismissalEvent.invoke(notification)
+            presentation.invokeDismissalEvent()
         })
     }
     

@@ -28,7 +28,20 @@ import CRToast
 
 public final class Presentation<Notification: NotificationType> {
     
-    let interactionEvent = Event<(Interaction, Notification, Dismisser<Notification>)>()
+    init(notification: Notification, identifier: String) {
+        self.notification = notification
+        self.identifier = identifier
+    }
+    
+    public let notification: Notification
+    
+    public let identifier: String
+    
+    var dismisser: Dismisser<Notification> {
+        return Dismisser(presentation: self)
+    }
+    
+    private let interactionEvent = Event<(Interaction, Notification, Dismisser<Notification>)>()
     
     public func on(interaction: Interaction, handler: (Notification, Dismisser<Notification>) -> Void) -> Self {
         self.interactionEvent.addHandler({ (occurredInteraction, notification, dismisser) in
@@ -39,23 +52,28 @@ public final class Presentation<Notification: NotificationType> {
         return self
     }
     
-    let dismissalEvent = Event<Notification>()
+    func invokeInteractionEvent(interaction: Interaction) {
+        self.interactionEvent.invoke(interaction, self.notification, self.dismisser)
+    }
+    
+    private let dismissalEvent = Event<Notification>()
     
     public func onDismissal(handler: (Notification) -> Void) -> Self {
         self.dismissalEvent.addHandler(handler)
         return self
     }
     
+    func invokeDismissalEvent() {
+        self.dismissalEvent.invoke(self.notification)
+    }
+    
 }
 
 public struct Dismisser<Notification: NotificationType> {
     
-    init(identifier: String, presentation: Presentation<Notification>) {
-        self.identifier = identifier
+    private init(presentation: Presentation<Notification>) {
         self.presentation = presentation
     }
-    
-    let identifier: String
     
     weak var presentation: Presentation<Notification>?
     
@@ -67,7 +85,7 @@ public struct Dismisser<Notification: NotificationType> {
         if let handler = handler {
             presentation.onDismissal(handler)
         }
-        CRToastManager.dismissAllNotificationsWithIdentifier(self.identifier, animated: animated)
+        CRToastManager.dismissAllNotificationsWithIdentifier(presentation.identifier, animated: animated)
     }
     
 }
