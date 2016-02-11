@@ -57,11 +57,15 @@ public struct Dismisser<Notification: NotificationType> {
     
     let identifier: String
     
-    unowned let presentation: Presentation<Notification>
+    weak var presentation: Presentation<Notification>?
     
     public func dismiss(animated animated: Bool = true, handler: ((Notification) -> Void)? = nil) {
+        guard let presentation = self.presentation else {
+            debugPrint("CRToastSwift: Dismisser.dismiss() was called after presentation object had been deallocated.\nDismissal by this call will not be performed and given handler will not be invoked.")
+            return
+        }
         if let handler = handler {
-            self.presentation.onDismissal(handler)
+            presentation.onDismissal(handler)
         }
         CRToastManager.dismissAllNotificationsWithIdentifier(self.identifier, animated: animated)
     }
