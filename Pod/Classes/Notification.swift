@@ -23,7 +23,7 @@
 //  THE SOFTWARE.
 //
 
-import UIKit
+import Foundation
 
 public protocol NotificationType {
     
