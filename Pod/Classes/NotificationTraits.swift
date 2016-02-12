@@ -89,7 +89,7 @@ public struct NotificationTraits {
     
     public var imageTintColor: UIColor?
     
-    public var imageAlignment: CRToastAccessoryViewAlignment = .Left
+    public var imageAlignment: AccessoryViewAlignment = .Left
     
     public var imageContentMode: UIViewContentMode = .Center
     
