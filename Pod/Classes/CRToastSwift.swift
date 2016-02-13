@@ -26,14 +26,14 @@
 import Foundation
 import CRToast
 
-public func notify<Notification: NotificationType, Context: NotificationContextType where Notification == Context.Notification>(notification: Notification, context: Context, animation: Animation = .Linear, presentationTimeInterval: NSTimeInterval? = 2.0, handler: () -> Void) -> Presentation<Notification> {
+public func notify<Notification: NotificationType, Context: NotificationPresentationContextType where Notification == Context.Notification>(notification: Notification, context: Context, animation: Animation = .Linear, presentationTimeInterval: NSTimeInterval? = 2.0, handler: () -> Void) -> NotificationPresentation<Notification> {
     
     let traits = context.traits(forNotification: notification)
     
     // Initializing Presentation Objects and Configurings
     
     let identifier = NSUUID().UUIDString
-    let presentation = Presentation<Notification>(notification: notification, identifier: identifier)
+    let presentation = NotificationPresentation<Notification>(notification: notification, identifier: identifier)
     
     var options = [String : AnyObject]()
     options[kCRToastIdentifierKey]                      = identifier

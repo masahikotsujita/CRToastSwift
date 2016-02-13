@@ -44,7 +44,7 @@ enum Theme {
     
 }
 
-class ViewController: UIViewController, NotificationContextType {
+class ViewController: UIViewController, NotificationPresentationContextType {
     
     override func viewDidLoad() {
         super.viewDidLoad()

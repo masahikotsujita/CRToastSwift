@@ -1,5 +1,5 @@
 //
-//  NotificationContext.swift
+//  NotificationPresentationContext.swift
 //  CRToastSwift
 //
 //  Copyright (c) 2015 Masahiko Tsujita <tsujitamasahiko.dev@icloud.com>
@@ -25,7 +25,7 @@
 
 import Foundation
 
-public protocol NotificationContextType {
+public protocol NotificationPresentationContextType {
     
     typealias Notification: NotificationType
     

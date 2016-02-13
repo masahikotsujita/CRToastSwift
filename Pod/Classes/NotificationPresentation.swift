@@ -1,5 +1,5 @@
 //
-//  Presentation.swift
+//  NotificationPresentation.swift
 //  CRToastSwift
 //
 //  Copyright (c) 2015 Masahiko Tsujita <tsujitamasahiko.dev@icloud.com>
@@ -26,7 +26,7 @@
 import UIKit
 import CRToast
 
-public final class Presentation<Notification: NotificationType> {
+public final class NotificationPresentation<Notification: NotificationType> {
     
     init(notification: Notification, identifier: String) {
         self.notification = notification
@@ -37,13 +37,13 @@ public final class Presentation<Notification: NotificationType> {
     
     public let identifier: String
     
-    var dismisser: Dismisser<Notification> {
-        return Dismisser(presentation: self)
+    var dismisser: NotificationDismisser<Notification> {
+        return NotificationDismisser(presentation: self)
     }
     
-    private let interactionEvent = Event<(Interaction, Notification, Dismisser<Notification>)>()
+    private let interactionEvent = Event<(Interaction, Notification, NotificationDismisser<Notification>)>()
     
-    public func on(interaction: Interaction, handler: (Notification, Dismisser<Notification>) -> Void) -> Self {
+    public func on(interaction: Interaction, handler: (Notification, NotificationDismisser<Notification>) -> Void) -> NotificationPresentation {
         self.interactionEvent.addHandler({ (occurredInteraction, notification, dismisser) in
             if !(occurredInteraction.intersect(interaction).isEmpty) {
                 handler(notification, dismisser)
@@ -58,7 +58,7 @@ public final class Presentation<Notification: NotificationType> {
     
     private let dismissalEvent = Event<Notification>()
     
-    public func onDismissal(handler: (Notification) -> Void) -> Self {
+    public func onDismissal(handler: (Notification) -> Void) -> NotificationPresentation {
         self.dismissalEvent.addHandler(handler)
         return self
     }
@@ -69,13 +69,13 @@ public final class Presentation<Notification: NotificationType> {
     
 }
 
-public struct Dismisser<Notification: NotificationType> {
+public struct NotificationDismisser<Notification: NotificationType> {
     
-    private init(presentation: Presentation<Notification>) {
+    private init(presentation: NotificationPresentation<Notification>) {
         self.presentation = presentation
     }
     
-    weak var presentation: Presentation<Notification>?
+    weak var presentation: NotificationPresentation<Notification>?
     
     public func dismiss(animated animated: Bool = true, handler: ((Notification) -> Void)? = nil) {
         guard let presentation = self.presentation else {
