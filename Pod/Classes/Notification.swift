@@ -35,12 +35,12 @@ public protocol NotificationType {
 
 public struct Notification: NotificationType {
     
-    public init(text: String = "", subtext: String? = nil) {
+    public init(text: String, subtext: String? = nil) {
         self.text = text
         self.subtext = subtext
     }
     
-    public var text: String = ""
+    public var text: String
     
     public var subtext: String?
     
