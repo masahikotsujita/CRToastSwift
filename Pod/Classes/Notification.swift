@@ -33,7 +33,7 @@ public protocol NotificationType {
     
 }
 
-public class Notification: NotificationType {
+public struct Notification: NotificationType {
     
     public init(text: String = "", subtext: String? = nil) {
         self.text = text
