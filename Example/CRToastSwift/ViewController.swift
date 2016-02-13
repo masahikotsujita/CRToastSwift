@@ -46,8 +46,6 @@ enum Theme {
 
 class ViewController: UIViewController, NotificationContextType {
     
-    typealias Notification = CRToastSwift.Notification
-
     override func viewDidLoad() {
         super.viewDidLoad()
     }
