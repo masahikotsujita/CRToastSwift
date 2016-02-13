@@ -39,7 +39,7 @@ class Event<Argument> {
         }
     }
     
-    func invoke(argument: Argument) {
+    func invoke(argument argument: Argument) {
         synchronized(self.lock) {
             self.handlers.forEach { $0(argument) }
         }

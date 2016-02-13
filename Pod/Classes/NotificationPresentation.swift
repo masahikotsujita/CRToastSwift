@@ -53,7 +53,7 @@ public final class NotificationPresentation<Notification: NotificationType> {
     }
     
     func invokeInteractionEvent(interaction: Interaction) {
-        self.interactionEvent.invoke(interaction, self.notification, self.dismisser)
+        self.interactionEvent.invoke(argument: (interaction, self.notification, self.dismisser))
     }
     
     private let dismissalEvent = Event<Notification>()
@@ -64,7 +64,7 @@ public final class NotificationPresentation<Notification: NotificationType> {
     }
     
     func invokeDismissalEvent() {
-        self.dismissalEvent.invoke(self.notification)
+        self.dismissalEvent.invoke(argument: self.notification)
     }
     
 }
