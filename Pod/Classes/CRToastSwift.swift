@@ -119,7 +119,7 @@ public func notify<Notification: NotificationType, Context: NotificationPresenta
     }
     
     options[kCRToastInteractionRespondersKey]           = [CRToastInteractionResponder(interactionType: .All, automaticallyDismiss: false, block: { type in
-        presentation.invokeInteractionEvent(Interaction(rawValue: type.rawValue))
+        presentation.invokeInteractionEvent(forInteraction: Interaction(rawValue: type.rawValue))
     })]
     
     // Presenting Notification

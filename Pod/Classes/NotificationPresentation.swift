@@ -52,7 +52,7 @@ public final class NotificationPresentation<Notification: NotificationType> {
         return self
     }
     
-    func invokeInteractionEvent(interaction: Interaction) {
+    func invokeInteractionEvent(forInteraction interaction: Interaction) {
         self.interactionEvent.invoke(argument: (interaction, self.notification, self.dismisser))
     }
     
