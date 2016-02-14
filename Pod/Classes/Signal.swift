@@ -25,7 +25,7 @@
 
 import Foundation
 
-class Signal<Value> {
+final class Signal<Value> {
     
     typealias Observer = (Value) -> Void
     
