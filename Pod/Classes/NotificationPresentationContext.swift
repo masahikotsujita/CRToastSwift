@@ -35,7 +35,7 @@ public protocol NotificationPresentationContextType {
 
 public extension NotificationPresentationContextType {
     
-    public func presentNotification(notification: Self.Notification, animation: Animation = .Linear, presentationDuration: NSTimeInterval? = 2.0, presentationHandler: ((NotificationDismisser<Self.Notification>) -> Void)? = nil) -> NotificationPresentation<Self.Notification> {
+    public func presentNotification(notification: Self.Notification, animation: Animation = .Linear, presentationDuration: NSTimeInterval? = 2.0, presentationHandler: ((Self.Notification, NotificationDismisser<Self.Notification>) -> Void)? = nil) -> NotificationPresentation<Self.Notification> {
         let traits = self.traitsForNotification(notification)
         return CRToastSwift.presentNotification(notification, traits: traits, animation: animation, presentationDuration: presentationDuration, presentationHandler: presentationHandler)
     }

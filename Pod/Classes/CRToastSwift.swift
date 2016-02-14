@@ -26,7 +26,7 @@
 import Foundation
 import CRToast
 
-public func presentNotification<Notification: NotificationType>(notification: Notification, traits: NotificationTraits, animation: Animation, presentationDuration: NSTimeInterval?, presentationHandler: ((NotificationDismisser<Notification>) -> Void)?) -> NotificationPresentation<Notification> {
+public func presentNotification<Notification: NotificationType>(notification: Notification, traits: NotificationTraits, animation: Animation, presentationDuration: NSTimeInterval?, presentationHandler: ((Notification, NotificationDismisser<Notification>) -> Void)?) -> NotificationPresentation<Notification> {
     
     // Initializing Presentation Objects and Configurings
     
@@ -125,7 +125,7 @@ public func presentNotification<Notification: NotificationType>(notification: No
     
     dispatch_async(dispatch_get_main_queue()) {
         CRToastManager.showNotificationWithOptions(options, apperanceBlock: {
-            presentationHandler?(dismisser)
+            presentationHandler?(notification, dismisser)
         }, completionBlock: {
             presentation.dismissalSignal.send(notification)
         })
