@@ -88,7 +88,7 @@ class ViewController: UIViewController, NotificationPresentationContextType {
         }
     }
     
-    func traits(forNotification _: Notification) -> NotificationTraits {
+    func traitsForNotification(_: Notification) -> NotificationTraits {
         var traits = NotificationTraits()
         traits.image = self.selectedTheme.image
         traits.backgroundColor = self.selectedTheme.backgroundColor

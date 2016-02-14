@@ -28,7 +28,7 @@ import CRToast
 
 public func notify<Notification: NotificationType, Context: NotificationPresentationContextType where Notification == Context.Notification>(notification: Notification, context: Context, animation: Animation = .Linear, presentationTimeInterval: NSTimeInterval? = 2.0, handler: () -> Void) -> NotificationPresentation<Notification> {
     
-    let traits = context.traits(forNotification: notification)
+    let traits = context.traitsForNotification(notification)
     
     // Initializing Presentation Objects and Configurings
     
@@ -119,7 +119,7 @@ public func notify<Notification: NotificationType, Context: NotificationPresenta
     }
     
     options[kCRToastInteractionRespondersKey]           = [CRToastInteractionResponder(interactionType: .All, automaticallyDismiss: false, block: { type in
-        presentation.invokeInteractionEvent(forInteraction: Interaction(rawValue: type.rawValue))
+        presentation.invokeInteractionEventForInteraction(Interaction(rawValue: type.rawValue))
     })]
     
     // Presenting Notification

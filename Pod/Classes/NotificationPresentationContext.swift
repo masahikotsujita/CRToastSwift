@@ -29,6 +29,6 @@ public protocol NotificationPresentationContextType {
     
     typealias Notification: NotificationType
     
-    func traits(forNotification notification: Self.Notification) -> NotificationTraits
+    func traitsForNotification(notification: Self.Notification) -> NotificationTraits
     
 }
