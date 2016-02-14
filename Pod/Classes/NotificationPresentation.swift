@@ -32,7 +32,7 @@ public final class NotificationPresentation<Notification: NotificationType> {
         self.identifier = identifier
     }
     
-    public let identifier: String
+    let identifier: String
     
     let interactionSignal = Signal<(Interaction, Notification, NotificationDismisser<Notification>)>()
     
