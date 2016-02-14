@@ -28,20 +28,13 @@ import CRToast
 
 public final class NotificationPresentation<Notification: NotificationType> {
     
-    init(notification: Notification, identifier: String) {
-        self.notification = notification
+    init(identifier: String) {
         self.identifier = identifier
     }
     
-    public let notification: Notification
-    
     public let identifier: String
     
-    var dismisser: NotificationDismisser<Notification> {
-        return NotificationDismisser(presentation: self)
-    }
-    
-    private let interactionSignal = Signal<(Interaction, Notification, NotificationDismisser<Notification>)>()
+    let interactionSignal = Signal<(Interaction, Notification, NotificationDismisser<Notification>)>()
     
     public func on(interaction: Interaction, handler: (Notification, NotificationDismisser<Notification>) -> Void) -> NotificationPresentation {
         self.interactionSignal.observe({ (occurredInteraction, notification, dismisser) in
@@ -52,26 +45,18 @@ public final class NotificationPresentation<Notification: NotificationType> {
         return self
     }
     
-    func sendInteractionSignal(interaction: Interaction) {
-        self.interactionSignal.send((interaction, self.notification, self.dismisser))
-    }
-    
-    private let dismissalSignal = Signal<Notification>()
+    let dismissalSignal = Signal<Notification>()
     
     public func onDismissal(handler: (Notification) -> Void) -> NotificationPresentation {
         self.dismissalSignal.observe(handler)
         return self
     }
     
-    func sendDismissalSignal() {
-        self.dismissalSignal.send(self.notification)
-    }
-    
 }
 
 public struct NotificationDismisser<Notification: NotificationType> {
     
-    private init(presentation: NotificationPresentation<Notification>) {
+    init(presentation: NotificationPresentation<Notification>) {
         self.presentation = presentation
     }
     
