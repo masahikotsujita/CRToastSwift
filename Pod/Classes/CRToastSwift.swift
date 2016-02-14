@@ -117,8 +117,8 @@ public func presentNotification<Notification: NotificationType>(notification: No
         options[kCRToastForceUserInteractionKey]        = true
     }
     
-    options[kCRToastInteractionRespondersKey]           = [CRToastInteractionResponder(interactionType: .All, automaticallyDismiss: false, block: { interaction in
-        presentation.interactionSignal.send((notification, Interaction(rawValue: interaction.rawValue), dismisser))
+    options[kCRToastInteractionRespondersKey]           = [CRToastInteractionResponder(interactionType: .All, automaticallyDismiss: false, block: { userInteraction in
+        presentation.userInteractionSignal.send((notification, UserInteraction(rawValue: userInteraction.rawValue), dismisser))
     })]
     
     // Presenting Notification

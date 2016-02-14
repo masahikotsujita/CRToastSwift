@@ -1,5 +1,5 @@
 //
-//  Interaction.swift
+//  UserInteraction.swift
 //  CRToastSwift
 //
 //  Copyright (c) 2015 Masahiko Tsujita <tsujitamasahiko.dev@icloud.com>
@@ -25,7 +25,7 @@
 
 import CRToast
 
-public struct Interaction: OptionSetType {
+public struct UserInteraction: OptionSetType {
     
     public typealias RawValue = CRToastInteractionType.RawValue
     
@@ -35,19 +35,19 @@ public struct Interaction: OptionSetType {
     
     public let rawValue: RawValue
     
-    public static let Tap                   = Interaction(rawValue: CRToastInteractionType.TapOnce.rawValue)
-    public static let DoubleTap             = Interaction(rawValue: CRToastInteractionType.TapTwice.rawValue)
-    public static let TwoFingerTap          = Interaction(rawValue: CRToastInteractionType.TwoFingerTapOnce.rawValue)
-    public static let TwoFingerDoubleTap    = Interaction(rawValue: CRToastInteractionType.TwoFingerTapTwice.rawValue)
+    public static let Tap                   = UserInteraction(rawValue: CRToastInteractionType.TapOnce.rawValue)
+    public static let DoubleTap             = UserInteraction(rawValue: CRToastInteractionType.TapTwice.rawValue)
+    public static let TwoFingerTap          = UserInteraction(rawValue: CRToastInteractionType.TwoFingerTapOnce.rawValue)
+    public static let TwoFingerDoubleTap    = UserInteraction(rawValue: CRToastInteractionType.TwoFingerTapTwice.rawValue)
     
-    public static let SwipeUp               = Interaction(rawValue: CRToastInteractionType.SwipeUp.rawValue)
-    public static let SwipeLeft             = Interaction(rawValue: CRToastInteractionType.SwipeLeft.rawValue)
-    public static let SwipeDown             = Interaction(rawValue: CRToastInteractionType.SwipeDown.rawValue)
-    public static let SwipeRight            = Interaction(rawValue: CRToastInteractionType.SwipeRight.rawValue)
+    public static let SwipeUp               = UserInteraction(rawValue: CRToastInteractionType.SwipeUp.rawValue)
+    public static let SwipeLeft             = UserInteraction(rawValue: CRToastInteractionType.SwipeLeft.rawValue)
+    public static let SwipeDown             = UserInteraction(rawValue: CRToastInteractionType.SwipeDown.rawValue)
+    public static let SwipeRight            = UserInteraction(rawValue: CRToastInteractionType.SwipeRight.rawValue)
     
-    public static let AnyTap                = Interaction(rawValue: CRToastInteractionType.Tap.rawValue)
-    public static let AnySwipe              = Interaction(rawValue: CRToastInteractionType.Swipe.rawValue)
-    public static let Any                   = Interaction(rawValue: CRToastInteractionType.All.rawValue)
+    public static let AnyTap                = UserInteraction(rawValue: CRToastInteractionType.Tap.rawValue)
+    public static let AnySwipe              = UserInteraction(rawValue: CRToastInteractionType.Swipe.rawValue)
+    public static let Any                   = UserInteraction(rawValue: CRToastInteractionType.All.rawValue)
     
     var crToastInteractionType: CRToastInteractionType {
         return CRToastInteractionType(rawValue: self.rawValue)

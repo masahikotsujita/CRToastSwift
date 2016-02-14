@@ -24,7 +24,7 @@
 		74B4EC789D9A9A0DD3039008F883B4FA /* CRToastManager.h in Headers */ = {isa = PBXBuildFile; fileRef = AEC401D3D57A44AF7D469A8CAC496745 /* CRToastManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8EF751B1EC63590AA8D7FC6EFD0F5A3E /* CRToast-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 735184D448E7CE182B9F2FD8AD1B3C66 /* CRToast-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		918775EF3F2D27C70A5A756B23C695B9 /* CRToastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E33E66B8D42E0F9EB5333FAA855270 /* CRToastViewController.m */; };
-		9203DD80E0C1C957F4D7A439066BA0F6 /* Interaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122E17783C544BE516F467ACCB83AE0E /* Interaction.swift */; };
+		9203DD80E0C1C957F4D7A439066BA0F6 /* UserInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122E17783C544BE516F467ACCB83AE0E /* UserInteraction.swift */; };
 		98FC46DD2C947BE365B0F0E3152503C6 /* Pods-CRToastSwift_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD59708A440B936C5FFD505C3534DEE /* Pods-CRToastSwift_Example-dummy.m */; };
 		9A7799F638372CEC1C2C75F09A608137 /* CRToastWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = B573BBBF842A26D1915B519E201C0C50 /* CRToastWindow.m */; };
 		9CA6664E6E7792D7B4CCF35697F7AC0A /* CRToast.h in Headers */ = {isa = PBXBuildFile; fileRef = B02827393802D18C7A81644A918F1826 /* CRToast.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -84,7 +84,7 @@
 
 /* Begin PBXFileReference section */
 		09786BC7EC6E0FBD5C4A4240103AE22D /* CRToastSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CRToastSwift-prefix.pch"; sourceTree = "<group>"; };
-		122E17783C544BE516F467ACCB83AE0E /* Interaction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Interaction.swift; sourceTree = "<group>"; };
+		122E17783C544BE516F467ACCB83AE0E /* UserInteraction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserInteraction.swift; sourceTree = "<group>"; };
 		1333DC346CB6189321BCD079EC5B1EE6 /* Pods-CRToastSwift_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CRToastSwift_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		2072040B244854464DCBBB3A138D8729 /* CRToastConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CRToastConfig.h; path = CRToast/CRToastConfig.h; sourceTree = "<group>"; };
 		22C683608BF057B70682BF723CA54742 /* CRToast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CRToast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -322,7 +322,7 @@
 				39E9678546EAF06081398C83AE4FAD19 /* Animation.swift */,
 				5C27A9D2867A992C97C2A27F234FED1F /* CRToastSwift.swift */,
 				7CDA0E5675C2038148DB081E3BBBC4CB /* Signal.swift */,
-				122E17783C544BE516F467ACCB83AE0E /* Interaction.swift */,
+				122E17783C544BE516F467ACCB83AE0E /* UserInteraction.swift */,
 				AF031A6A0F67812017F709C83C339CB9 /* Notification.swift */,
 				384A44D3D46306E394CF58576BA70D83 /* NotificationTraits.swift */,
 				7ECC1701359C5658B26191F12D9CC90B /* NotificationPresentationContext.swift */,
@@ -545,7 +545,7 @@
 				F93C7538129FDDFB3DDD1B398FF37553 /* CRToastSwift-dummy.m in Sources */,
 				553367ECAD87AE1506105296A54C7CC5 /* CRToastSwift.swift in Sources */,
 				1E4BCC9481C5EE553AAF8D801C8B50D7 /* Signal.swift in Sources */,
-				9203DD80E0C1C957F4D7A439066BA0F6 /* Interaction.swift in Sources */,
+				9203DD80E0C1C957F4D7A439066BA0F6 /* UserInteraction.swift in Sources */,
 				FEAD7550F9652034B0EDA6AC3FA2A417 /* Notification.swift in Sources */,
 				DA765A649A6DB54EC193D426479FE0E7 /* NotificationTraits.swift in Sources */,
 				09745575E59D84B9435E1BC947FD9095 /* NotificationPresentationContext.swift in Sources */,

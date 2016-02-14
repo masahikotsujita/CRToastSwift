@@ -34,11 +34,11 @@ public final class NotificationPresentation<Notification: NotificationType> {
     
     let identifier: String
     
-    let interactionSignal = Signal<(Notification, Interaction, NotificationDismisser<Notification>)>()
+    let userInteractionSignal = Signal<(Notification, UserInteraction, NotificationDismisser<Notification>)>()
     
-    public func on(interaction: Interaction, handler: (Notification, NotificationDismisser<Notification>) -> Void) -> NotificationPresentation {
-        self.interactionSignal.observe({ (notification, performedInteraction, dismisser) in
-            if !(performedInteraction.intersect(interaction).isEmpty) {
+    public func on(userInteraction: UserInteraction, handler: (Notification, NotificationDismisser<Notification>) -> Void) -> NotificationPresentation {
+        self.userInteractionSignal.observe({ (notification, performedUserInteraction, dismisser) in
+            if !(performedUserInteraction.intersect(userInteraction).isEmpty) {
                 handler(notification, dismisser)
             }
         })
