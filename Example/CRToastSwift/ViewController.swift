@@ -97,7 +97,7 @@ class ViewController: UIViewController, NotificationPresentationContextType {
     }
     
     @IBAction func showNotification(sender: UIButton) {
-        notify(Notification(text: self.textField.text!, subtext: self.subtextField.text), context: self, animation: self.selectedAnimation) {
+        self.notify(Notification(text: self.textField.text!, subtext: self.subtextField.text), animation: self.selectedAnimation) {
             print("Presented")
         } .on(.Tap) { (_, dismisser) in
             print("OnTapOnce")
