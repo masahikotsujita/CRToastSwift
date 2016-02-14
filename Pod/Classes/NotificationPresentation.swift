@@ -37,8 +37,8 @@ public final class NotificationPresentation<Notification: NotificationType> {
     let interactionSignal = Signal<(Notification, Interaction, NotificationDismisser<Notification>)>()
     
     public func on(interaction: Interaction, handler: (Notification, NotificationDismisser<Notification>) -> Void) -> NotificationPresentation {
-        self.interactionSignal.observe({ (notification, occurredInteraction, dismisser) in
-            if !(occurredInteraction.intersect(interaction).isEmpty) {
+        self.interactionSignal.observe({ (notification, performedInteraction, dismisser) in
+            if !(performedInteraction.intersect(interaction).isEmpty) {
                 handler(notification, dismisser)
             }
         })
