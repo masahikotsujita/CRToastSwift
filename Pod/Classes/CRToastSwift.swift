@@ -26,7 +26,7 @@
 import Foundation
 import CRToast
 
-public func presentNotification<Notification: NotificationType>(notification: Notification, traits: NotificationTraits, animation: Animation, presentationTimeInterval: NSTimeInterval?, presentationHandler: () -> Void) -> NotificationPresentation<Notification> {
+public func presentNotification<Notification: NotificationType>(notification: Notification, traits: NotificationTraits, animation: Animation, presentationDuration: NSTimeInterval?, presentationHandler: () -> Void) -> NotificationPresentation<Notification> {
     
     // Initializing Presentation Objects and Configurings
     
@@ -110,9 +110,9 @@ public func presentNotification<Notification: NotificationType>(notification: No
     
     // Configuring User Interactions
     
-    if let presentationTimeInterval = presentationTimeInterval {
+    if let presentationDuration = presentationDuration {
         options[kCRToastForceUserInteractionKey]        = false
-        options[kCRToastTimeIntervalKey]                = presentationTimeInterval
+        options[kCRToastTimeIntervalKey]                = presentationDuration
     } else {
         options[kCRToastForceUserInteractionKey]        = true
     }
