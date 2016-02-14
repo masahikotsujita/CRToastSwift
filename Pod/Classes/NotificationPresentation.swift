@@ -41,10 +41,10 @@ public final class NotificationPresentation<Notification: NotificationType> {
         return NotificationDismisser(presentation: self)
     }
     
-    private let interactionEvent = Event<(Interaction, Notification, NotificationDismisser<Notification>)>()
+    private let interactionSignal = Signal<(Interaction, Notification, NotificationDismisser<Notification>)>()
     
     public func on(interaction: Interaction, handler: (Notification, NotificationDismisser<Notification>) -> Void) -> NotificationPresentation {
-        self.interactionEvent.addHandler({ (occurredInteraction, notification, dismisser) in
+        self.interactionSignal.observe({ (occurredInteraction, notification, dismisser) in
             if !(occurredInteraction.intersect(interaction).isEmpty) {
                 handler(notification, dismisser)
             }
@@ -52,19 +52,19 @@ public final class NotificationPresentation<Notification: NotificationType> {
         return self
     }
     
-    func invokeInteractionEventForInteraction(interaction: Interaction) {
-        self.interactionEvent.invokeWithArgument((interaction, self.notification, self.dismisser))
+    func sendInteractionSignal(interaction: Interaction) {
+        self.interactionSignal.send((interaction, self.notification, self.dismisser))
     }
     
-    private let dismissalEvent = Event<Notification>()
+    private let dismissalSignal = Signal<Notification>()
     
     public func onDismissal(handler: (Notification) -> Void) -> NotificationPresentation {
-        self.dismissalEvent.addHandler(handler)
+        self.dismissalSignal.observe(handler)
         return self
     }
     
-    func invokeDismissalEvent() {
-        self.dismissalEvent.invokeWithArgument(self.notification)
+    func sendDismissalSignal() {
+        self.dismissalSignal.send(self.notification)
     }
     
 }

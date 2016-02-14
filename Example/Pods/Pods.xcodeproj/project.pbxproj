@@ -10,7 +10,7 @@
 		081A64CA13FA582177ADD4BB68277BE5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 324E93C3577451E9859B70B5D3E5ECA6 /* UIKit.framework */; };
 		09745575E59D84B9435E1BC947FD9095 /* NotificationPresentationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECC1701359C5658B26191F12D9CC90B /* NotificationPresentationContext.swift */; };
 		1659191D5F0DE7C23A4D8043B185276D /* CRToastWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 31905F9C68BA18DBB45DA64781922200 /* CRToastWindow.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		1E4BCC9481C5EE553AAF8D801C8B50D7 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDA0E5675C2038148DB081E3BBBC4CB /* Event.swift */; };
+		1E4BCC9481C5EE553AAF8D801C8B50D7 /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDA0E5675C2038148DB081E3BBBC4CB /* Signal.swift */; };
 		226DF8CB7AC3F7966006C58B29A3B083 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626A07D75A06C66862D5EA0C1C2162FB /* Utils.swift */; };
 		2D7DA67F4206AF96F4D7BFE6F2C0A66A /* CRToast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C96AF33B6E76058126F623C108124A16 /* CRToast.framework */; };
 		33718000E841CCF1D4983A5A0F1E7BFF /* CRToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8017B99BABD5CA7CDB70A3F2117C76C5 /* CRToastView.m */; };
@@ -112,7 +112,7 @@
 		6C62169BC5A61076DCE0497D2BA20E03 /* Pods-CRToastSwift_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-CRToastSwift_Tests.modulemap"; sourceTree = "<group>"; };
 		735184D448E7CE182B9F2FD8AD1B3C66 /* CRToast-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CRToast-umbrella.h"; sourceTree = "<group>"; };
 		76E33E66B8D42E0F9EB5333FAA855270 /* CRToastViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CRToastViewController.m; path = CRToast/CRToastViewController.m; sourceTree = "<group>"; };
-		7CDA0E5675C2038148DB081E3BBBC4CB /* Event.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		7CDA0E5675C2038148DB081E3BBBC4CB /* Signal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Signal.swift; sourceTree = "<group>"; };
 		7ECC1701359C5658B26191F12D9CC90B /* NotificationPresentationContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NotificationPresentationContext.swift; sourceTree = "<group>"; };
 		8017B99BABD5CA7CDB70A3F2117C76C5 /* CRToastView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CRToastView.m; path = CRToast/CRToastView.m; sourceTree = "<group>"; };
 		9319DD5290F79EA7A95B66A1DD08707C /* Pods-CRToastSwift_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CRToastSwift_Tests-resources.sh"; sourceTree = "<group>"; };
@@ -321,7 +321,7 @@
 			children = (
 				39E9678546EAF06081398C83AE4FAD19 /* Animation.swift */,
 				5C27A9D2867A992C97C2A27F234FED1F /* CRToastSwift.swift */,
-				7CDA0E5675C2038148DB081E3BBBC4CB /* Event.swift */,
+				7CDA0E5675C2038148DB081E3BBBC4CB /* Signal.swift */,
 				122E17783C544BE516F467ACCB83AE0E /* Interaction.swift */,
 				AF031A6A0F67812017F709C83C339CB9 /* Notification.swift */,
 				384A44D3D46306E394CF58576BA70D83 /* NotificationTraits.swift */,
@@ -544,7 +544,7 @@
 				56980CC8BC7ED89305F96769A44CA5A1 /* Animation.swift in Sources */,
 				F93C7538129FDDFB3DDD1B398FF37553 /* CRToastSwift-dummy.m in Sources */,
 				553367ECAD87AE1506105296A54C7CC5 /* CRToastSwift.swift in Sources */,
-				1E4BCC9481C5EE553AAF8D801C8B50D7 /* Event.swift in Sources */,
+				1E4BCC9481C5EE553AAF8D801C8B50D7 /* Signal.swift in Sources */,
 				9203DD80E0C1C957F4D7A439066BA0F6 /* Interaction.swift in Sources */,
 				FEAD7550F9652034B0EDA6AC3FA2A417 /* Notification.swift in Sources */,
 				DA765A649A6DB54EC193D426479FE0E7 /* NotificationTraits.swift in Sources */,

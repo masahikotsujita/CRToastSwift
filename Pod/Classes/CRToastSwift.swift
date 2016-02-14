@@ -119,14 +119,14 @@ public func notify<Notification: NotificationType, Context: NotificationPresenta
     }
     
     options[kCRToastInteractionRespondersKey]           = [CRToastInteractionResponder(interactionType: .All, automaticallyDismiss: false, block: { type in
-        presentation.invokeInteractionEventForInteraction(Interaction(rawValue: type.rawValue))
+        presentation.sendInteractionSignal(Interaction(rawValue: type.rawValue))
     })]
     
     // Presenting Notification
     
     dispatch_async(dispatch_get_main_queue()) {
         CRToastManager.showNotificationWithOptions(options, apperanceBlock: handler, completionBlock: {
-            presentation.invokeDismissalEvent()
+            presentation.sendDismissalSignal()
         })
     }
     

@@ -1,5 +1,5 @@
 //
-//  Event.swift
+//  Signal.swift
 //  CRToastSwift
 //
 //  Copyright (c) 2015 Masahiko Tsujita <tsujitamasahiko.dev@icloud.com>
@@ -25,23 +25,23 @@
 
 import Foundation
 
-class Event<Argument> {
+class Signal<Value> {
     
-    typealias EventHandler = (Argument) -> Void
+    typealias Observer = (Value) -> Void
     
-    private(set) var handlers = [EventHandler]()
+    private(set) var observers = [Observer]()
     
     private let lock = NSLock()
     
-    func addHandler(handler: EventHandler) {
+    func observe(handler: Observer) {
         synchronized(self.lock) {
-            self.handlers.append(handler)
+            self.observers.append(handler)
         }
     }
     
-    func invokeWithArgument(argument: Argument) {
+    func send(value: Value) {
         synchronized(self.lock) {
-            self.handlers.forEach { $0(argument) }
+            self.observers.forEach { $0(value) }
         }
     }
     
