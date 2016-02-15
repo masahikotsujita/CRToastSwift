@@ -2,11 +2,11 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '9.0'
 use_frameworks!
 
-target 'CRToastSwift_Example', :exclusive => true do
+target 'CRToastSwift_Example' do
   pod "CRToastSwift", :path => "../"
 end
 
-target 'CRToastSwift_Tests', :exclusive => true do
+target 'CRToastSwift_Tests' do
   pod "CRToastSwift", :path => "../"
 end
   

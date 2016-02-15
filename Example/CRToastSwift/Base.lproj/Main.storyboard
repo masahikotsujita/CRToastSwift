@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15C40a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Vvh-IG-MJa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Vvh-IG-MJa">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -12,7 +12,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ew3-Ge-wes">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                     </navigationBar>
                     <connections>
                         <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="QLV-E2-z3j"/>
@@ -39,7 +38,6 @@
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Yf5-2J-1fj">
                                         <rect key="frame" x="0.0" y="0.0" width="570" height="29"/>
-                                        <animations/>
                                         <segments>
                                             <segment title="Info"/>
                                             <segment title="Success"/>
@@ -49,13 +47,11 @@
                                     </segmentedControl>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Hello!" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="g3X-UV-LIk">
                                         <rect key="frame" x="0.0" y="48" width="570" height="30"/>
-                                        <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="This is a subtitle text." borderStyle="roundedRect" placeholder="Subtitle" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="IQ7-Mi-rPl">
                                         <rect key="frame" x="0.0" y="98" width="570" height="30"/>
-                                        <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -64,14 +60,12 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animation:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZ0-zP-QTb">
                                                 <rect key="frame" x="0.0" y="0.0" width="82" height="28"/>
-                                                <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="YlN-P4-kCP">
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="YlN-P4-kCP">
                                                 <rect key="frame" x="394" y="0.0" width="176" height="29"/>
-                                                <animations/>
                                                 <segments>
                                                     <segment title="Linear"/>
                                                     <segment title="Spring"/>
@@ -79,7 +73,6 @@
                                                 </segments>
                                             </segmentedControl>
                                         </subviews>
-                                        <animations/>
                                         <constraints>
                                             <constraint firstItem="YlN-P4-kCP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="PZ0-zP-QTb" secondAttribute="trailing" constant="16" id="26z-1s-rav"/>
                                             <constraint firstItem="PZ0-zP-QTb" firstAttribute="leading" secondItem="Vx9-bU-Nmg" secondAttribute="leading" id="Efi-XO-Bsm"/>
@@ -96,17 +89,14 @@
                                         <subviews>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1Fv-ah-Pgg">
                                                 <rect key="frame" x="521" y="0.0" width="51" height="31"/>
-                                                <animations/>
                                             </switch>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status Bar Visible:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxP-bE-fv7">
                                                 <rect key="frame" x="0.0" y="5" width="139" height="21"/>
-                                                <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <animations/>
                                         <constraints>
                                             <constraint firstItem="1Fv-ah-Pgg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="oxP-bE-fv7" secondAttribute="trailing" constant="16" id="9Im-cf-boT"/>
                                             <constraint firstItem="oxP-bE-fv7" firstAttribute="leading" secondItem="lJ5-nc-Bzy" secondAttribute="leading" id="IUU-PJ-ilA"/>
@@ -118,7 +108,6 @@
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J1A-cC-d8p">
                                         <rect key="frame" x="0.0" y="247" width="570" height="44"/>
-                                        <animations/>
                                         <color key="backgroundColor" red="0.18823529410000001" green="0.51372549020000002" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="vMC-3F-8rA"/>
@@ -131,10 +120,8 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <animations/>
                             </stackView>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="PjX-pq-6hy" firstAttribute="width" secondItem="9IJ-DT-AST" secondAttribute="width" constant="-30" id="WWU-pf-ktf"/>
@@ -145,11 +132,11 @@
                     <navigationItem key="navigationItem" title="CRToastSwift" id="Bwz-fn-zL2"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="animationTypeSegmentedControl" destination="YlN-P4-kCP" id="9Yt-NK-ldS"/>
+                        <outlet property="animationSegmentedControl" destination="YlN-P4-kCP" id="lfq-jN-401"/>
                         <outlet property="statusBarVisibleSwitch" destination="1Fv-ah-Pgg" id="0oh-NE-1BI"/>
-                        <outlet property="subtitleTextField" destination="IQ7-Mi-rPl" id="1eb-1H-X6u"/>
-                        <outlet property="templateSegmentedControl" destination="Yf5-2J-1fj" id="rDc-XK-a1B"/>
-                        <outlet property="titleTextField" destination="g3X-UV-LIk" id="CdS-Ad-nYc"/>
+                        <outlet property="subtextField" destination="IQ7-Mi-rPl" id="DdH-4l-B2q"/>
+                        <outlet property="textField" destination="g3X-UV-LIk" id="ZwM-ia-8mq"/>
+                        <outlet property="themeSegmentedControl" destination="Yf5-2J-1fj" id="cZh-ig-8va"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
