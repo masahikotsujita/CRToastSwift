@@ -1,6 +1,6 @@
 PODS:
   - CRToast (0.0.9)
-  - CRToastSwift (0.1.0):
+  - CRToastSwift (1.0.0-alpha.1):
     - CRToast (~> 0.0.9)
 
 DEPENDENCIES:
@@ -12,6 +12,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   CRToast: 5a78c22b921c5ed3487488af605bc403a9c92fed
-  CRToastSwift: fb4b9835b4db0abce55914fcf9b6a35d9bb80810
+  CRToastSwift: 90c61731a88e6d3180289722f8cc72f1211dc36f
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 5986c3360b86b899bd260da98199b1a125f5b3f7
+
+COCOAPODS: 1.0.0.beta.3
