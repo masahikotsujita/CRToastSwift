@@ -61,7 +61,7 @@ public func presentNotification<Notification: NotificationType, Context: Notific
 
     // Configuring Appearances
 
-    options[kCRToastNotificationTypeKey]                = traits.size.crToastType.rawValue
+    options[kCRToastNotificationTypeKey]                = CRToastType(notificationSize: traits.size).rawValue
     switch traits.size {
     case .Custom(let preferredHeight):
         options[kCRToastNotificationPreferredHeightKey] = preferredHeight

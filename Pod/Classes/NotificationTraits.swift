@@ -59,22 +59,9 @@ public struct NotificationTraits {
     public var subtextShadowOffset: CGSize = CGSize(width: 0.0, height: 0.0)
     
     public enum Size {
-        
         case Compact
         case Regular
         case Custom(preferredHeight: CGFloat)
-        
-        var crToastType: CRToastType {
-            switch self {
-            case .Compact:
-                return .StatusBar
-            case .Regular:
-                return .NavigationBar
-            case .Custom(_):
-                return .Custom
-            }
-        }
-        
     }
     
     public var size: Size = .Regular

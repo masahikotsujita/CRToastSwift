@@ -49,8 +49,4 @@ public struct UserInteraction: OptionSetType {
     public static let AnySwipe              = UserInteraction(rawValue: CRToastInteractionType.Swipe.rawValue)
     public static let Any                   = UserInteraction(rawValue: CRToastInteractionType.All.rawValue)
     
-    var crToastInteractionType: CRToastInteractionType {
-        return CRToastInteractionType(rawValue: self.rawValue)
-    }
-    
 }
