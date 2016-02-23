@@ -26,16 +26,28 @@
 import UIKit
 import CRToast
 
+/// Represents a notification presentation.
 public final class NotificationPresentation<Notification: NotificationType> {
     
+    /// Initializes a presentation with a specified identifier.
     init(identifier: String) {
         self.identifier = identifier
     }
     
+    /// The string to identify the presentation. Must be equal to the string set to the presentation for kCRToastIdentifier key.
     let identifier: String
     
+    /// The signal of user interaction. Calls handlers when user interactions are performed.
     let userInteractionSignal = Signal<(Notification, UserInteraction, NotificationDismisser<Notification>)>()
     
+    /**
+     Adds a handler for specified user interaction.
+     
+     - parameter userInteraction: The user interaction.
+     - parameter handler:         A handler called when the user interaction is performed.
+     
+     - returns: The presentation itself.
+     */
     public func on(userInteraction: UserInteraction, handler: (Notification, NotificationDismisser<Notification>) -> Void) -> NotificationPresentation {
         self.userInteractionSignal.observe({ (notification, performedUserInteraction, dismisser) in
             if !(performedUserInteraction.intersect(userInteraction).isEmpty) {
@@ -45,8 +57,16 @@ public final class NotificationPresentation<Notification: NotificationType> {
         return self
     }
     
+    /// The signal of dismissal. Calles handlers when the notification is dismissed.
     let dismissalSignal = Signal<Notification>()
     
+    /**
+     Adds a handler for the dismissal.
+     
+     - parameter handler: A handler to be called when the notification is dismissed.
+     
+     - returns: The presentation itself.
+     */
     public func onDismissal(handler: (Notification) -> Void) -> NotificationPresentation {
         self.dismissalSignal.observe(handler)
         return self
@@ -54,14 +74,23 @@ public final class NotificationPresentation<Notification: NotificationType> {
     
 }
 
+/// Related to a notification presentation, and had ability to dismiss the notification.
 public struct NotificationDismisser<Notification: NotificationType> {
     
+    /// Initializes a dismisser with a presentation.
     init(presentation: NotificationPresentation<Notification>) {
         self.presentation = presentation
     }
     
+    /// The related notification presentation.
     weak var presentation: NotificationPresentation<Notification>?
     
+    /**
+     Dismisses the related notification.
+     
+     - parameter animated: The boolean value that determines whether animate the dismissal or not. Default is true.
+     - parameter handler:  A handler called when the notification is dismissed.
+     */
     public func dismiss(animated animated: Bool = true, handler: ((Notification) -> Void)? = nil) {
         guard let presentation = self.presentation else {
             debugPrint("CRToastSwift: Dismisser.dismiss() was called after presentation object had been deallocated.\nDismissal by this call will not be performed and given handler will not be invoked.")

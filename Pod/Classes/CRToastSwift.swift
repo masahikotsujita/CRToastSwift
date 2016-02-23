@@ -27,16 +27,17 @@ import Foundation
 import CRToast
 
 public func presentNotification<Notification: NotificationType, Context: NotificationPresentationContextType where Notification == Context.Notification>(notification: Notification, context: Context, animation: Animation = .Linear, presentationDuration: NSTimeInterval? = nil, presentationHandler: ((Notification, NotificationDismisser<Notification>) -> Void)? = nil) -> NotificationPresentation<Notification> {
-    
-    let traits = context.traitsForNotification(notification)
-    
-    // Initializing Presentation Objects and Configurings
 
+    // Initializing variables and constants
+
+    let traits = context.traitsForNotification(notification)
     let identifier = NSUUID().UUIDString
     let presentation = NotificationPresentation<Notification>(identifier: identifier)
     let dismisser = NotificationDismisser(presentation: presentation)
-
     var options = [String : AnyObject]()
+
+    // ID
+
     options[kCRToastIdentifierKey]                      = identifier
 
     // Configuring Texts
@@ -89,11 +90,6 @@ public func presentNotification<Notification: NotificationType, Context: Notific
 
     options[kCRToastKeepNavigationBarBorderKey]         = traits.keepsNavigationBarBorder
 
-    // Configuring Other Properties
-
-    options[kCRToastAutorotateKey]                      = traits.rotatesAutomatically
-    options[kCRToastCaptureDefaultWindowKey]            = traits.capturesDefaultWindow
-
     // Configuring Animations
 
     options[kCRToastAnimationInTypeKey]                 = animation.inCurve.rawValue
@@ -122,6 +118,11 @@ public func presentNotification<Notification: NotificationType, Context: Notific
     options[kCRToastInteractionRespondersKey]           = [CRToastInteractionResponder(interactionType: .All, automaticallyDismiss: false, block: { userInteraction in
         presentation.userInteractionSignal.send((notification, UserInteraction(rawValue: userInteraction.rawValue), dismisser))
     })]
+
+    // Others
+
+    options[kCRToastAutorotateKey]                      = traits.rotatesAutomatically
+    options[kCRToastCaptureDefaultWindowKey]            = traits.capturesDefaultWindow
 
     // Presenting Notification
 

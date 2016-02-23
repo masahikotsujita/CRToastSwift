@@ -25,6 +25,7 @@
 
 import Foundation
 
+/// A signal representing stream of values over time
 final class Signal<Value> {
     
     typealias Observer = (Value) -> Void
@@ -33,12 +34,14 @@ final class Signal<Value> {
     
     private let lock = NSLock()
     
+    /// Adds an observer
     func observe(handler: Observer) {
         synchronized(self.lock) {
             self.observers.append(handler)
         }
     }
     
+    /// Sends a value to observers
     func send(value: Value) {
         synchronized(self.lock) {
             self.observers.forEach { $0(value) }

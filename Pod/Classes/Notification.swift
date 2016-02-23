@@ -25,10 +25,13 @@
 
 import Foundation
 
+/// A type can be notified to user.
 public protocol NotificationType {
     
+    /// Main text.
     var text: String { get }
     
+    /// Subsidiary text. Ignored if the size of view is not large enough.
     var subtext: String? { get }
     
 }

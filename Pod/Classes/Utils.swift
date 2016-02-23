@@ -26,6 +26,7 @@
 import Foundation
 import CRToast
 
+/// Do something locking given lock object
 func synchronized(lock: NSLocking, @noescape body: () -> Void) {
     lock.lock()
     body()

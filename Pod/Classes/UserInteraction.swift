@@ -25,6 +25,7 @@
 
 import CRToast
 
+/// Represents an user interaction
 public struct UserInteraction: OptionSetType {
     
     public typealias RawValue = CRToastInteractionType.RawValue
