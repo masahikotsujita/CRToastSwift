@@ -31,8 +31,12 @@ public protocol NotificationType {
     /// Main text.
     var text: String { get }
     
+}
+
+public extension NotificationType {
+    
     /// Subsidiary text. Ignored if the size of view is not large enough.
-    var subtext: String? { get }
+    public var subtext: String? { return nil }
     
 }
 
@@ -53,10 +57,6 @@ extension String: NotificationType {
     
     public var text: String {
         return self
-    }
-    
-    public var subtext: String? {
-        return nil
     }
     
 }
