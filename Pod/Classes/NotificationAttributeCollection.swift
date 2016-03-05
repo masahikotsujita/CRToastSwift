@@ -1,5 +1,5 @@
 //
-//  NotificationTraits.swift
+//  NotificationAttributeCollection.swift
 //  CRToastSwift
 //
 //  Copyright (c) 2015 Masahiko Tsujita <tsujitamasahiko.dev@icloud.com>
@@ -27,7 +27,7 @@ import Foundation
 import CRToast
 
 /// A structure containing miscellaneous properties for a notification.
-public struct NotificationTraits {
+public struct NotificationAttributeCollection {
     
     public typealias AccessoryViewAlignment = CRToastAccessoryViewAlignment
     

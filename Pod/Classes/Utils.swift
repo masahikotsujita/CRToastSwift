@@ -35,7 +35,7 @@ func synchronized(lock: NSLocking, @noescape body: () -> Void) {
 
 extension CRToastType {
     
-    init(notificationSize: NotificationTraits.Size) {
+    init(notificationSize: NotificationAttributeCollection.Size) {
         switch notificationSize {
         case .Compact:
             self = .StatusBar

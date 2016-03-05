@@ -88,8 +88,8 @@ class ViewController: UIViewController, NotificationPresentationContextType {
         }
     }
     
-    func traitsForNotification(_: Notification) -> NotificationTraits {
-        var traits = NotificationTraits()
+    func attributesForNotification(_: Notification) -> NotificationAttributeCollection {
+        var traits = NotificationAttributeCollection()
         traits.image = self.selectedTheme.image
         traits.backgroundColor = self.selectedTheme.backgroundColor
         traits.showsStatusBar = self.statusBarVisibleSwitch.on

@@ -36,7 +36,7 @@ public class NotificationPresenter {
         
         // Initializing variables and constants
         
-        let traits = context.traitsForNotification(notification)
+        let traits = context.attributesForNotification(notification)
         let identifier = NSUUID().UUIDString
         let presentation = NotificationPresentation<Notification>(identifier: identifier)
         let dismisser = NotificationDismisser(presentation: presentation)

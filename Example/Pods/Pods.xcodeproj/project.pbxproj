@@ -32,7 +32,7 @@
 		CA3872915A6165B3860ADF5500523205 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AE8A5A62136B1889D2E6B6EE2A60B51 /* Foundation.framework */; };
 		CC652A28C61F40A4C788337F3F5E4F32 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AE8A5A62136B1889D2E6B6EE2A60B51 /* Foundation.framework */; };
 		D6715EDC1C815F1C00157ED2 /* NotificationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6715EDB1C815F1C00157ED2 /* NotificationPresenter.swift */; };
-		DA765A649A6DB54EC193D426479FE0E7 /* NotificationTraits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384A44D3D46306E394CF58576BA70D83 /* NotificationTraits.swift */; };
+		DA765A649A6DB54EC193D426479FE0E7 /* NotificationAttributeCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384A44D3D46306E394CF58576BA70D83 /* NotificationAttributeCollection.swift */; };
 		E14015E3BDEEB18019ADE2A9FEA1D4D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AE8A5A62136B1889D2E6B6EE2A60B51 /* Foundation.framework */; };
 		E558E1943F0D720389E22F3F72C3DE58 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AE8A5A62136B1889D2E6B6EE2A60B51 /* Foundation.framework */; };
 		F0AC484A3CC96145535FE6F28E4FE758 /* NotificationPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4D32ADC03C98D97241DB52D7A15C42 /* NotificationPresentation.swift */; };
@@ -96,7 +96,7 @@
 		324E93C3577451E9859B70B5D3E5ECA6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		339653633508D6732B1210577D0CB5B4 /* CRToast-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CRToast-dummy.m"; sourceTree = "<group>"; };
 		3758D67D9A7282A309029E5C303D6091 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		384A44D3D46306E394CF58576BA70D83 /* NotificationTraits.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NotificationTraits.swift; sourceTree = "<group>"; };
+		384A44D3D46306E394CF58576BA70D83 /* NotificationAttributeCollection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NotificationAttributeCollection.swift; sourceTree = "<group>"; };
 		38DB8BF8F822F89D6F036A7DB9C88E88 /* Pods-CRToastSwift_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CRToastSwift_Example.release.xcconfig"; sourceTree = "<group>"; };
 		39E9678546EAF06081398C83AE4FAD19 /* Animation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		3B76F9CD4C7C55B081BDDCB282597CC9 /* CRToastView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CRToastView.h; path = CRToast/CRToastView.h; sourceTree = "<group>"; };
@@ -324,7 +324,7 @@
 				D6715EDB1C815F1C00157ED2 /* NotificationPresenter.swift */,
 				122E17783C544BE516F467ACCB83AE0E /* UserInteraction.swift */,
 				AF031A6A0F67812017F709C83C339CB9 /* Notification.swift */,
-				384A44D3D46306E394CF58576BA70D83 /* NotificationTraits.swift */,
+				384A44D3D46306E394CF58576BA70D83 /* NotificationAttributeCollection.swift */,
 				7ECC1701359C5658B26191F12D9CC90B /* NotificationPresentationContext.swift */,
 				AF4D32ADC03C98D97241DB52D7A15C42 /* NotificationPresentation.swift */,
 				626A07D75A06C66862D5EA0C1C2162FB /* Utils.swift */,
@@ -546,7 +546,7 @@
 				1E4BCC9481C5EE553AAF8D801C8B50D7 /* Signal.swift in Sources */,
 				9203DD80E0C1C957F4D7A439066BA0F6 /* UserInteraction.swift in Sources */,
 				FEAD7550F9652034B0EDA6AC3FA2A417 /* Notification.swift in Sources */,
-				DA765A649A6DB54EC193D426479FE0E7 /* NotificationTraits.swift in Sources */,
+				DA765A649A6DB54EC193D426479FE0E7 /* NotificationAttributeCollection.swift in Sources */,
 				09745575E59D84B9435E1BC947FD9095 /* NotificationPresentationContext.swift in Sources */,
 				D6715EDC1C815F1C00157ED2 /* NotificationPresenter.swift in Sources */,
 				F0AC484A3CC96145535FE6F28E4FE758 /* NotificationPresentation.swift in Sources */,
