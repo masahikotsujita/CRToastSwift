@@ -17,7 +17,6 @@
 		448C6B6A8253D8288302B02391E981F9 /* CRToastManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E7139809EBD1037FC80C1DA1EE0C8615 /* CRToastManager.m */; };
 		50E3AE089BA5FDB776F72AD7A5ADD115 /* CRToast-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 339653633508D6732B1210577D0CB5B4 /* CRToast-dummy.m */; };
 		53A54F7F0610B94AC03C33862D547590 /* Pods-CRToastSwift_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CED0B6FECF0B57BA3C71152C55209BA1 /* Pods-CRToastSwift_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		553367ECAD87AE1506105296A54C7CC5 /* CRToastSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C27A9D2867A992C97C2A27F234FED1F /* CRToastSwift.swift */; };
 		56980CC8BC7ED89305F96769A44CA5A1 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E9678546EAF06081398C83AE4FAD19 /* Animation.swift */; };
 		5F5A455F52E16F2C69AE4A4243B5E0AF /* Pods-CRToastSwift_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F6097562BEA2217ADE81C7407FA7F4E0 /* Pods-CRToastSwift_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		70F8D120A6B7FD27BE9E3DC50C5A78D1 /* Pods-CRToastSwift_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D5058EC8195885FDA20101B13F8F5E /* Pods-CRToastSwift_Tests-dummy.m */; };
@@ -32,6 +31,7 @@
 		B82288A480251B40A1DAE7DC66C48DEA /* CRToastView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B76F9CD4C7C55B081BDDCB282597CC9 /* CRToastView.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		CA3872915A6165B3860ADF5500523205 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AE8A5A62136B1889D2E6B6EE2A60B51 /* Foundation.framework */; };
 		CC652A28C61F40A4C788337F3F5E4F32 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AE8A5A62136B1889D2E6B6EE2A60B51 /* Foundation.framework */; };
+		D6715EDC1C815F1C00157ED2 /* NotificationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6715EDB1C815F1C00157ED2 /* NotificationPresenter.swift */; };
 		DA765A649A6DB54EC193D426479FE0E7 /* NotificationTraits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384A44D3D46306E394CF58576BA70D83 /* NotificationTraits.swift */; };
 		E14015E3BDEEB18019ADE2A9FEA1D4D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AE8A5A62136B1889D2E6B6EE2A60B51 /* Foundation.framework */; };
 		E558E1943F0D720389E22F3F72C3DE58 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AE8A5A62136B1889D2E6B6EE2A60B51 /* Foundation.framework */; };
@@ -107,7 +107,6 @@
 		4AE8A5A62136B1889D2E6B6EE2A60B51 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		5070466A3FAD7B5D36F96C89ECCB7147 /* CRToastLayoutHelpers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CRToastLayoutHelpers.h; path = CRToast/CRToastLayoutHelpers.h; sourceTree = "<group>"; };
 		513FBED57B4A4F6DEACD326A0D90BA02 /* CRToastSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = CRToastSwift.modulemap; sourceTree = "<group>"; };
-		5C27A9D2867A992C97C2A27F234FED1F /* CRToastSwift.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CRToastSwift.swift; sourceTree = "<group>"; };
 		626A07D75A06C66862D5EA0C1C2162FB /* Utils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		6C62169BC5A61076DCE0497D2BA20E03 /* Pods-CRToastSwift_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-CRToastSwift_Tests.modulemap"; sourceTree = "<group>"; };
 		735184D448E7CE182B9F2FD8AD1B3C66 /* CRToast-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CRToast-umbrella.h"; sourceTree = "<group>"; };
@@ -133,6 +132,7 @@
 		C96AF33B6E76058126F623C108124A16 /* CRToast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CRToast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE31EC8BB757798132570537B5CF5FCA /* CRToast.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CRToast.xcconfig; sourceTree = "<group>"; };
 		CED0B6FECF0B57BA3C71152C55209BA1 /* Pods-CRToastSwift_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CRToastSwift_Example-umbrella.h"; sourceTree = "<group>"; };
+		D6715EDB1C815F1C00157ED2 /* NotificationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationPresenter.swift; sourceTree = "<group>"; };
 		DA506EC7AE52F379E99B1CAACA8936AA /* Pods-CRToastSwift_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CRToastSwift_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		DA69FADFE98E5B6062CB9965AF34C3C9 /* Pods_CRToastSwift_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CRToastSwift_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE9F00EB26AF7980000BF237F1E3B1CE /* Pods-CRToastSwift_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CRToastSwift_Tests-frameworks.sh"; sourceTree = "<group>"; };
@@ -320,8 +320,8 @@
 			isa = PBXGroup;
 			children = (
 				39E9678546EAF06081398C83AE4FAD19 /* Animation.swift */,
-				5C27A9D2867A992C97C2A27F234FED1F /* CRToastSwift.swift */,
 				7CDA0E5675C2038148DB081E3BBBC4CB /* Signal.swift */,
+				D6715EDB1C815F1C00157ED2 /* NotificationPresenter.swift */,
 				122E17783C544BE516F467ACCB83AE0E /* UserInteraction.swift */,
 				AF031A6A0F67812017F709C83C339CB9 /* Notification.swift */,
 				384A44D3D46306E394CF58576BA70D83 /* NotificationTraits.swift */,
@@ -543,12 +543,12 @@
 			files = (
 				56980CC8BC7ED89305F96769A44CA5A1 /* Animation.swift in Sources */,
 				F93C7538129FDDFB3DDD1B398FF37553 /* CRToastSwift-dummy.m in Sources */,
-				553367ECAD87AE1506105296A54C7CC5 /* CRToastSwift.swift in Sources */,
 				1E4BCC9481C5EE553AAF8D801C8B50D7 /* Signal.swift in Sources */,
 				9203DD80E0C1C957F4D7A439066BA0F6 /* UserInteraction.swift in Sources */,
 				FEAD7550F9652034B0EDA6AC3FA2A417 /* Notification.swift in Sources */,
 				DA765A649A6DB54EC193D426479FE0E7 /* NotificationTraits.swift in Sources */,
 				09745575E59D84B9435E1BC947FD9095 /* NotificationPresentationContext.swift in Sources */,
+				D6715EDC1C815F1C00157ED2 /* NotificationPresenter.swift in Sources */,
 				F0AC484A3CC96145535FE6F28E4FE758 /* NotificationPresentation.swift in Sources */,
 				226DF8CB7AC3F7966006C58B29A3B083 /* Utils.swift in Sources */,
 			);
