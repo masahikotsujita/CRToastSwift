@@ -32,7 +32,7 @@ public class NotificationPresenter {
         
     }
     
-    public func presentNotification<Notification: NotificationType, Context: NotificationPresentationContextType where Notification == Context.Notification>(notification: Notification, context: Context, animation: Animation = .Linear, presentationDuration: NSTimeInterval? = 2.0, presentationHandler: ((Notification, NotificationDismisser<Notification>) -> Void)? = nil) -> NotificationPresentation<Notification> {
+    public func present<Notification: NotificationType, Context: NotificationPresentationContextType where Notification == Context.Notification>(notification: Notification, context: Context, animation: Animation = .Linear, duration: NSTimeInterval? = 2.0, handler: ((Notification, NotificationDismisser<Notification>) -> Void)? = nil) -> NotificationPresentation<Notification> {
         
         // Initializing variables and constants
         
@@ -114,9 +114,9 @@ public class NotificationPresenter {
         
         // Configuring User Interactions
         
-        if let presentationDuration = presentationDuration {
+        if let duration = duration {
             options[kCRToastForceUserInteractionKey]        = false
-            options[kCRToastTimeIntervalKey]                = presentationDuration
+            options[kCRToastTimeIntervalKey]                = duration
         } else {
             options[kCRToastForceUserInteractionKey]        = true
         }
@@ -132,8 +132,8 @@ public class NotificationPresenter {
         
         // Presenting Notification
         
-        if let presentationHandler = presentationHandler {
-            presentation.onPresented(presentationHandler)
+        if let handler = handler {
+            presentation.onPresented(handler)
         }
         
         dispatch_async(dispatch_get_main_queue()) {
@@ -149,20 +149,20 @@ public class NotificationPresenter {
     
     public static let sharedPresenter = NotificationPresenter()
     
-    public static func presentNotification<Notification: NotificationType, Context: NotificationPresentationContextType where Notification == Context.Notification>(notification: Notification, context: Context, animation: Animation = .Linear, presentationDuration: NSTimeInterval? = 2.0, presentationHandler: ((Notification, NotificationDismisser<Notification>) -> Void)? = nil) -> NotificationPresentation<Notification> {
-        return self.sharedPresenter.presentNotification(notification, context: context, animation: animation, presentationDuration: presentationDuration, presentationHandler: presentationHandler)
+    public static func present<Notification: NotificationType, Context: NotificationPresentationContextType where Notification == Context.Notification>(notification: Notification, context: Context, animation: Animation = .Linear, duration: NSTimeInterval? = 2.0, handler: ((Notification, NotificationDismisser<Notification>) -> Void)? = nil) -> NotificationPresentation<Notification> {
+        return self.sharedPresenter.present(notification, context: context, animation: animation, duration: duration, handler: handler)
     }
     
-    public static func presentNotification<Notification: NotificationType>(notification: Notification, animation: Animation = .Linear, presentationDuration: NSTimeInterval? = 2.0, presentationHandler: ((Notification, NotificationDismisser<Notification>) -> Void)? = nil) -> NotificationPresentation<Notification> {
-        return self.sharedPresenter.presentNotification(notification, context: NotificationPresentationContext { _ in NotificationAttributeCollection() }, animation: animation, presentationDuration: presentationDuration, presentationHandler: presentationHandler)
+    public static func present<Notification: NotificationType>(notification: Notification, animation: Animation = .Linear, duration: NSTimeInterval? = 2.0, handler: ((Notification, NotificationDismisser<Notification>) -> Void)? = nil) -> NotificationPresentation<Notification> {
+        return self.sharedPresenter.present(notification, context: NotificationPresentationContext { _ in NotificationAttributeCollection() }, animation: animation, duration: duration, handler: handler)
     }
     
-    public static func presentNotification<Context: NotificationPresentationContextType where Context.Notification == CRToastSwift.Notification>(text text: String, subtext: String?, context: Context, animation: Animation = .Linear, presentationDuration: NSTimeInterval? = 2.0, presentationHandler: ((Notification, NotificationDismisser<Notification>) -> Void)? = nil) -> NotificationPresentation<Notification> {
-        return self.sharedPresenter.presentNotification(Notification(text: text, subtext: subtext), context: context, animation: animation, presentationDuration: presentationDuration, presentationHandler: presentationHandler)
+    public static func present<Context: NotificationPresentationContextType where Context.Notification == CRToastSwift.Notification>(text text: String, subtext: String?, context: Context, animation: Animation = .Linear, duration: NSTimeInterval? = 2.0, handler: ((Notification, NotificationDismisser<Notification>) -> Void)? = nil) -> NotificationPresentation<Notification> {
+        return self.sharedPresenter.present(Notification(text: text, subtext: subtext), context: context, animation: animation, duration: duration, handler: handler)
     }
     
-    public static func presentNotification(text text: String, subtext: String?, animation: Animation = .Linear, presentationDuration: NSTimeInterval? = 2.0, presentationHandler: ((Notification, NotificationDismisser<Notification>) -> Void)? = nil) -> NotificationPresentation<Notification> {
-        return self.sharedPresenter.presentNotification(Notification(text: text, subtext: subtext), context: NotificationPresentationContext { _ in NotificationAttributeCollection() }, animation: animation, presentationDuration: presentationDuration, presentationHandler: presentationHandler)
+    public static func present(text text: String, subtext: String?, animation: Animation = .Linear, duration: NSTimeInterval? = 2.0, handler: ((Notification, NotificationDismisser<Notification>) -> Void)? = nil) -> NotificationPresentation<Notification> {
+        return self.sharedPresenter.present(Notification(text: text, subtext: subtext), context: NotificationPresentationContext { _ in NotificationAttributeCollection() }, animation: animation, duration: duration, handler: handler)
     }
     
 }
