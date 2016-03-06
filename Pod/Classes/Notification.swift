@@ -31,11 +31,13 @@ public protocol NotificationType {
     /// Main text.
     var text: String { get }
     
+    /// Subsidiary text. Ignored if the size of view is not large enough.
+    var subtext: String? { get }
+    
 }
 
 public extension NotificationType {
     
-    /// Subsidiary text. Ignored if the size of view is not large enough.
     public var subtext: String? { return nil }
     
 }
