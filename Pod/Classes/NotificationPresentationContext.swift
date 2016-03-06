@@ -32,3 +32,17 @@ public protocol NotificationPresentationContextType {
     func attributesForNotification(notification: Self.Notification) -> NotificationAttributeCollection
     
 }
+
+public struct NotificationPresentationContext<Notification: NotificationType>: NotificationPresentationContextType {
+    
+    public init(_ handler: (Notification) -> NotificationAttributeCollection) {
+        self.handler = handler
+    }
+    
+    public let handler: (Notification) -> NotificationAttributeCollection
+    
+    public func attributesForNotification(notification: Notification) -> NotificationAttributeCollection {
+        return self.handler(notification)
+    }
+    
+}
