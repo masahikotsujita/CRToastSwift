@@ -36,7 +36,7 @@ public class NotificationPresenter {
         
         // Initializing variables and constants
         
-        let traits = context.attributesForNotification(notification)
+        let attributes = context.attributesForNotification(notification)
         let identifier = NSUUID().UUIDString
         let presentation = NotificationPresentation<Notification>(identifier: identifier)
         let dismisser = NotificationDismisser(presentation: presentation)
@@ -49,52 +49,52 @@ public class NotificationPresenter {
         // Configuring Texts
         
         options[kCRToastTextKey]                            = notification.text
-        options[kCRToastTextAlignmentKey]                   = traits.textAlignment.rawValue
-        options[kCRToastFontKey]                            = traits.textFont
-        options[kCRToastTextColorKey]                       = traits.textColor
-        options[kCRToastTextMaxNumberOfLinesKey]            = traits.textMaxNumberOfLines
-        options[kCRToastTextShadowColorKey]                 = traits.textShadowColor
-        options[kCRToastTextShadowOffsetKey]                = NSValue(CGSize: traits.textShadowOffset)
+        options[kCRToastTextAlignmentKey]                   = attributes.textAlignment.rawValue
+        options[kCRToastFontKey]                            = attributes.textFont
+        options[kCRToastTextColorKey]                       = attributes.textColor
+        options[kCRToastTextMaxNumberOfLinesKey]            = attributes.textMaxNumberOfLines
+        options[kCRToastTextShadowColorKey]                 = attributes.textShadowColor
+        options[kCRToastTextShadowOffsetKey]                = NSValue(CGSize: attributes.textShadowOffset)
         
         if notification.subtext != nil {
             options[kCRToastSubtitleTextKey]                = notification.subtext
         }
-        options[kCRToastSubtitleTextAlignmentKey]           = traits.subtextAlignment.rawValue
-        options[kCRToastSubtitleFontKey]                    = traits.subtextFont
-        options[kCRToastSubtitleTextColorKey]               = traits.subtextColor
-        options[kCRToastSubtitleTextMaxNumberOfLinesKey]    = traits.subtextMaxNumberOfLines
-        options[kCRToastSubtitleTextShadowColorKey]         = traits.subtextShadowColor
-        options[kCRToastSubtitleTextShadowOffsetKey]        = NSValue(CGSize: traits.subtextShadowOffset)
+        options[kCRToastSubtitleTextAlignmentKey]           = attributes.subtextAlignment.rawValue
+        options[kCRToastSubtitleFontKey]                    = attributes.subtextFont
+        options[kCRToastSubtitleTextColorKey]               = attributes.subtextColor
+        options[kCRToastSubtitleTextMaxNumberOfLinesKey]    = attributes.subtextMaxNumberOfLines
+        options[kCRToastSubtitleTextShadowColorKey]         = attributes.subtextShadowColor
+        options[kCRToastSubtitleTextShadowOffsetKey]        = NSValue(CGSize: attributes.subtextShadowOffset)
         
         // Configuring Appearances
         
-        options[kCRToastNotificationTypeKey]                = CRToastType(notificationSize: traits.size).rawValue
-        switch traits.size {
+        options[kCRToastNotificationTypeKey]                = CRToastType(notificationSize: attributes.size).rawValue
+        switch attributes.size {
         case .Custom(let preferredHeight):
             options[kCRToastNotificationPreferredHeightKey] = preferredHeight
         default:
             break
         }
         
-        options[kCRToastBackgroundColorKey]                 = traits.backgroundColor
-        options[kCRToastBackgroundViewKey]                  = traits.backgroundView?()
+        options[kCRToastBackgroundColorKey]                 = attributes.backgroundColor
+        options[kCRToastBackgroundViewKey]                  = attributes.backgroundView?()
         
-        options[kCRToastNotificationPreferredPaddingKey]    = traits.preferredPadding
+        options[kCRToastNotificationPreferredPaddingKey]    = attributes.preferredPadding
         
-        options[kCRToastUnderStatusBarKey]                  = traits.showsStatusBar
-        options[kCRToastStatusBarStyleKey]                  = traits.statusBarStyle.rawValue
+        options[kCRToastUnderStatusBarKey]                  = attributes.showsStatusBar
+        options[kCRToastStatusBarStyleKey]                  = attributes.statusBarStyle.rawValue
         
-        options[kCRToastImageKey]                           = traits.image
-        options[kCRToastImageTintKey]                       = traits.imageTintColor
+        options[kCRToastImageKey]                           = attributes.image
+        options[kCRToastImageTintKey]                       = attributes.imageTintColor
         
-        options[kCRToastImageAlignmentKey]                  = traits.imageAlignment.rawValue
-        options[kCRToastImageContentModeKey]                = traits.imageContentMode.rawValue
+        options[kCRToastImageAlignmentKey]                  = attributes.imageAlignment.rawValue
+        options[kCRToastImageContentModeKey]                = attributes.imageContentMode.rawValue
         
-        options[kCRToastShowActivityIndicatorKey]           = traits.showsActivityIndicatorView
-        options[kCRToastActivityIndicatorAlignmentKey]      = traits.activityIndicatorAlignment.rawValue
-        options[kCRToastActivityIndicatorViewStyleKey]      = traits.activityIndicatorViewStyle.rawValue
+        options[kCRToastShowActivityIndicatorKey]           = attributes.showsActivityIndicatorView
+        options[kCRToastActivityIndicatorAlignmentKey]      = attributes.activityIndicatorAlignment.rawValue
+        options[kCRToastActivityIndicatorViewStyleKey]      = attributes.activityIndicatorViewStyle.rawValue
         
-        options[kCRToastKeepNavigationBarBorderKey]         = traits.keepsNavigationBarBorder
+        options[kCRToastKeepNavigationBarBorderKey]         = attributes.keepsNavigationBarBorder
         
         // Configuring Animations
         
@@ -127,8 +127,8 @@ public class NotificationPresenter {
         
         // Others
         
-        options[kCRToastAutorotateKey]                      = traits.rotatesAutomatically
-        options[kCRToastCaptureDefaultWindowKey]            = traits.capturesDefaultWindow
+        options[kCRToastAutorotateKey]                      = attributes.rotatesAutomatically
+        options[kCRToastCaptureDefaultWindowKey]            = attributes.capturesDefaultWindow
         
         // Presenting Notification
         
