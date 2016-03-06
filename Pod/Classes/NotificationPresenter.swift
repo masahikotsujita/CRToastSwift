@@ -149,4 +149,8 @@ public class NotificationPresenter {
         return self.sharedPresenter.presentNotification(notification, context: context, animation: animation, presentationDuration: presentationDuration, presentationHandler: presentationHandler)
     }
     
+    public static func presentNotification<Notification: NotificationType>(notification: Notification, animation: Animation = .Linear, presentationDuration: NSTimeInterval? = 2.0, presentationHandler: ((Notification, NotificationDismisser<Notification>) -> Void)? = nil) -> NotificationPresentation<Notification> {
+        return self.sharedPresenter.presentNotification(notification, context: NotificationPresentationContext { _ in NotificationAttributeCollection() }, animation: animation, presentationDuration: presentationDuration, presentationHandler: presentationHandler)
+    }
+    
 }
