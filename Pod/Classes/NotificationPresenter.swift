@@ -157,4 +157,12 @@ public class NotificationPresenter {
         return self.sharedPresenter.presentNotification(notification, context: NotificationPresentationContext { _ in NotificationAttributeCollection() }, animation: animation, presentationDuration: presentationDuration, presentationHandler: presentationHandler)
     }
     
+    public static func presentNotification<Context: NotificationPresentationContextType where Context.Notification == CRToastSwift.Notification>(text text: String, subtext: String?, context: Context, animation: Animation = .Linear, presentationDuration: NSTimeInterval? = 2.0, presentationHandler: ((Notification, NotificationDismisser<Notification>) -> Void)? = nil) -> NotificationPresentation<Notification> {
+        return self.sharedPresenter.presentNotification(Notification(text: text, subtext: subtext), context: context, animation: animation, presentationDuration: presentationDuration, presentationHandler: presentationHandler)
+    }
+    
+    public static func presentNotification(text text: String, subtext: String?, animation: Animation = .Linear, presentationDuration: NSTimeInterval? = 2.0, presentationHandler: ((Notification, NotificationDismisser<Notification>) -> Void)? = nil) -> NotificationPresentation<Notification> {
+        return self.sharedPresenter.presentNotification(Notification(text: text, subtext: subtext), context: NotificationPresentationContext { _ in NotificationAttributeCollection() }, animation: animation, presentationDuration: presentationDuration, presentationHandler: presentationHandler)
+    }
+    
 }
