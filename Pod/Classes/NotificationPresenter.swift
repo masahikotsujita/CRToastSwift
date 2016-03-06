@@ -132,9 +132,13 @@ public class NotificationPresenter {
         
         // Presenting Notification
         
+        if let presentationHandler = presentationHandler {
+            presentation.onPresented(presentationHandler)
+        }
+        
         dispatch_async(dispatch_get_main_queue()) {
             CRToastManager.showNotificationWithOptions(options, apperanceBlock: {
-                presentationHandler?(notification, dismisser)
+                presentation.presentationSignal.send(notification, dismisser)
                 }, completionBlock: {
                     presentation.dismissalSignal.send(notification)
             })

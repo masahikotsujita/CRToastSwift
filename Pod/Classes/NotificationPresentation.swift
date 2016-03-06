@@ -37,6 +37,21 @@ public final class NotificationPresentation<Notification: NotificationType> {
     /// The string to identify the presentation. Must be equal to the string set to the presentation for kCRToastIdentifier key.
     let identifier: String
     
+    /// The signal of presentation. Calls handlers when the notification is presented.
+    let presentationSignal = Signal<(Notification, NotificationDismisser<Notification>)>()
+    
+    /**
+     Adds a handler for the presentation.
+     
+     - parameter handler: A handler to be called when the notification is presented.
+     
+     - returns: The presentation itself.
+     */
+    public func onPresented(handler: (Notification, NotificationDismisser<Notification>) -> Void) -> NotificationPresentation {
+        self.presentationSignal.observe(handler)
+        return self
+    }
+    
     /// The signal of user interaction. Calls handlers when user interactions are performed.
     let userInteractionSignal = Signal<(Notification, UserInteraction, NotificationDismisser<Notification>)>()
     
