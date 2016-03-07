@@ -106,7 +106,7 @@ public struct NotificationAttributeCollection {
     public var backgroundColor = UIColor.darkGrayColor()
     
     /// The view to be placed on background of notification view.
-    public var backgroundView: (() -> UIView?)?
+    public var backgroundView: UIView?
     
     /// The boolean value that determines the activity indicator is displayed or not.
     public var showsActivityIndicatorView = false

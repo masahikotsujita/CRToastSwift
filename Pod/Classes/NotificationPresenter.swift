@@ -77,7 +77,7 @@ public class NotificationPresenter {
         }
         
         options[kCRToastBackgroundColorKey]                 = attributes.backgroundColor
-        options[kCRToastBackgroundViewKey]                  = attributes.backgroundView?()
+        options[kCRToastBackgroundViewKey]                  = attributes.backgroundView
         
         options[kCRToastNotificationPreferredPaddingKey]    = attributes.preferredPadding
         
