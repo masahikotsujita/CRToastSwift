@@ -25,16 +25,32 @@
 
 import Foundation
 
+/// Represents a context for notification presentations.
 public protocol PresentationContextType {
     
     typealias Notification: NotificationType
     
+    /**
+     Returns attributes for the notification to be presented.
+     
+     - parameter notification: The notification to be presented.
+     
+     - returns: The attributes for the notification.
+     */
     func attributesForNotification(notification: Self.Notification) -> NotificationAttributeCollection
     
 }
 
+/// A presentation context initialized with a function for its attributesForNotification(: ).
 public struct PresentationContext<Notification: NotificationType>: PresentationContextType {
     
+    /**
+     Initializes a presentation context with a function for attributesForNotification(: ).
+     
+     - parameter handler: The function for attributesForNotification(: ).
+     
+     - returns: Initialized presentation context.
+     */
     public init(_ handler: (Notification) -> NotificationAttributeCollection) {
         self.handler = handler
     }
