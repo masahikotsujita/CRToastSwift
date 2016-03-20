@@ -31,6 +31,7 @@
 		B82288A480251B40A1DAE7DC66C48DEA /* CRToastView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B76F9CD4C7C55B081BDDCB282597CC9 /* CRToastView.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		CA3872915A6165B3860ADF5500523205 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AE8A5A62136B1889D2E6B6EE2A60B51 /* Foundation.framework */; };
 		CC652A28C61F40A4C788337F3F5E4F32 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AE8A5A62136B1889D2E6B6EE2A60B51 /* Foundation.framework */; };
+		D65BF8E61C9F0F3400EDA220 /* Dismisser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65BF8E51C9F0F3400EDA220 /* Dismisser.swift */; };
 		D6715EDC1C815F1C00157ED2 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6715EDB1C815F1C00157ED2 /* Presenter.swift */; };
 		DA765A649A6DB54EC193D426479FE0E7 /* NotificationAttributeCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384A44D3D46306E394CF58576BA70D83 /* NotificationAttributeCollection.swift */; };
 		E14015E3BDEEB18019ADE2A9FEA1D4D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AE8A5A62136B1889D2E6B6EE2A60B51 /* Foundation.framework */; };
@@ -132,6 +133,7 @@
 		C96AF33B6E76058126F623C108124A16 /* CRToast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CRToast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE31EC8BB757798132570537B5CF5FCA /* CRToast.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CRToast.xcconfig; sourceTree = "<group>"; };
 		CED0B6FECF0B57BA3C71152C55209BA1 /* Pods-CRToastSwift_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CRToastSwift_Example-umbrella.h"; sourceTree = "<group>"; };
+		D65BF8E51C9F0F3400EDA220 /* Dismisser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dismisser.swift; sourceTree = "<group>"; };
 		D6715EDB1C815F1C00157ED2 /* Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		DA506EC7AE52F379E99B1CAACA8936AA /* Pods-CRToastSwift_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CRToastSwift_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		DA69FADFE98E5B6062CB9965AF34C3C9 /* Pods_CRToastSwift_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CRToastSwift_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -327,6 +329,7 @@
 				384A44D3D46306E394CF58576BA70D83 /* NotificationAttributeCollection.swift */,
 				7ECC1701359C5658B26191F12D9CC90B /* PresentationContext.swift */,
 				AF4D32ADC03C98D97241DB52D7A15C42 /* Presentation.swift */,
+				D65BF8E51C9F0F3400EDA220 /* Dismisser.swift */,
 				626A07D75A06C66862D5EA0C1C2162FB /* Utils.swift */,
 			);
 			path = Classes;
@@ -550,6 +553,7 @@
 				09745575E59D84B9435E1BC947FD9095 /* PresentationContext.swift in Sources */,
 				D6715EDC1C815F1C00157ED2 /* Presenter.swift in Sources */,
 				F0AC484A3CC96145535FE6F28E4FE758 /* Presentation.swift in Sources */,
+				D65BF8E61C9F0F3400EDA220 /* Dismisser.swift in Sources */,
 				226DF8CB7AC3F7966006C58B29A3B083 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
