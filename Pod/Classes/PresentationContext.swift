@@ -1,5 +1,5 @@
 //
-//  NotificationPresentationContext.swift
+//  PresentationContext.swift
 //  CRToastSwift
 //
 //  Copyright (c) 2015 Masahiko Tsujita <tsujitamasahiko.dev@icloud.com>
@@ -25,7 +25,7 @@
 
 import Foundation
 
-public protocol NotificationPresentationContextType {
+public protocol PresentationContextType {
     
     typealias Notification: NotificationType
     
@@ -33,7 +33,7 @@ public protocol NotificationPresentationContextType {
     
 }
 
-public struct NotificationPresentationContext<Notification: NotificationType>: NotificationPresentationContextType {
+public struct PresentationContext<Notification: NotificationType>: PresentationContextType {
     
     public init(_ handler: (Notification) -> NotificationAttributeCollection) {
         self.handler = handler

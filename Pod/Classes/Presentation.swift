@@ -1,5 +1,5 @@
 //
-//  NotificationPresentation.swift
+//  Presentation.swift
 //  CRToastSwift
 //
 //  Copyright (c) 2015 Masahiko Tsujita <tsujitamasahiko.dev@icloud.com>
@@ -27,7 +27,7 @@ import UIKit
 import CRToast
 
 /// Represents a notification presentation.
-public final class NotificationPresentation<Notification: NotificationType> {
+public final class Presentation<Notification: NotificationType> {
     
     /// Initializes a presentation with a specified identifier.
     init(identifier: String) {
@@ -38,7 +38,7 @@ public final class NotificationPresentation<Notification: NotificationType> {
     let identifier: String
     
     /// The signal of presentation. Calls handlers when the notification is presented.
-    let presentationSignal = Signal<(Notification, NotificationDismisser<Notification>)>()
+    let presentationSignal = Signal<(Notification, Dismisser<Notification>)>()
     
     /**
      Adds a handler for the presentation.
@@ -47,13 +47,13 @@ public final class NotificationPresentation<Notification: NotificationType> {
      
      - returns: The presentation itself.
      */
-    public func onPresented(handler: (Notification, NotificationDismisser<Notification>) -> Void) -> NotificationPresentation {
+    public func onPresented(handler: (Notification, Dismisser<Notification>) -> Void) -> Presentation {
         self.presentationSignal.observe(handler)
         return self
     }
     
     /// The signal of user interaction. Calls handlers when user interactions are performed.
-    let userInteractionSignal = Signal<(Notification, UserInteraction, NotificationDismisser<Notification>)>()
+    let userInteractionSignal = Signal<(Notification, UserInteraction, Dismisser<Notification>)>()
     
     /**
      Adds a handler for specified user interaction.
@@ -63,7 +63,7 @@ public final class NotificationPresentation<Notification: NotificationType> {
      
      - returns: The presentation itself.
      */
-    public func on(userInteraction: UserInteraction, handler: (Notification, NotificationDismisser<Notification>) -> Void) -> NotificationPresentation {
+    public func on(userInteraction: UserInteraction, handler: (Notification, Dismisser<Notification>) -> Void) -> Presentation {
         self.userInteractionSignal.observe({ (notification, performedUserInteraction, dismisser) in
             if !(performedUserInteraction.intersect(userInteraction).isEmpty) {
                 handler(notification, dismisser)
@@ -82,7 +82,7 @@ public final class NotificationPresentation<Notification: NotificationType> {
      
      - returns: The presentation itself.
      */
-    public func onDismissal(handler: (Notification) -> Void) -> NotificationPresentation {
+    public func onDismissal(handler: (Notification) -> Void) -> Presentation {
         self.dismissalSignal.observe(handler)
         return self
     }
@@ -90,15 +90,15 @@ public final class NotificationPresentation<Notification: NotificationType> {
 }
 
 /// Related to a notification presentation, and had ability to dismiss the notification.
-public struct NotificationDismisser<Notification: NotificationType> {
+public struct Dismisser<Notification: NotificationType> {
     
     /// Initializes a dismisser with a presentation.
-    init(presentation: NotificationPresentation<Notification>) {
+    init(presentation: Presentation<Notification>) {
         self.presentation = presentation
     }
     
     /// The related notification presentation.
-    weak var presentation: NotificationPresentation<Notification>?
+    weak var presentation: Presentation<Notification>?
     
     /**
      Dismisses the related notification.

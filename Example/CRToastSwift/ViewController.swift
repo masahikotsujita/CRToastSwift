@@ -44,7 +44,7 @@ enum Theme {
     
 }
 
-class ViewController: UIViewController, NotificationPresentationContextType {
+class ViewController: UIViewController, PresentationContextType {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,7 +97,7 @@ class ViewController: UIViewController, NotificationPresentationContextType {
     }
     
     @IBAction func showNotification(sender: UIButton) {
-        NotificationPresenter.present(text: self.textField.text!, subtext: self.subtextField.text, context: self, animation: self.selectedAnimation) { _ in
+        Presenter.present(text: self.textField.text!, subtext: self.subtextField.text, context: self, animation: self.selectedAnimation) { _ in
             print("Presented")
         } .on(.Tap) { (_, dismisser) in
             print("OnTapOnce")

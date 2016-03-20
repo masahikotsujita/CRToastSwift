@@ -1,5 +1,5 @@
 //
-//  NotificationPresenter.swift
+//  Presenter.swift
 //  CRToastSwift
 //
 //  Copyright (c) 2015 Masahiko Tsujita <tsujitamasahiko.dev@icloud.com>
@@ -26,20 +26,20 @@
 import Foundation
 import CRToast
 
-public class NotificationPresenter {
+public class Presenter {
     
     public init() {
         
     }
     
-    public func present<Notification: NotificationType, Context: NotificationPresentationContextType where Notification == Context.Notification>(notification: Notification, context: Context, animation: Animation = .Linear, duration: NSTimeInterval? = 2.0, handler: ((Notification, NotificationDismisser<Notification>) -> Void)? = nil) -> NotificationPresentation<Notification> {
+    public func present<Notification: NotificationType, Context:PresentationContextType where Notification == Context.Notification>(notification: Notification, context: Context, animation: Animation = .Linear, duration: NSTimeInterval? = 2.0, handler: ((Notification, Dismisser<Notification>) -> Void)? = nil) -> Presentation<Notification> {
         
         // Initializing variables and constants
         
         let attributes = context.attributesForNotification(notification)
         let identifier = NSUUID().UUIDString
-        let presentation = NotificationPresentation<Notification>(identifier: identifier)
-        let dismisser = NotificationDismisser(presentation: presentation)
+        let presentation = Presentation<Notification>(identifier: identifier)
+        let dismisser = Dismisser(presentation: presentation)
         var options = [String : AnyObject]()
         
         // ID
@@ -147,22 +147,22 @@ public class NotificationPresenter {
         return presentation
     }
     
-    public static let sharedPresenter = NotificationPresenter()
+    public static let sharedPresenter = Presenter()
     
-    public static func present<Notification: NotificationType, Context: NotificationPresentationContextType where Notification == Context.Notification>(notification: Notification, context: Context, animation: Animation = .Linear, duration: NSTimeInterval? = 2.0, handler: ((Notification, NotificationDismisser<Notification>) -> Void)? = nil) -> NotificationPresentation<Notification> {
+    public static func present<Notification: NotificationType, Context:PresentationContextType where Notification == Context.Notification>(notification: Notification, context: Context, animation: Animation = .Linear, duration: NSTimeInterval? = 2.0, handler: ((Notification, Dismisser<Notification>) -> Void)? = nil) -> Presentation<Notification> {
         return self.sharedPresenter.present(notification, context: context, animation: animation, duration: duration, handler: handler)
     }
     
-    public static func present<Notification: NotificationType>(notification: Notification, animation: Animation = .Linear, duration: NSTimeInterval? = 2.0, handler: ((Notification, NotificationDismisser<Notification>) -> Void)? = nil) -> NotificationPresentation<Notification> {
-        return self.sharedPresenter.present(notification, context: NotificationPresentationContext { _ in NotificationAttributeCollection() }, animation: animation, duration: duration, handler: handler)
+    public static func present<Notification: NotificationType>(notification: Notification, animation: Animation = .Linear, duration: NSTimeInterval? = 2.0, handler: ((Notification, Dismisser<Notification>) -> Void)? = nil) -> Presentation<Notification> {
+        return self.sharedPresenter.present(notification, context: PresentationContext { _ in NotificationAttributeCollection() }, animation: animation, duration: duration, handler: handler)
     }
     
-    public static func present<Context: NotificationPresentationContextType where Context.Notification == CRToastSwift.Notification>(text text: String, subtext: String?, context: Context, animation: Animation = .Linear, duration: NSTimeInterval? = 2.0, handler: ((Notification, NotificationDismisser<Notification>) -> Void)? = nil) -> NotificationPresentation<Notification> {
+    public static func present<Context:PresentationContextType where Context.Notification == CRToastSwift.Notification>(text text: String, subtext: String?, context: Context, animation: Animation = .Linear, duration: NSTimeInterval? = 2.0, handler: ((Notification, Dismisser<Notification>) -> Void)? = nil) -> Presentation<Notification> {
         return self.sharedPresenter.present(Notification(text: text, subtext: subtext), context: context, animation: animation, duration: duration, handler: handler)
     }
     
-    public static func present(text text: String, subtext: String?, animation: Animation = .Linear, duration: NSTimeInterval? = 2.0, handler: ((Notification, NotificationDismisser<Notification>) -> Void)? = nil) -> NotificationPresentation<Notification> {
-        return self.sharedPresenter.present(Notification(text: text, subtext: subtext), context: NotificationPresentationContext { _ in NotificationAttributeCollection() }, animation: animation, duration: duration, handler: handler)
+    public static func present(text text: String, subtext: String?, animation: Animation = .Linear, duration: NSTimeInterval? = 2.0, handler: ((Notification, Dismisser<Notification>) -> Void)? = nil) -> Presentation<Notification> {
+        return self.sharedPresenter.present(Notification(text: text, subtext: subtext), context: PresentationContext { _ in NotificationAttributeCollection() }, animation: animation, duration: duration, handler: handler)
     }
     
 }
