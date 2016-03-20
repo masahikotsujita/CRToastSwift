@@ -25,7 +25,7 @@
 
 import Foundation
 
-/// A type can be notified to user.
+/// A type can be presented to user by CRToast.
 public protocol NotificationType {
     
     /// Main text.
@@ -42,6 +42,10 @@ public extension NotificationType {
     
 }
 
+/**
+ Notification is a predefined notification type.
+ A notification is initialized with and stores text and subtext.
+ */
 public struct Notification: NotificationType {
     
     public init(text: String, subtext: String? = nil) {
@@ -55,6 +59,10 @@ public struct Notification: NotificationType {
     
 }
 
+/**
+ Add NotificationType protocol conformance to String.
+ Provides self as its text and always nil as its subtext.
+ */
 extension String: NotificationType {
     
     public var text: String {
