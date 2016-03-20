@@ -24,26 +24,10 @@
 //
 
 import Foundation
-import CRToast
 
 /// Do something locking given lock object
 func synchronized(lock: NSLocking, @noescape body: () -> Void) {
     lock.lock()
     body()
     lock.unlock()
-}
-
-extension CRToastType {
-    
-    init(notificationSize: NotificationAttributeCollection.Size) {
-        switch notificationSize {
-        case .Compact:
-            self = .StatusBar
-        case .Regular:
-            self = .NavigationBar
-        case .Custom(_):
-            self = .Custom
-        }
-    }
-    
 }

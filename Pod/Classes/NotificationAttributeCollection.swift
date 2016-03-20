@@ -73,9 +73,22 @@ public struct NotificationAttributeCollection {
     
     /// Determines size of notification view.
     public enum Size {
+        
         case Compact
         case Regular
         case Custom(preferredHeight: CGFloat)
+        
+        var CRToastTypeValue: CRToastType {
+            switch self {
+            case .Compact:
+                return .StatusBar
+            case .Regular:
+                return .NavigationBar
+            case .Custom(_):
+                return .Custom
+            }
+        }
+        
     }
     
     /// The value that determines size of notification view.

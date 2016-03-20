@@ -68,7 +68,7 @@ public class Presenter {
         
         // Configuring Appearances
         
-        options[kCRToastNotificationTypeKey]                = CRToastType(notificationSize: attributes.size).rawValue
+        options[kCRToastNotificationTypeKey]                = attributes.size.CRToastTypeValue.rawValue
         switch attributes.size {
         case .Custom(let preferredHeight):
             options[kCRToastNotificationPreferredHeightKey] = preferredHeight
