@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07A322BCF02E7EA204DE753C /* Pods_CRToastSwift_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F637EB0312029EC0913F002 /* Pods_CRToastSwift_Tests.framework */; };
+		4FB728735637A42730774204 /* Pods_CRToastSwift_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CD36BD82704C0C908DA7856 /* Pods_CRToastSwift_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
@@ -14,8 +16,6 @@
 		D61031F11C6A2BC80098DC90 /* NotificationImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D61031F01C6A2BC80098DC90 /* NotificationImages.xcassets */; };
 		D676A8F21BF799570075AE0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D676A8F01BF799570075AE0D /* Main.storyboard */; };
 		D676A8F41BF7995E0075AE0D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D676A8F31BF7995E0075AE0D /* ViewController.swift */; };
-		DE3F2384DCC847FAD1899855 /* Pods_CRToastSwift_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D54851DAE9DB86739E9014F /* Pods_CRToastSwift_Tests.framework */; };
-		E317D6404DC8070F51850823 /* Pods_CRToastSwift_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63CC30A54E3DAD3C9B705516 /* Pods_CRToastSwift_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +29,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4D54851DAE9DB86739E9014F /* Pods_CRToastSwift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CRToastSwift_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F637EB0312029EC0913F002 /* Pods_CRToastSwift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CRToastSwift_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E5A8A49F4AE3AD3CF6AE923 /* Pods-CRToastSwift_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CRToastSwift_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-CRToastSwift_Example/Pods-CRToastSwift_Example.release.xcconfig"; sourceTree = "<group>"; };
+		5CD36BD82704C0C908DA7856 /* Pods_CRToastSwift_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CRToastSwift_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* CRToastSwift_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CRToastSwift_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,17 +40,15 @@
 		607FACE51AFB9204008FA782 /* CRToastSwift_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CRToastSwift_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		63CC30A54E3DAD3C9B705516 /* Pods_CRToastSwift_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CRToastSwift_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AD3CD13C0FF5065E05EDEDE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		77DB34642A55821C00F98125 /* Pods-CRToastSwift_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CRToastSwift_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-CRToastSwift_Example/Pods-CRToastSwift_Example.release.xcconfig"; sourceTree = "<group>"; };
-		7A808E3C2EC3B3EB01F3D132 /* Pods-CRToastSwift_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CRToastSwift_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CRToastSwift_Tests/Pods-CRToastSwift_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		830CBA6573C43F9DB75CFFFB /* Pods-CRToastSwift_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CRToastSwift_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CRToastSwift_Tests/Pods-CRToastSwift_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		9718AF5AE4EAACD2FCB0CE72 /* Pods-CRToastSwift_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CRToastSwift_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CRToastSwift_Example/Pods-CRToastSwift_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		9AC71F022433533D4E5DC75E /* CRToastSwift.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = CRToastSwift.podspec; path = ../CRToastSwift.podspec; sourceTree = "<group>"; };
+		CDBE120D0465EDC8390E1762 /* Pods-CRToastSwift_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CRToastSwift_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CRToastSwift_Tests/Pods-CRToastSwift_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		D2657ED85ACB93D12D0865C3 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		D61031F01C6A2BC80098DC90 /* NotificationImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = NotificationImages.xcassets; sourceTree = "<group>"; };
 		D676A8F11BF799570075AE0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D676A8F31BF7995E0075AE0D /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DDA4E6A2BBFDB0333641C8B5 /* Pods-CRToastSwift_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CRToastSwift_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CRToastSwift_Tests/Pods-CRToastSwift_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		E138DBADB23B1100B6B8DD15 /* Pods-CRToastSwift_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CRToastSwift_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CRToastSwift_Example/Pods-CRToastSwift_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E317D6404DC8070F51850823 /* Pods_CRToastSwift_Example.framework in Frameworks */,
+				4FB728735637A42730774204 /* Pods_CRToastSwift_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,7 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE3F2384DCC847FAD1899855 /* Pods_CRToastSwift_Tests.framework in Frameworks */,
+				07A322BCF02E7EA204DE753C /* Pods_CRToastSwift_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,8 +78,8 @@
 				607FACD21AFB9204008FA782 /* Example for CRToastSwift */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
-				7D77CD05C3A7FA8993F9703F /* Pods */,
-				B43E0794C3771F2BA1F7073E /* Frameworks */,
+				990C61EF46C2CB361ACEE740 /* Pods */,
+				C9BF91149125EAA3E3F49344 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -142,22 +142,22 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		7D77CD05C3A7FA8993F9703F /* Pods */ = {
+		990C61EF46C2CB361ACEE740 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9718AF5AE4EAACD2FCB0CE72 /* Pods-CRToastSwift_Example.debug.xcconfig */,
-				77DB34642A55821C00F98125 /* Pods-CRToastSwift_Example.release.xcconfig */,
-				7A808E3C2EC3B3EB01F3D132 /* Pods-CRToastSwift_Tests.debug.xcconfig */,
-				830CBA6573C43F9DB75CFFFB /* Pods-CRToastSwift_Tests.release.xcconfig */,
+				E138DBADB23B1100B6B8DD15 /* Pods-CRToastSwift_Example.debug.xcconfig */,
+				3E5A8A49F4AE3AD3CF6AE923 /* Pods-CRToastSwift_Example.release.xcconfig */,
+				DDA4E6A2BBFDB0333641C8B5 /* Pods-CRToastSwift_Tests.debug.xcconfig */,
+				CDBE120D0465EDC8390E1762 /* Pods-CRToastSwift_Tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		B43E0794C3771F2BA1F7073E /* Frameworks */ = {
+		C9BF91149125EAA3E3F49344 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				63CC30A54E3DAD3C9B705516 /* Pods_CRToastSwift_Example.framework */,
-				4D54851DAE9DB86739E9014F /* Pods_CRToastSwift_Tests.framework */,
+				5CD36BD82704C0C908DA7856 /* Pods_CRToastSwift_Example.framework */,
+				2F637EB0312029EC0913F002 /* Pods_CRToastSwift_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -169,12 +169,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "CRToastSwift_Example" */;
 			buildPhases = (
-				6FF6F75CE43994A03890C18A /* Check Pods Manifest.lock */,
+				F5595EFF5BFC26733539BBDF /* Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				95CDCA28AB9C9DF40F0B4198 /* Embed Pods Frameworks */,
-				EF93F8CBFE5CE3E34010A307 /* Copy Pods Resources */,
+				BE3DEE874541FC2C07F9CD8A /* Embed Pods Frameworks */,
+				55CCCCC5DCD9326A640931BF /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -189,12 +189,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "CRToastSwift_Tests" */;
 			buildPhases = (
-				D8A64723079C5EB854B38EB7 /* Check Pods Manifest.lock */,
+				39D066A41E9F62DD686000FA /* Check Pods Manifest.lock */,
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
-				1FB71AB836C2B9A9A156AD42 /* Embed Pods Frameworks */,
-				7F83BEEC19C7C12E5E2BBC53 /* Copy Pods Resources */,
+				B63201A24B7511507A4B9B0C /* Embed Pods Frameworks */,
+				5215313B560569FBB63AAA0D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -266,22 +266,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1FB71AB836C2B9A9A156AD42 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CRToastSwift_Tests/Pods-CRToastSwift_Tests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6FF6F75CE43994A03890C18A /* Check Pods Manifest.lock */ = {
+		39D066A41E9F62DD686000FA /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -296,7 +281,7 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		7F83BEEC19C7C12E5E2BBC53 /* Copy Pods Resources */ = {
+		5215313B560569FBB63AAA0D /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -311,7 +296,37 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CRToastSwift_Tests/Pods-CRToastSwift_Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		95CDCA28AB9C9DF40F0B4198 /* Embed Pods Frameworks */ = {
+		55CCCCC5DCD9326A640931BF /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CRToastSwift_Example/Pods-CRToastSwift_Example-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B63201A24B7511507A4B9B0C /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CRToastSwift_Tests/Pods-CRToastSwift_Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE3DEE874541FC2C07F9CD8A /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -326,7 +341,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CRToastSwift_Example/Pods-CRToastSwift_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D8A64723079C5EB854B38EB7 /* Check Pods Manifest.lock */ = {
+		F5595EFF5BFC26733539BBDF /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -339,21 +354,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		EF93F8CBFE5CE3E34010A307 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CRToastSwift_Example/Pods-CRToastSwift_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -489,7 +489,7 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9718AF5AE4EAACD2FCB0CE72 /* Pods-CRToastSwift_Example.debug.xcconfig */;
+			baseConfigurationReference = E138DBADB23B1100B6B8DD15 /* Pods-CRToastSwift_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CRToastSwift/Info.plist;
@@ -501,7 +501,7 @@
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 77DB34642A55821C00F98125 /* Pods-CRToastSwift_Example.release.xcconfig */;
+			baseConfigurationReference = 3E5A8A49F4AE3AD3CF6AE923 /* Pods-CRToastSwift_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CRToastSwift/Info.plist;
@@ -513,7 +513,7 @@
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7A808E3C2EC3B3EB01F3D132 /* Pods-CRToastSwift_Tests.debug.xcconfig */;
+			baseConfigurationReference = DDA4E6A2BBFDB0333641C8B5 /* Pods-CRToastSwift_Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -533,7 +533,7 @@
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 830CBA6573C43F9DB75CFFFB /* Pods-CRToastSwift_Tests.release.xcconfig */;
+			baseConfigurationReference = CDBE120D0465EDC8390E1762 /* Pods-CRToastSwift_Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
