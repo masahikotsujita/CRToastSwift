@@ -23,7 +23,7 @@
 //  THE SOFTWARE.
 //
 
-import UIKit
+import Foundation
 
 /// Represents a notification presentation.
 public final class Presentation<Notification: NotificationType> {
