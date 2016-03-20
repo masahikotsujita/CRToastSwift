@@ -26,12 +26,24 @@
 import Foundation
 import CRToast
 
+/// A notification presenter.
 public class Presenter {
     
     public init() {
         
     }
     
+    /**
+     Presents a notification.
+     
+     - parameter notification: The notification to be presented.
+     - parameter context:      The presentation context.
+     - parameter animation:    The animation.
+     - parameter duration:     The time interval that determines how long the notification will be presented.
+     - parameter handler:      A handler to be called when the notification is presented.
+     
+     - returns: The presentation object for the presentation.
+     */
     public func present<Notification: NotificationType, Context:PresentationContextType where Notification == Context.Notification>(notification: Notification, context: Context, animation: Animation = .Linear, duration: NSTimeInterval? = 2.0, handler: ((Notification, Dismisser<Notification>) -> Void)? = nil) -> Presentation<Notification> {
         
         // Initializing variables and constants
@@ -147,20 +159,67 @@ public class Presenter {
         return presentation
     }
     
+    /// Shared presenter for static methods
     public static let sharedPresenter = Presenter()
     
+    // MARK: Static Presentation Methods
+    
+    /**
+     Presents a notification with a presentation context.
+     
+     - parameter notification: The notification to be presented.
+     - parameter context:      The presentation context.
+     - parameter animation:    The animation.
+     - parameter duration:     The time interval that determines how long the notification will be presented.
+     - parameter handler:      A handler to be called when the notification is presented.
+     
+     - returns: The presentation object for the presentation.
+     */
     public static func present<Notification: NotificationType, Context:PresentationContextType where Notification == Context.Notification>(notification: Notification, context: Context, animation: Animation = .Linear, duration: NSTimeInterval? = 2.0, handler: ((Notification, Dismisser<Notification>) -> Void)? = nil) -> Presentation<Notification> {
         return self.sharedPresenter.present(notification, context: context, animation: animation, duration: duration, handler: handler)
     }
     
+    /**
+     Presents a notification without presentation context.
+     
+     - parameter notification: The notification to be presented.
+     - parameter animation:    The animation.
+     - parameter duration:     The time interval that determines how long the notification will be presented.
+     - parameter handler:      A handler to be called when the notification is presented.
+     
+     - returns: The presentation object for the presentation.
+     */
     public static func present<Notification: NotificationType>(notification: Notification, animation: Animation = .Linear, duration: NSTimeInterval? = 2.0, handler: ((Notification, Dismisser<Notification>) -> Void)? = nil) -> Presentation<Notification> {
         return self.sharedPresenter.present(notification, context: PresentationContext { _ in NotificationAttributeCollection() }, animation: animation, duration: duration, handler: handler)
     }
     
+    /**
+     Presents a notification with given text and subtext with a presentation context.
+     
+     - parameter text:      The main text of the notification.
+     - parameter subtext:   The subsidiary text of the notification.
+     - parameter context:   The presentation context.
+     - parameter animation: The animation.
+     - parameter duration:  The time interval that determines how long the notification will be presented.
+     - parameter handler:   A handler to be called when the notification is presented.
+     
+     - returns: The presentation object for the presentation.
+     */
     public static func present<Context:PresentationContextType where Context.Notification == CRToastSwift.Notification>(text text: String, subtext: String?, context: Context, animation: Animation = .Linear, duration: NSTimeInterval? = 2.0, handler: ((Notification, Dismisser<Notification>) -> Void)? = nil) -> Presentation<Notification> {
         return self.sharedPresenter.present(Notification(text: text, subtext: subtext), context: context, animation: animation, duration: duration, handler: handler)
     }
     
+    /**
+     Presents a notification with given text and subtext without presentation context.
+     
+     - parameter text:      The main text of the notification.
+     - parameter subtext:   The subsidiary text of the notification.
+     - parameter animation: The animation.
+     - parameter duration:  The time interval that determines how long the notification will be presented.
+     - parameter handler:   A handler to be called when the notification is presented.
+     
+     - returns: The presentation object for the presentation.
+     */
     public static func present(text text: String, subtext: String?, animation: Animation = .Linear, duration: NSTimeInterval? = 2.0, handler: ((Notification, Dismisser<Notification>) -> Void)? = nil) -> Presentation<Notification> {
         return self.sharedPresenter.present(Notification(text: text, subtext: subtext), context: PresentationContext { _ in NotificationAttributeCollection() }, animation: animation, duration: duration, handler: handler)
     }
