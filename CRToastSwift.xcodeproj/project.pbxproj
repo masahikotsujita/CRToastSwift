@@ -70,18 +70,17 @@
 		D65BF8F31C9F151F00EDA220 /* CRToastSwift */ = {
 			isa = PBXGroup;
 			children = (
-				D65BF8FC1C9F15FF00EDA220 /* Animation.swift */,
-				D65BF8FD1C9F15FF00EDA220 /* Dismisser.swift */,
 				D65BF8FE1C9F15FF00EDA220 /* Notification.swift */,
 				D65BF8FF1C9F15FF00EDA220 /* NotificationAttributeCollection.swift */,
-				D65BF9001C9F15FF00EDA220 /* Presentation.swift */,
+				D65BF8FC1C9F15FF00EDA220 /* Animation.swift */,
+				D65BF9041C9F15FF00EDA220 /* UserInteraction.swift */,
 				D65BF9011C9F15FF00EDA220 /* PresentationContext.swift */,
 				D65BF9021C9F15FF00EDA220 /* Presenter.swift */,
+				D65BF9001C9F15FF00EDA220 /* Presentation.swift */,
+				D65BF8FD1C9F15FF00EDA220 /* Dismisser.swift */,
 				D65BF9031C9F15FF00EDA220 /* Signal.swift */,
-				D65BF9041C9F15FF00EDA220 /* UserInteraction.swift */,
 				D65BF9051C9F15FF00EDA220 /* Utils.swift */,
-				D65BF8F41C9F151F00EDA220 /* CRToastSwift.h */,
-				D65BF8F61C9F151F00EDA220 /* Info.plist */,
+				D6F888741C9F2F8A00806137 /* Supporting Files */,
 			);
 			path = CRToastSwift;
 			sourceTree = "<group>";
@@ -92,6 +91,15 @@
 				D65BF9101C9F196300EDA220 /* CRToast.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D6F888741C9F2F8A00806137 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D65BF8F41C9F151F00EDA220 /* CRToastSwift.h */,
+				D65BF8F61C9F151F00EDA220 /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
