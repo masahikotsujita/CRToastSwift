@@ -159,6 +159,10 @@ public class Presenter {
         return presentation
     }
     
+}
+
+public extension Presenter {
+    
     /// Shared presenter for static methods
     public static let sharedPresenter = Presenter()
     
