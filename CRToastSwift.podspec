@@ -18,6 +18,13 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description      = <<-DESC
                        A wrapper library of CRToast totally redesigned for Swift 2.
+					   
+					   Features:
+					   - Awesome UX based on CRToast
+					   - Carefully considered, highly structured and Swiftish API
+					   - Strongly typed properties
+					   - Flowable event handlings by method chaining and trailing closures
+					   - Easy customization for your applications
                        DESC
 
   s.homepage         = "https://github.com/masahiko24/CRToastSwift"
