@@ -92,7 +92,8 @@
 				D65BF8FD1C9F15FF00EDA220 /* Dismisser.swift */,
 				D65BF9031C9F15FF00EDA220 /* Signal.swift */,
 				D65BF9051C9F15FF00EDA220 /* Utils.swift */,
-				D6F888741C9F2F8A00806137 /* Supporting Files */,
+				D65BF8F41C9F151F00EDA220 /* CRToastSwift.h */,
+				D65BF8F61C9F151F00EDA220 /* Info.plist */,
 			);
 			path = CRToastSwift;
 			sourceTree = "<group>";
@@ -103,15 +104,6 @@
 				D65BF9101C9F196300EDA220 /* CRToast.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D6F888741C9F2F8A00806137 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				D65BF8F41C9F151F00EDA220 /* CRToastSwift.h */,
-				D65BF8F61C9F151F00EDA220 /* Info.plist */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
