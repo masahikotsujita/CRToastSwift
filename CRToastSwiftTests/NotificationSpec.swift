@@ -31,7 +31,39 @@ import CRToastSwift
 class NotificationSpec: QuickSpec {
     
     override func spec() {
-        
+        describe("the notification initialized with text and subtext") {
+            let notification = Notification(text: "Hello", subtext: "world")
+            it("has given text on initialization") {
+                expect(notification.text).to(equal("Hello"))
+                expect(notification.subtext).to(equal("world"))
+            }
+        }
+        describe("the notification initialized with text") {
+            let notification = Notification(text: "Hello")
+            it("s subtext should be nil") {
+                expect(notification.subtext).to(beNil())
+            }
+        }
+        describe("the notification after setting text") {
+            var notification = Notification(text: "Umm...", subtext: "Hahaha")
+            notification.text = "Hello"
+            it("has set text") {
+                expect(notification.text).to(equal("Hello"))
+            }
+            it("s subtext should not be changed") {
+                expect(notification.subtext).to(equal("Hahaha"))
+            }
+        }
+        describe("the notification after setting subtext") {
+            var notification = Notification(text: "Umm...", subtext: "Hahaha")
+            notification.subtext = "world"
+            it("has set subtext") {
+                expect(notification.subtext).to(equal("world"))
+            }
+            it("s text should not be changed") {
+                expect(notification.text).to(equal("Umm..."))
+            }
+        }
     }
     
 }
