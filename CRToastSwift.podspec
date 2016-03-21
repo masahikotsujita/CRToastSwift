@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = "CRToastSwift"
-  s.version          = "1.0.0-alpha.1"
-  s.summary          = "A CRToast wrapper library for Swift."
+  s.version          = "1.0.0-alpha.2"
+  s.summary          = "A wrapper library of CRToast totally redesigned for Swift 2."
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -17,23 +17,27 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description      = <<-DESC
-                       CRToastSwift is a Swift wrapper library of CRToast.
-                       It provides strongly-typed properties and enum types, and non-Singleton based APIs.
-                       So you can show toast notifications briefly, easily and safely.
-                       Additionally, it provides 4 custom themes for common situations, such as notifying completion of a task or occurence of an error.
+                       A wrapper library of CRToast totally redesigned for Swift 2.
+					   
+					   Features:
+					   - Awesome UX based on CRToast
+					   - Carefully considered, highly structured and Swiftish API
+					   - Strongly typed properties
+					   - Flowable event handlings by method chaining and trailing closures
+					   - Easy customization for your applications
                        DESC
 
-  s.homepage         = "https://github.com/masahikot/CRToastSwift"
+  s.homepage         = "https://github.com/masahiko24/CRToastSwift"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "Masahiko Tsujita" => "tsujitamasahiko.dev@icloud.com" }
-  s.source           = { :git => "https://github.com/masahikot/CRToastSwift.git", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/masahiko24/CRToastSwift.git", :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.platform     = :ios, '8.0'
   s.requires_arc = true
 
-  s.source_files = 'Pod/Classes/**/*'
+  s.source_files = 'CRToastSwift/**/*'
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit'
