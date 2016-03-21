@@ -43,7 +43,7 @@ public struct Dismisser<Notification: NotificationType> {
      - parameter animated: The boolean value that determines whether animate the dismissal or not. Default is true.
      - parameter handler:  A handler called when the notification is dismissed.
      */
-    public func dismiss(animated animated: Bool = true, handler: ((Notification) -> Void)? = nil) {
+    public func dismiss(animated animated: Bool = true, handler: (Notification -> Void)? = nil) {
         guard let presentation = self.presentation else {
             debugPrint("CRToastSwift: Dismisser.dismiss() was called after presentation object had been deallocated.\nDismissal by this call will not be performed and given handler will not be invoked.")
             return

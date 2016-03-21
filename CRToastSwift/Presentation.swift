@@ -81,7 +81,7 @@ public final class Presentation<Notification: NotificationType> {
      
      - returns: The presentation itself.
      */
-    public func onDismissal(handler: (Notification) -> Void) -> Presentation {
+    public func onDismissal(handler: Notification -> Void) -> Presentation {
         self.dismissalSignal.observe(handler)
         return self
     }
