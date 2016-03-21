@@ -1,6 +1,6 @@
 # CRToastSwift
 
-[![CI Status](http://img.shields.io/travis/Masahiko Tsujita/CRToastSwift.svg?style=flat)](https://travis-ci.org/Masahiko Tsujita/CRToastSwift)
+[![CI Status](http://img.shields.io/travis/Masahiko Tsujita/CRToastSwift.svg?style=flat)](https://travis-ci.org/masahiko24/CRToastSwift)
 [![Version](https://img.shields.io/cocoapods/v/CRToastSwift.svg?style=flat)](http://cocoapods.org/pods/CRToastSwift)
 [![License](https://img.shields.io/cocoapods/l/CRToastSwift.svg?style=flat)](http://cocoapods.org/pods/CRToastSwift)
 [![Platform](https://img.shields.io/cocoapods/p/CRToastSwift.svg?style=flat)](http://cocoapods.org/pods/CRToastSwift)
@@ -8,11 +8,11 @@
 A wrapper library of [CRToast](https://github.com/cruffenach/CRToast) totally redesigned for Swift 2.
 
 ## Features
-- Beautiful UX based on CRToast
+- Awesome UX based on CRToast
 - Carefully considered, highly structured and Swiftish API
 - Strongly typed properties
-- Flowable event handlings by method chaining
-- Easily customizable for your applications
+- Flowable event handlings by method chaining and trailing closures
+- Easy customization for your applications
 
 ## Requirements
 - Xcode 7 and later
@@ -20,7 +20,14 @@ A wrapper library of [CRToast](https://github.com/cruffenach/CRToast) totally re
 
 ## Installation
 
-CRToastSwift is available through [CocoaPods](http://cocoapods.org). To install
+CRToastSwift is available through [Carthage](https://github.com/Carthage/Carthage).
+To install, 
+
+```
+github "masahiko24/CRToastSwift"
+```
+
+CRToastSwift also is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
@@ -30,7 +37,7 @@ pod "CRToastSwift"
 ## Usage
 
 ### 1. Define custom notification type (Optional)
-First, define your notification type confirming `NotificationType` protocol.  
+First, define your notification type conforming `NotificationType` protocol.  
 It requires two text properties:
 
 ```swift
@@ -43,36 +50,36 @@ public protocol NotificationType {
 }
 ```
 
-There are two predefined types confirming to `NotificationType` - `Notification` and `String`.  
+There are two predefined types conforming to `NotificationType` - `Notification` and `String`.  
 `Notification` is a simple notification with two required text properties with given parameters on initialization.  
-`String` also confirms to the protocol. It provides itself for `text` and always `nil` for `subtext`.
+`String` also conforms to the protocol. It provides itself for `text` and always `nil` for `subtext`.
 If these types are enough for you, you do not have to define custom notification types.
 
-### 2. Confirm to `NotificationPresentationContextType` protocol
+### 2. Conform to `PresentationContextType` protocol
 
-`NotificationPresentationContextType` is a context which notifications are presented.  
-You can customize apparances or behaviors of notifications as follows:
+`PresentationContextType` is a context which notifications are presented.  
+You can customize apparances and behaviors of notifications as follows:
 
 ```swift
-struct NotificationPresentationContext: NotificationPresentationContextType {
-	func traitsForNotification(notification: String) -> NotificationTraits {
-		var traits = NotificationTraits()
-		traits.image = UIImage(named: "NotificationImage")
-		traits.backgroundColor = .redColor()
-		traits.showsStatusBar = true
-		return traits
+class MyContext :PresentationContextType {
+    
+	func attributesForNotification(notification: Notification) -> NotificationAttributeCollection {
+		var attributes = NotificationAttributeCollection()
+		attributes.image = UIImage(named: "Error")
+		attributes.backgroundColor = .redColor()
+		attributes.showsStatusBar = true
+		return attributes
 	}
+    
 }
 ```
 
 ### 3. Present notifications and handle events
 
-You can present notifications by calling `presentNotification()` and handle events using method chaining:
+You can present notifications by calling `Presenter.present()` and handle events using method chaining:
 
 ```swift
-let context = NotificationPresentationContext()
-
-context.presentNotification("Hello, world") {  in
+Presenter.present("Hello, world", context: context) { (notification, _) in
 	// Handling presentation
 	print("\(notification) was presented.")
 } .on(.Tap) { (notification, _, dismisser) in
@@ -92,10 +99,10 @@ context.presentNotification("Hello, world") {  in
 
 #### Configuring animations
 
-You can specify animations on calling `presentNotification()`:
+You can specify animations on presentation as follows:
 
 ```swift
-self.presentNotification("Hello, world", animation: .Gravity) ...
+Presenter.present(..., animation: .Gravity) ...
 ```
 
 `animation` can take an instance of `Animation`.
@@ -114,12 +121,11 @@ public struct Animation {
 You can also specify how long the notification will be presented:
 
 ```swift
-self.presentNotification("Hello, world", presentationDuration: 5.0) ...
+Presenter.present(..., duration: 5.0) ...
 ```
 
-You can specify `nil` for `presentationDuration`. Then the notification will not be dismissed automatically, so you have to dismiss the notification manually using `dismisser` given as a parameter of handlers of presentation or user interactions.
+You can specify `nil` for `duration`. Then the notification will not be dismissed automatically, so you have to dismiss the notification manually using `dismisser` given as a parameter of handlers of presentation or user interactions.
 
 ## License
 
 CRToastSwift is available under the MIT license. See the LICENSE file for more info.
-
