@@ -51,14 +51,14 @@ public struct PresentationContext<Notification: NotificationType>: PresentationC
      
      - returns: Initialized presentation context.
      */
-    public init(_ handler: Notification -> NotificationAttributeCollection) {
-        self.handler = handler
+    public init(_ body: Notification -> NotificationAttributeCollection) {
+        self.body = body
     }
     
-    public let handler: Notification -> NotificationAttributeCollection
+    public let body: Notification -> NotificationAttributeCollection
     
     public func attributesForNotification(notification: Notification) -> NotificationAttributeCollection {
-        return self.handler(notification)
+        return self.body(notification)
     }
     
 }
