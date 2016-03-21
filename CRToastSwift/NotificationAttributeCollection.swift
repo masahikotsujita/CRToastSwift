@@ -30,10 +30,12 @@ public typealias AccessoryViewAlignment = CRToastAccessoryViewAlignment
 
 /// Determines size of notification view.
 public enum NotificationSize {
-    
     case Compact
     case Regular
     case Custom(preferredHeight: CGFloat)
+}
+
+extension NotificationSize {
     
     var CRToastTypeValue: CRToastType {
         switch self {
