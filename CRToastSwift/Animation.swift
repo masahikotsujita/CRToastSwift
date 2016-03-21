@@ -26,8 +26,6 @@
 import UIKit
 import CRToast
 
-//  MARK: Animation Type Definition
-
 /// Represents an animation used for notification presentation.
 public struct Animation {
     
