@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D642F94E1C9FD0EB00422264 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = D642F9491C9FD0EB00422264 /* Cartfile */; };
+		D642F9501C9FD0EB00422264 /* CRToastSwift.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D642F94B1C9FD0EB00422264 /* CRToastSwift.podspec */; };
+		D642F9511C9FD0EB00422264 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = D642F94C1C9FD0EB00422264 /* LICENSE */; };
+		D642F9521C9FD0EB00422264 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = D642F94D1C9FD0EB00422264 /* README.md */; };
 		D65BF8F51C9F151F00EDA220 /* CRToastSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = D65BF8F41C9F151F00EDA220 /* CRToastSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D65BF9061C9F15FF00EDA220 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65BF8FC1C9F15FF00EDA220 /* Animation.swift */; };
 		D65BF9071C9F15FF00EDA220 /* Dismisser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65BF8FD1C9F15FF00EDA220 /* Dismisser.swift */; };
@@ -22,6 +26,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D642F9491C9FD0EB00422264 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = SOURCE_ROOT; };
+		D642F94B1C9FD0EB00422264 /* CRToastSwift.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CRToastSwift.podspec; sourceTree = SOURCE_ROOT; };
+		D642F94C1C9FD0EB00422264 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
+		D642F94D1C9FD0EB00422264 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		D65BF8F11C9F151F00EDA220 /* CRToastSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CRToastSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D65BF8F41C9F151F00EDA220 /* CRToastSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRToastSwift.h; sourceTree = "<group>"; };
 		D65BF8F61C9F151F00EDA220 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,6 +61,10 @@
 		D65BF8E71C9F151F00EDA220 = {
 			isa = PBXGroup;
 			children = (
+				D642F94D1C9FD0EB00422264 /* README.md */,
+				D642F9491C9FD0EB00422264 /* Cartfile */,
+				D642F94B1C9FD0EB00422264 /* CRToastSwift.podspec */,
+				D642F94C1C9FD0EB00422264 /* LICENSE */,
 				D65BF8F31C9F151F00EDA220 /* CRToastSwift */,
 				D65BF9121C9F19A500EDA220 /* Frameworks */,
 				D65BF8F21C9F151F00EDA220 /* Products */,
@@ -170,6 +182,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D642F9501C9FD0EB00422264 /* CRToastSwift.podspec in Resources */,
+				D642F94E1C9FD0EB00422264 /* Cartfile in Resources */,
+				D642F9511C9FD0EB00422264 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,6 +204,7 @@
 				D65BF90D1C9F15FF00EDA220 /* Signal.swift in Sources */,
 				D65BF90A1C9F15FF00EDA220 /* Presentation.swift in Sources */,
 				D65BF9091C9F15FF00EDA220 /* NotificationAttributeCollection.swift in Sources */,
+				D642F9521C9FD0EB00422264 /* README.md in Sources */,
 				D65BF90E1C9F15FF00EDA220 /* UserInteraction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
