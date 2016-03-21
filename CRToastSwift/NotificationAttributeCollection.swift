@@ -26,10 +26,30 @@
 import Foundation
 import CRToast
 
+public typealias AccessoryViewAlignment = CRToastAccessoryViewAlignment
+
+/// Determines size of notification view.
+public enum NotificationSize {
+    
+    case Compact
+    case Regular
+    case Custom(preferredHeight: CGFloat)
+    
+    var CRToastTypeValue: CRToastType {
+        switch self {
+        case .Compact:
+            return .StatusBar
+        case .Regular:
+            return .NavigationBar
+        case .Custom(_):
+            return .Custom
+        }
+    }
+    
+}
+
 /// A structure containing miscellaneous properties for a notification.
 public struct NotificationAttributeCollection {
-    
-    public typealias AccessoryViewAlignment = CRToastAccessoryViewAlignment
     
     public init() {
         
@@ -71,28 +91,8 @@ public struct NotificationAttributeCollection {
     /// The shadow offset of subtext.
     public var subtextShadowOffset: CGSize = CGSize(width: 0.0, height: 0.0)
     
-    /// Determines size of notification view.
-    public enum Size {
-        
-        case Compact
-        case Regular
-        case Custom(preferredHeight: CGFloat)
-        
-        var CRToastTypeValue: CRToastType {
-            switch self {
-            case .Compact:
-                return .StatusBar
-            case .Regular:
-                return .NavigationBar
-            case .Custom(_):
-                return .Custom
-            }
-        }
-        
-    }
-    
     /// The value that determines size of notification view.
-    public var size: Size = .Regular
+    public var size: NotificationSize = .Regular
     
     /// The boolean value that determines the status bar is visible or not.
     public var showsStatusBar = false
