@@ -59,6 +59,18 @@ public struct Notification: NotificationType {
     
 }
 
+extension Notification: CustomStringConvertible, CustomDebugStringConvertible {
+    
+    public var description: String {
+        return "Notification(text: \(self.text), subtext: \(self.subtext))"
+    }
+    
+    public var debugDescription: String {
+        return self.description
+    }
+    
+}
+
 /**
  Add NotificationType protocol conformance to String.
  Provides self as its text and always nil as its subtext.
