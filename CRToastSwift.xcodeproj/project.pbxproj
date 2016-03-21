@@ -23,7 +23,23 @@
 		D65BF90E1C9F15FF00EDA220 /* UserInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65BF9041C9F15FF00EDA220 /* UserInteraction.swift */; };
 		D65BF90F1C9F15FF00EDA220 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65BF9051C9F15FF00EDA220 /* Utils.swift */; };
 		D65BF9111C9F196300EDA220 /* CRToast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D65BF9101C9F196300EDA220 /* CRToast.framework */; };
+		D6D539951CA04BAA003778E0 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6D539941CA04BAA003778E0 /* Nimble.framework */; };
+		D6D539971CA04BAF003778E0 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6D539961CA04BAF003778E0 /* Quick.framework */; };
+		D6D539A51CA0502E003778E0 /* CRToastSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D65BF8F11C9F151F00EDA220 /* CRToastSwift.framework */; };
+		D6D539AB1CA0503A003778E0 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6D539961CA04BAF003778E0 /* Quick.framework */; };
+		D6D539AC1CA0503A003778E0 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6D539941CA04BAA003778E0 /* Nimble.framework */; };
+		D6D539AE1CA05698003778E0 /* NotificationSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D5398B1CA048D3003778E0 /* NotificationSpec.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D6D539A61CA0502E003778E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D65BF8E81C9F151F00EDA220 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D65BF8F01C9F151F00EDA220;
+			remoteInfo = CRToastSwift;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		D642F9491C9FD0EB00422264 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = SOURCE_ROOT; };
@@ -44,6 +60,11 @@
 		D65BF9041C9F15FF00EDA220 /* UserInteraction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInteraction.swift; sourceTree = "<group>"; };
 		D65BF9051C9F15FF00EDA220 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		D65BF9101C9F196300EDA220 /* CRToast.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CRToast.framework; path = Carthage/Build/iOS/CRToast.framework; sourceTree = "<group>"; };
+		D6D5398B1CA048D3003778E0 /* NotificationSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSpec.swift; sourceTree = "<group>"; };
+		D6D5398D1CA048D3003778E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D6D539941CA04BAA003778E0 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		D6D539961CA04BAF003778E0 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		D6D539A01CA0502E003778E0 /* CRToastSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CRToastSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +73,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				D65BF9111C9F196300EDA220 /* CRToast.framework in Frameworks */,
+				D6D539951CA04BAA003778E0 /* Nimble.framework in Frameworks */,
+				D6D539971CA04BAF003778E0 /* Quick.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6D5399D1CA0502E003778E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6D539A51CA0502E003778E0 /* CRToastSwift.framework in Frameworks */,
+				D6D539AB1CA0503A003778E0 /* Quick.framework in Frameworks */,
+				D6D539AC1CA0503A003778E0 /* Nimble.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +99,7 @@
 				D642F94B1C9FD0EB00422264 /* CRToastSwift.podspec */,
 				D642F94C1C9FD0EB00422264 /* LICENSE */,
 				D65BF8F31C9F151F00EDA220 /* CRToastSwift */,
+				D6D5398A1CA048D3003778E0 /* CRToastSwiftTests */,
 				D65BF9121C9F19A500EDA220 /* Frameworks */,
 				D65BF8F21C9F151F00EDA220 /* Products */,
 			);
@@ -75,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				D65BF8F11C9F151F00EDA220 /* CRToastSwift.framework */,
+				D6D539A01CA0502E003778E0 /* CRToastSwiftTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -102,8 +137,19 @@
 			isa = PBXGroup;
 			children = (
 				D65BF9101C9F196300EDA220 /* CRToast.framework */,
+				D6D539961CA04BAF003778E0 /* Quick.framework */,
+				D6D539941CA04BAA003778E0 /* Nimble.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D6D5398A1CA048D3003778E0 /* CRToastSwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				D6D5398B1CA048D3003778E0 /* NotificationSpec.swift */,
+				D6D5398D1CA048D3003778E0 /* Info.plist */,
+			);
+			path = CRToastSwiftTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,16 +184,39 @@
 			productReference = D65BF8F11C9F151F00EDA220 /* CRToastSwift.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		D6D5399F1CA0502E003778E0 /* CRToastSwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D6D539A81CA0502E003778E0 /* Build configuration list for PBXNativeTarget "CRToastSwiftTests" */;
+			buildPhases = (
+				D6D5399C1CA0502E003778E0 /* Sources */,
+				D6D5399D1CA0502E003778E0 /* Frameworks */,
+				D6D5399E1CA0502E003778E0 /* Resources */,
+				D6D539AD1CA0503E003778E0 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D6D539A71CA0502E003778E0 /* PBXTargetDependency */,
+			);
+			name = CRToastSwiftTests;
+			productName = CRToastSwiftTests;
+			productReference = D6D539A01CA0502E003778E0 /* CRToastSwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		D65BF8E81C9F151F00EDA220 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Masahiko Tsujita";
 				TargetAttributes = {
 					D65BF8F01C9F151F00EDA220 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					D6D5399F1CA0502E003778E0 = {
 						CreatedOnToolsVersion = 7.2.1;
 					};
 				};
@@ -158,6 +227,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = D65BF8E71C9F151F00EDA220;
 			productRefGroup = D65BF8F21C9F151F00EDA220 /* Products */;
@@ -165,6 +235,7 @@
 			projectRoot = "";
 			targets = (
 				D65BF8F01C9F151F00EDA220 /* CRToastSwift */,
+				D6D5399F1CA0502E003778E0 /* CRToastSwiftTests */,
 			);
 		};
 /* End PBXProject section */
@@ -180,7 +251,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D6D5399E1CA0502E003778E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D6D539AD1CA0503E003778E0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/CRToast.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Quick.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D65BF8EC1C9F151F00EDA220 /* Sources */ = {
@@ -201,7 +298,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D6D5399C1CA0502E003778E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6D539AE1CA05698003778E0 /* NotificationSpec.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D6D539A71CA0502E003778E0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D65BF8F01C9F151F00EDA220 /* CRToastSwift */;
+			targetProxy = D6D539A61CA0502E003778E0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		D65BF8F71C9F151F00EDA220 /* Debug */ = {
@@ -336,6 +449,36 @@
 			};
 			name = Release;
 		};
+		D6D539A91CA0502E003778E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = CRToastSwiftTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.masahikotsujita.CRToastSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D6D539AA1CA0502E003778E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = CRToastSwiftTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.masahikotsujita.CRToastSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -356,6 +499,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		D6D539A81CA0502E003778E0 /* Build configuration list for PBXNativeTarget "CRToastSwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D6D539A91CA0502E003778E0 /* Debug */,
+				D6D539AA1CA0502E003778E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
