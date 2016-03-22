@@ -26,7 +26,7 @@
 import XCTest
 import Nimble
 import Quick
-import CRToastSwift
+@testable import CRToastSwift
 
 class PresentationContextSpec: QuickSpec {
     
