@@ -36,7 +36,7 @@ class NotificationSpec: QuickSpec {
             
             let notification = Notification(text: "AAA", subtext: "BBB")
             
-            it("has given text on initialization") {
+            it("has given text and subtext on initialization") {
                 expect(notification.text).to(equal("AAA"))
                 expect(notification.subtext).to(equal("BBB"))
             }
