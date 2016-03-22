@@ -31,39 +31,66 @@ import CRToastSwift
 class NotificationSpec: QuickSpec {
     
     override func spec() {
+        
         describe("the notification initialized with text and subtext") {
-            let notification = Notification(text: "Hello", subtext: "world")
+            
+            let notification = Notification(text: "AAA", subtext: "BBB")
+            
             it("has given text on initialization") {
-                expect(notification.text).to(equal("Hello"))
-                expect(notification.subtext).to(equal("world"))
+                expect(notification.text).to(equal("AAA"))
+                expect(notification.subtext).to(equal("BBB"))
             }
+            
         }
-        describe("the notification initialized with text") {
-            let notification = Notification(text: "Hello")
-            it("s subtext should be nil") {
+        
+        describe("the notification initialized with text only") {
+            
+            let notification = Notification(text: "AAA")
+            
+            it("has nil subtext") {
                 expect(notification.subtext).to(beNil())
             }
+            
         }
-        describe("the notification after setting text") {
-            var notification = Notification(text: "Umm...", subtext: "Hahaha")
-            notification.text = "Hello"
+        
+        context("after setting text") {
+            
+            var notification: Notification!
+            
+            beforeEach {
+                notification = Notification(text: "AAA", subtext: "BBB")
+                notification.text = "CCC"
+            }
+            
             it("has set text") {
-                expect(notification.text).to(equal("Hello"))
+                expect(notification.text).to(equal("CCC"))
             }
-            it("s subtext should not be changed") {
-                expect(notification.subtext).to(equal("Hahaha"))
+            
+            it("has same subtext as before") {
+                expect(notification.subtext).to(equal("BBB"))
             }
+            
         }
-        describe("the notification after setting subtext") {
-            var notification = Notification(text: "Umm...", subtext: "Hahaha")
-            notification.subtext = "world"
+        
+        context("after setting subtext") {
+            
+            var notification: Notification!
+            
+            beforeEach {
+                notification = Notification(text: "AAA", subtext: "BBB")
+                notification.subtext = "DDD"
+            }
+            
             it("has set subtext") {
-                expect(notification.subtext).to(equal("world"))
+                expect(notification.subtext).to(equal("DDD"))
             }
-            it("s text should not be changed") {
-                expect(notification.text).to(equal("Umm..."))
+            
+            it("has same text as before") {
+                expect(notification.text).to(equal("AAA"))
             }
+            
         }
+        
     }
     
 }
