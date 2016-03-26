@@ -40,9 +40,7 @@ class SignalSpec: QuickSpec {
             beforeEach {
                 signal = Signal<Int>()
                 values = []
-                signal.observe { _ in }
                 signal.observe { values.append($0) }
-                signal.observe { _ in }
             }
                 
             context("after sending a number to the signal") {
