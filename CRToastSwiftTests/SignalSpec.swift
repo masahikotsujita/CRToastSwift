@@ -32,6 +32,47 @@ class SignalSpec: QuickSpec {
     
     override func spec() {
         
+        describe("the signal of numbers") {
+            
+            var signal: Signal<Int>!
+            var values: [Int]!
+            
+            beforeEach {
+                signal = Signal<Int>()
+                values = []
+                signal.observe { _ in }
+                signal.observe { values.append($0) }
+                signal.observe { _ in }
+            }
+                
+            context("after sending a number to the signal") {
+                
+                beforeEach {
+                    signal.send(1)
+                }
+                
+                it("notifies the number") {
+                    expect(values).toEventually(equal([1]))
+                }
+                
+            }
+            
+            context("after sending multiple numbers to the signal in order") {
+                
+                beforeEach {
+                    signal.send(1)
+                    signal.send(2)
+                    signal.send(3)
+                }
+                
+                it("notifies the numbers in order") {
+                    expect(values).toEventually(equal([1, 2, 3]))
+                }
+                
+            }
+            
+        }
+        
     }
     
 }
