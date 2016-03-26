@@ -71,6 +71,28 @@ class SignalSpec: QuickSpec {
                 
             }
             
+            context("after sending multiple numbers to the signal concurrently") {
+                
+                beforeEach {
+                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+                        signal.send(1)
+                    }
+                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+                        signal.send(2)
+                    }
+                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+                        signal.send(3)
+                    }
+                }
+                
+                it("notifies the all numbers") {
+                    expect(values).toEventually(contain(1))
+                    expect(values).toEventually(contain(2))
+                    expect(values).toEventually(contain(3))
+                }
+                
+            }
+            
         }
         
     }
