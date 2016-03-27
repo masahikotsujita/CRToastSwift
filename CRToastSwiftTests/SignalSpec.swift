@@ -57,7 +57,7 @@ class SignalSpec: QuickSpec {
                         signal.send(3)
                     }
                     
-                    it("receives the sent values in order") {
+                    it("receives the sent values in the order") {
                         expect(values).toEventually(equal([1, 2, 3]))
                     }
                     
