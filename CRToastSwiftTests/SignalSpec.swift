@@ -71,13 +71,13 @@ class SignalSpec: QuickSpec {
                             expect(values).toNotEventually(contain(3))
                         }
                         
-                        it("receives those values in order") {
+                        it("receives the values sent after beginning observation in order") {
                             expect(values).toEventually(equal([4, 5, 6]))
                         }
                         
                     }
                     
-                    context("after several numbers are sent concurrently") {
+                    context("after several values are sent concurrently") {
                         
                         beforeEach {
                             let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
@@ -98,7 +98,7 @@ class SignalSpec: QuickSpec {
                             expect(values).toNotEventually(contain(3))
                         }
                         
-                        it("receives those values (regardless of order)") {
+                        it("receives the values sent after beginning observation (regardless of the order)") {
                             expect(values).toEventually(contain(4))
                             expect(values).toEventually(contain(5))
                             expect(values).toEventually(contain(6))
