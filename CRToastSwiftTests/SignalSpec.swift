@@ -32,30 +32,15 @@ class SignalSpec: QuickSpec {
     
     override func spec() {
         
-        describe("the signal of numbers") {
+        describe("a signal of numbers") {
             
             var signal: Signal<Int>!
-            var values: [Int]!
             
             beforeEach {
                 signal = Signal<Int>()
-                values = []
-                signal.observe { values.append($0) }
-            }
-                
-            context("after sending a number to the signal") {
-                
-                beforeEach {
-                    signal.send(1)
-                }
-                
-                it("notifies the number") {
-                    expect(values).toEventually(equal([1]))
-                }
-                
             }
             
-            context("after sending multiple numbers to the signal in order") {
+            context("after several values are sent") {
                 
                 beforeEach {
                     signal.send(1)
@@ -63,30 +48,64 @@ class SignalSpec: QuickSpec {
                     signal.send(3)
                 }
                 
-                it("notifies the numbers in order") {
-                    expect(values).toEventually(equal([1, 2, 3]))
-                }
-                
-            }
-            
-            context("after sending multiple numbers to the signal concurrently") {
-                
-                beforeEach {
-                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-                        signal.send(1)
+                describe("an observer added then") {
+                    
+                    var values: [Int]!
+                    
+                    beforeEach {
+                        values = [Int]()
+                        signal.observe { values.append($0) }
                     }
-                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-                        signal.send(2)
+                    
+                    context("after several values are sent") {
+                        
+                        beforeEach {
+                            signal.send(4)
+                            signal.send(5)
+                            signal.send(6)
+                        }
+                        
+                        it("does not receives any values sent before beginning observation") {
+                            expect(values).toNotEventually(contain(1))
+                            expect(values).toNotEventually(contain(2))
+                            expect(values).toNotEventually(contain(3))
+                        }
+                        
+                        it("receives those values in order") {
+                            expect(values).toEventually(equal([4, 5, 6]))
+                        }
+                        
                     }
-                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-                        signal.send(3)
+                    
+                    context("after several numbers are sent concurrently") {
+                        
+                        beforeEach {
+                            let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+                            dispatch_async(queue) {
+                                signal.send(4)
+                            }
+                            dispatch_async(queue) {
+                                signal.send(5)
+                            }
+                            dispatch_async(queue) {
+                                signal.send(6)
+                            }
+                        }
+                        
+                        it("does not receives any values sent before beginning observation") {
+                            expect(values).toNotEventually(contain(1))
+                            expect(values).toNotEventually(contain(2))
+                            expect(values).toNotEventually(contain(3))
+                        }
+                        
+                        it("receives those values (regardless of order)") {
+                            expect(values).toEventually(contain(4))
+                            expect(values).toEventually(contain(5))
+                            expect(values).toEventually(contain(6))
+                        }
+                        
                     }
-                }
-                
-                it("notifies the all numbers") {
-                    expect(values).toEventually(contain(1))
-                    expect(values).toEventually(contain(2))
-                    expect(values).toEventually(contain(3))
+                    
                 }
                 
             }
