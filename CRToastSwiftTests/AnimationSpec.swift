@@ -32,6 +32,56 @@ class AnimationSpec: QuickSpec {
     
     override func spec() {
         
+        var animation: Animation!
+        
+        describe("the static Linear animation value") {
+            
+            beforeEach {
+                animation = .Linear
+            }
+            
+            it("has linear in curve") {
+                expect(animation.inCurve).to(equal(Animation.Curve.Linear))
+            }
+            
+            it("has linear out curve") {
+                expect(animation.outCurve).to(equal(Animation.Curve.Linear))
+            }
+            
+        }
+        
+        describe("the static Spring animation value") {
+            
+            beforeEach {
+                animation = .Spring
+            }
+            
+            it("has spring in curve") {
+                expect(animation.inCurve).to(equal(Animation.Curve.Spring))
+            }
+            
+            it("has spring out curve") {
+                expect(animation.outCurve).to(equal(Animation.Curve.Spring))
+            }
+            
+        }
+        
+        describe("the static Gravity animation value") {
+            
+            beforeEach {
+                animation = .Gravity
+            }
+            
+            it("has gravity in curve") {
+                expect(animation.inCurve).to(equal(Animation.Curve.Gravity))
+            }
+            
+            it("has gravity out curve") {
+                expect(animation.outCurve).to(equal(Animation.Curve.Gravity))
+            }
+            
+        }
+        
     }
     
 }
