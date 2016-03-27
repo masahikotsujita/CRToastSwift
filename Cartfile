@@ -1,1 +1,4 @@
 github "cruffenach/CRToast" ~> 0.0.9
+github "Quick/Nimble"
+github "Quick/Quick"
+
