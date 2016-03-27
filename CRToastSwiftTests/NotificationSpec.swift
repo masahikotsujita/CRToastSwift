@@ -32,61 +32,73 @@ class NotificationSpec: QuickSpec {
     
     override func spec() {
         
-        describe("the notification initialized with text and subtext") {
+        var notification: Notification!
+        
+        describe("a notification initialized with text and subtext") {
             
-            let notification = Notification(text: "AAA", subtext: "BBB")
+            beforeEach {
+                notification = Notification(text: "AAA", subtext: "BBB")
+            }
             
-            it("has given text and subtext on initialization") {
+            it("contains the given text and subtext on initialization") {
                 expect(notification.text).to(equal("AAA"))
                 expect(notification.subtext).to(equal("BBB"))
             }
             
+            context("after setting a text") {
+                
+                beforeEach {
+                    notification.text = "CCC"
+                }
+                
+                it("contains the set text") {
+                    expect(notification.text).to(equal("CCC"))
+                }
+                
+                it("contains same subtext as before") {
+                    expect(notification.subtext).to(equal("BBB"))
+                }
+                
+            }
+            
+            context("after setting a subtext") {
+                
+                beforeEach {
+                    notification.subtext = "DDD"
+                }
+                
+                it("contains the set subtext") {
+                    expect(notification.subtext).to(equal("DDD"))
+                }
+                
+                it("contains same text as before") {
+                    expect(notification.text).to(equal("AAA"))
+                }
+                
+            }
+            
         }
         
-        describe("the notification initialized with text only") {
+        describe("a notification initialized with text only") {
             
-            let notification = Notification(text: "AAA")
+            beforeEach {
+                notification = Notification(text: "AAA")
+            }
             
-            it("has nil subtext") {
+            it("does not contain subtext") {
                 expect(notification.subtext).to(beNil())
             }
             
-        }
-        
-        context("after setting text") {
-            
-            var notification: Notification!
-            
-            beforeEach {
-                notification = Notification(text: "AAA", subtext: "BBB")
-                notification.text = "CCC"
-            }
-            
-            it("has set text") {
-                expect(notification.text).to(equal("CCC"))
-            }
-            
-            it("has same subtext as before") {
-                expect(notification.subtext).to(equal("BBB"))
-            }
-            
-        }
-        
-        context("after setting subtext") {
-            
-            var notification: Notification!
-            
-            beforeEach {
-                notification = Notification(text: "AAA", subtext: "BBB")
-                notification.subtext = "DDD"
-            }
-            
-            it("has set subtext") {
-                expect(notification.subtext).to(equal("DDD"))
-            }
-            
-            it("has same text as before") {
-                expect(notification.text).to(equal("AAA"))
+            context("after setting a subtext") {
+                
+                beforeEach {
+                    notification.subtext = "DDD"
+                }
+                
+                it("contains the set subtext") {
+                    expect(notification.subtext).to(equal("DDD"))
+                }
+                
             }
             
         }
