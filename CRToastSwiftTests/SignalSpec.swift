@@ -71,7 +71,7 @@ class SignalSpec: QuickSpec {
                             expect(values).toNotEventually(contain(3))
                         }
                         
-                        it("receives the values sent after beginning observation in order") {
+                        it("receives the values sent after beginning observation in the order") {
                             expect(values).toEventually(equal([4, 5, 6]))
                         }
                         
