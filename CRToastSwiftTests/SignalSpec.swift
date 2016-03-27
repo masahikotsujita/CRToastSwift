@@ -40,6 +40,72 @@ class SignalSpec: QuickSpec {
                 signal = Signal<Int>()
             }
             
+            describe("an observer added then") {
+                
+                var values: [Int]!
+                
+                beforeEach {
+                    values = [Int]()
+                    signal.observe { values.append($0) }
+                }
+                
+                context("after several values are sent") {
+                    
+                    beforeEach {
+                        signal.send(1)
+                        signal.send(2)
+                        signal.send(3)
+                    }
+                    
+                    it("receives the sent values in order") {
+                        expect(values).toEventually(equal([1, 2, 3]))
+                    }
+                    
+                    context("after additional observers are added and then several values are sent") {
+                        
+                        beforeEach {
+                            values = [Int]()
+                            signal.observe { _ in }
+                            signal.observe { _ in }
+                            signal.observe { _ in }
+                            signal.send(4)
+                            signal.send(5)
+                            signal.send(6)
+                        }
+                        
+                        it("receives the sent values in the order") {
+                            expect(values).toEventually(equal([4, 5, 6]))
+                        }
+                        
+                    }
+                    
+                }
+                
+                context("after several values are sent concurrently") {
+                    
+                    beforeEach {
+                        let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+                        dispatch_async(queue) {
+                            signal.send(1)
+                        }
+                        dispatch_async(queue) {
+                            signal.send(2)
+                        }
+                        dispatch_async(queue) {
+                            signal.send(3)
+                        }
+                    }
+                    
+                    it("receives the sent values (regardless of the order)") {
+                        expect(values).toEventually(contain(1))
+                        expect(values).toEventually(contain(2))
+                        expect(values).toEventually(contain(3))
+                    }
+                    
+                }
+                
+            }
+            
             context("after several values are sent") {
                 
                 beforeEach {
