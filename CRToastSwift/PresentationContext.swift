@@ -28,7 +28,7 @@ import Foundation
 /// Represents a context for notification presentations.
 public protocol PresentationContextType {
     
-    typealias Notification: NotificationType
+    associatedtype Notification: NotificationType
     
     /**
      Returns attributes for the notification to be presented.
