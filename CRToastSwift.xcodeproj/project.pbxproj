@@ -23,6 +23,7 @@
 		D65BF90E1C9F15FF00EDA220 /* UserInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65BF9041C9F15FF00EDA220 /* UserInteraction.swift */; };
 		D65BF90F1C9F15FF00EDA220 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65BF9051C9F15FF00EDA220 /* Utils.swift */; };
 		D65BF9111C9F196300EDA220 /* CRToast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D65BF9101C9F196300EDA220 /* CRToast.framework */; };
+		D67062B71CA96055007F0D37 /* Cartfile.private in Resources */ = {isa = PBXBuildFile; fileRef = D67062B61CA96055007F0D37 /* Cartfile.private */; };
 		D672257C1CA19608009FD99E /* NotificationAttributeCollectionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D672257B1CA19608009FD99E /* NotificationAttributeCollectionSpec.swift */; };
 		D672257E1CA19679009FD99E /* AnimationSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D672257D1CA19679009FD99E /* AnimationSpec.swift */; };
 		D67225821CA196D5009FD99E /* UserInteractionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67225811CA196D5009FD99E /* UserInteractionSpec.swift */; };
@@ -67,6 +68,7 @@
 		D65BF9041C9F15FF00EDA220 /* UserInteraction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInteraction.swift; sourceTree = "<group>"; };
 		D65BF9051C9F15FF00EDA220 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		D65BF9101C9F196300EDA220 /* CRToast.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CRToast.framework; path = Carthage/Build/iOS/CRToast.framework; sourceTree = "<group>"; };
+		D67062B61CA96055007F0D37 /* Cartfile.private */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile.private; sourceTree = "<group>"; };
 		D672257B1CA19608009FD99E /* NotificationAttributeCollectionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationAttributeCollectionSpec.swift; sourceTree = "<group>"; };
 		D672257D1CA19679009FD99E /* AnimationSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationSpec.swift; sourceTree = "<group>"; };
 		D67225811CA196D5009FD99E /* UserInteractionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInteractionSpec.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			children = (
 				D642F94D1C9FD0EB00422264 /* README.md */,
 				D642F9491C9FD0EB00422264 /* Cartfile */,
+				D67062B61CA96055007F0D37 /* Cartfile.private */,
 				D642F94B1C9FD0EB00422264 /* CRToastSwift.podspec */,
 				D642F94C1C9FD0EB00422264 /* LICENSE */,
 				D65BF8F31C9F151F00EDA220 /* CRToastSwift */,
@@ -271,6 +274,7 @@
 				D642F9501C9FD0EB00422264 /* CRToastSwift.podspec in Resources */,
 				D642F94E1C9FD0EB00422264 /* Cartfile in Resources */,
 				D642F9511C9FD0EB00422264 /* LICENSE in Resources */,
+				D67062B71CA96055007F0D37 /* Cartfile.private in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
