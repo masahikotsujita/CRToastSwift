@@ -145,7 +145,7 @@ public class Presenter {
         // Presenting Notification
         
         if let handler = handler {
-            presentation.onPresented(handler)
+            presentation.onPresentation(handler)
         }
         
         dispatch_async(dispatch_get_main_queue()) {
