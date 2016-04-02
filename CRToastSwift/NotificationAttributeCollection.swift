@@ -35,21 +35,6 @@ public enum NotificationSize {
     case Custom(preferredHeight: CGFloat)
 }
 
-extension NotificationSize {
-    
-    var CRToastTypeValue: CRToastType {
-        switch self {
-        case .Compact:
-            return .StatusBar
-        case .Regular:
-            return .NavigationBar
-        case .Custom(_):
-            return .Custom
-        }
-    }
-    
-}
-
 /// A structure containing miscellaneous properties for a notification.
 public struct NotificationAttributeCollection {
     
