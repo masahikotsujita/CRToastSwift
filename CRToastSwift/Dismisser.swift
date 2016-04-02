@@ -49,7 +49,7 @@ public struct Dismisser<Notification: NotificationType> {
             return
         }
         if let handler = handler {
-            presentation.onDismissal(handler)
+            presentation.onDismissed(handler)
         }
         CRToastManager.dismissAllNotificationsWithIdentifier(presentation.identifier, animated: animated)
     }
